@@ -1,4 +1,4 @@
-<!doctype html>
+git<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -10,12 +10,12 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <script src="js/aos.js"></script>
-		<link href="css/aos.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -59,7 +59,7 @@
     <div class="brand">Product Designer</div>
 </section>
 <div class="contact">
-    <span class="email">hi@catalinsandru.com</span>
+    <span class="email">hi@catasandru.com</span>
     <span class="divider footer"></span>
     <div class="social">
         <span class="dribbble">
@@ -86,10 +86,10 @@
         <div class="hero">
             <h1>PRODUCT DESIGNER </h1>
             <div class="contet-hero">
-                <p class="hero-text">I’m Catalin Sandru a <span class="blue">Product designer</span> born in Romania, currently living in <strike>Luxembourg</strike> Bucharest, and working as an in-house designer.
+                <p class="hero-text">I'm Catalin Sandru a <span class="blue">Product designer</span> born in Romania, currently living in <strike>Luxembourg</strike> Bucharest, and working as an in-house designer.
 					<br>Strengths - website and app design.</br>
                 Co-founder of <span class="blue">Places2Go.co</span>
-                If you want to know more about me, my work or if youʼre a Nigerian prince who wants to offer me a lot of money, feel free to contact me on <a href="mailto:hi@catalinsandru.com?subject="> hi[at]catalinsandru.com.</a></br>
+                If you want to know more about me, my work or if you're a Nigerian prince who wants to offer me a lot of money, feel free to contact me on <a href="mailto:hi@catasandru.com?subject="> hi[at]catasandru.com.</a></br>
             </div>
         </div>
     </div>
@@ -125,7 +125,7 @@
                 <div class="project-content" data-aos="fade-up">
                     <h1>Mobile Banking App</h1>
                     <span class="text-block">In-house UI designer, UX and project manager - my roles in this project. This meant a 360 degrees view of a behavior-learning mobile banking app.
-In addition to regular banking features, savings are automatically sent to a separate account based on the clients’ buying behavior and the financial goals set.
+In addition to regular banking features, savings are automatically sent to a separate account based on the clients' buying behavior and the financial goals set.
 </span>
                 
                     <div class="info">
@@ -200,7 +200,7 @@ Lots of meetings and Skype calls, product goals and wireframes later, the projec
 		<div class="social-footer">
 			<div class="button footer-buton"><a href="https://ro.linkedin.com/in/catalinsandru"><button class="button button4">View LinkedIn</button></a></div>
 			<div class="social-links">
-				<div class="footer-email"> <a href="mailto:hi@catalinsandru.com?Subject=Hello%20" target="_top"> <span class="footer-email">hi@catalinsandru.com</span></a></div>
+				<div class="footer-email"> <a href="mailto:hi@catasandru.com?Subject=Hello%20" target="_top"> <span class="footer-email">hi@catasandru.com</span></a></div>
 				<div class="divider footer-divider"></div>
 				<div class="social social-footer">
 					<div class="social-icons">
@@ -225,10 +225,8 @@ Lots of meetings and Skype calls, product goals and wireframes later, the projec
 </section>
 <script>
 $(document).ready(function() {
-        
     var load_flag = true;
     $(document).scroll(function() {
-        
         var mywindow = $(window);
         var mypos = mywindow.scrollTop();
         var up = false;
@@ -247,39 +245,21 @@ $(document).ready(function() {
         });
     });
 });
+
+// Initialize AOS
+AOS.init({
+    easing: 'ease-in-out-sine'
+});
 </script>
 
-		 <script src="js/aos.js"></script>
-    <script>
-      AOS.init({
-        easing: 'ease-in-out-sine'
-      });
-    </script>
-
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js"></script>
-    <script>
-      requirejs.config({
-          baseUrl: '../dist',
-      });
-
-      require(['aos'], function(AOS){
-          AOS.init({
-              easing: 'ease-in-out-sine'
-          });
-      });
-    </script> -->
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+</script>
     </body>
 </html>
