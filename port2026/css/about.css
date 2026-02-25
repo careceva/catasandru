@@ -1,0 +1,479 @@
+/* ============================================================
+   ABOUT PAGE STYLES
+============================================================ */
+
+.about-page {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+.about-container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+/* ============================================================
+   ABOUT HERO
+============================================================ */
+
+.about-hero {
+  padding-top: 64px;
+  padding-bottom: clamp(60px, 6vw, 120px);
+}
+
+.about-hero-content {
+  display: grid;
+  /* use percentage columns so content aligns to container/menu width */
+  grid-template-columns: 55% 45%;
+  gap: clamp(24px, 4vw, 40x);
+  /* pick a viewport-driven pill height and reuse it for the image to keep parity */
+  --pill-h: min(52vh, 40vw, 460px);
+  min-height: calc(var(--pill-h) + 20px);
+  align-items: center;
+  width: 100%;
+}
+
+.intro-pill {
+  /* fill the left grid column; sizing responds to container width */
+  width: 120%;
+  min-height: var(--pill-h);
+  background: var(--green);
+  border-radius: 0 999px 999px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  /* scale padding proportionally */
+  padding: clamp(36px, 4.5vw, 72px) clamp(36px, 4vw, 88px);
+}
+
+.intro-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1.2vw, 12px);
+}
+
+.hi-greeting {
+  font-family: var(--script);
+  font-size: 22px;
+  color: var(--dark);
+  opacity: 1;
+  line-height: 1;
+  margin: 0 0 3px 0;
+}
+
+.intro-heading {
+  font-family: var(--sans);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 53px;
+  color: var(--dark);
+  margin: 0;
+  position: relative;
+  z-index: 10;
+  padding: 0;
+  max-width: 100%;
+}
+
+.intro-heading strong {
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.about-right {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.about-photo {
+  /* occupy the right grid column and match pill height with a 5:7 aspect ratio */
+  aspect-ratio: 5 / 7;
+  /* height drives size; width computed from aspect-ratio */
+  height: var(--pill-h);
+  width: auto;
+  max-width: 520px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: block;
+  flex-shrink: 0;
+}
+
+.about-photo img {
+  /* fill the container while preserving proportion */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Stack on narrow viewports and scale elements proportionally */
+@media (max-width: 900px) {
+  .about-hero-content {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 6vw, 48px);
+  }
+
+  .intro-pill, .about-photo {
+    width: 100%;
+    min-height: auto;
+    height: auto;
+  }
+
+  .about-photo img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 7;
+  }
+}
+
+/* ============================================================
+   ABOUT CONTENT
+============================================================ */
+
+.about-content {
+  padding: clamp(60px, 6vw, 0px) 0;
+}
+
+.content-section {
+  margin-bottom: clamp(80px, 8vw, 150px);
+  max-width: clamp(360px, 46vw, 820px);
+  margin-top: 0px;
+}
+
+.content-section h2 {
+  font-size: clamp(28px, 3vw, 32px);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 40px;
+}
+
+.section-text {
+  max-width: 800px;
+}
+
+.section-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--body);
+  margin-bottom: 24px;
+}
+
+.section-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   CONTENT GRID (Work Experience + Education)
+============================================================ */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: clamp(40px, 4vw, 80px);
+  margin-bottom: clamp(80px, 8vw, 150px);
+  width: 100%;
+  max-width: 100%;
+}
+
+.work-experience-grid {
+  width: 100%;
+  max-width: 100%;
+}
+
+.work-col h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 40px 0;
+}
+
+/* Align col 2 (no heading) so first entry starts level with Visma in col 1 */
+.work-col--offset {
+  padding-top: calc(32px * 1.2 + 50px + 2px);
+}
+
+/* --- Experience entry --- */
+.experience-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 64px;
+}
+
+.experience-entry:last-child {
+  margin-bottom: 0;
+}
+
+.exp-company-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.exp-company {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 36px;
+}
+
+.exp-period {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 36px;
+}
+
+.exp-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  opacity: 0.6;
+}
+
+.exp-meta p {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--dark);
+  margin: 0;
+}
+
+/* --- Role sub-entries inside an experience --- */
+.exp-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 26px;
+}
+
+.exp-role {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.role-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark);
+  opacity: 0.6;
+  line-height: 36px;
+  margin: 0;
+}
+
+.role-date {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--dark);
+  opacity: 0.6;
+  line-height: 20px;
+  margin: 0;
+}
+
+/* --- Education entries --- */
+.education-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 32px;
+}
+
+.education-entry:last-of-type {
+  margin-bottom: 40px;
+}
+
+.exp-company-block {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.exp-meta-line {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark);
+  opacity: 0.6;
+  margin: 0;
+  line-height: 24px;
+}
+
+/* --- Software / Soft Skills blocks --- */
+.skills-block {
+  margin-bottom: 32px;
+}
+
+.skills-block:last-child {
+  margin-bottom: 0;
+}
+
+.skills-title {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 36px;
+  margin-bottom: 6px;
+}
+
+.skills-block p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark);
+  opacity: 0.6;
+  line-height: 24px;
+  margin: 0;
+}
+
+/* ============================================================
+   EXPERTISE SECTION
+============================================================ */
+
+.expertise-section {
+  margin-top: 46px;
+  margin-bottom: clamp(80px, 8vw, 150px);
+}
+
+.expertise-title {
+  font-size: clamp(28px, 4vw, 300px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--dark);
+  max-width: 100%;
+  margin-bottom: 80px;
+  letter-spacing: -0.02em;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  gap: clamp(60px, 8vw, 100px);
+}
+
+.expertise-item h3 {
+  font-size: clamp(20px, 2.2vw, 200px);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 24px;
+}
+
+.expertise-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expertise-item ul li {
+  font-size: clamp(14px, 1.1vw, 100px);
+  color: var(--body);
+  padding: 8px 0;
+}
+
+/* ============================================================
+   CLOSING STATEMENT
+============================================================ */
+
+.closing-statement {
+  margin-bottom: clamp(80px, 8vw, 150px);
+  padding: clamp(40px, 6vw, 80px);
+  background: rgba(134, 181, 143, 0.08);
+  border-radius: 12px;
+}
+
+.closing-statement h2 {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--dark);
+  margin: 0;
+}
+
+/* ============================================================
+   ABOUT PAGE BUTTONS
+============================================================ */
+
+.about-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.about-buttons .btn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.about-buttons .btn-green {
+  background: var(--green);
+  color: black;
+}
+
+.about-buttons .btn-green:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+.about-buttons .btn-light {
+  background: rgba(134, 181, 143, 0.18);
+  color: black;
+  border: 1px solid var(--green);
+}
+
+.about-buttons .btn-light:hover {
+  background: var(--green);
+  color: black;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .work-experience-grid .work-col:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-col--offset {
+    padding-top: 0;
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-buttons {
+    flex-direction: column;
+  }
+}

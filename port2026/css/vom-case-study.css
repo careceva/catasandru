@@ -1,0 +1,396 @@
+/* ============================================================
+   VOM CASE STUDY — PAGE STYLES
+============================================================ */
+
+.cs-page {
+  background: #EBE8E0;
+}
+
+/* ============================================================
+   DARK SECTION (hero + quote — one shared background)
+============================================================ */
+
+.cs-dark-section {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-dark-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height:80%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  z-index: 0;
+}
+
+/* White nav — floats over the hero */
+.cs-dark-section .nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.nav--white .nav-link {
+  color: #fff;
+}
+
+.nav--white .nav-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* Hero content — fills the full viewport, text starts ~400px from top */
+.cs-hero-content {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 70vh;
+}
+
+.cs-hero-inner {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4.5vw, 40px);
+}
+
+.cs-hero-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  align-self: flex-start;
+  filter: brightness(0) invert(1);
+}
+
+.cs-hero-title {
+  font-weight: 700;
+  font-size: clamp(40px, 4.4vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -1.28px;
+  color: #fff;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.cs-hero-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cs-hero-body p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  letter-spacing: -0.32px;
+}
+
+/* ============================================================
+   QUOTE
+============================================================ */
+
+.cs-quote-layout {
+  position: relative;
+  z-index: 1;
+  margin-top: 25vw;
+  padding-bottom: clamp(0px, 1vw, 0px);
+}
+
+.cs-quote-inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 5vw, 80px);
+  align-items: center;
+}
+
+.cs-quote-heading {
+  font-weight: 700;
+  font-size: clamp(48px, 6.9vw, 100px);
+  line-height: 1;
+  letter-spacing: -2px;
+  color: #fff;
+  margin: 0;
+}
+
+.cs-quote-image {
+  width: 100%;
+}
+
+.cs-quote-image img {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   CONTEXT BODY TEXT
+============================================================ */
+
+.cs-context {
+  padding: clamp(80px, 8vw, 10px) 0;
+}
+
+.cs-context-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: left;
+}
+
+.cs-context-inner p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--body);
+  margin: 0;
+}
+
+/* ============================================================
+   SCREENS GRID
+============================================================ */
+
+.cs-screens {
+  padding-bottom: clamp(80px, 8vw, 160px);
+}
+
+.cs-screens > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---- Base card ---- */
+.cs-card {
+  border-radius: 36px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ---- Beige card ---- */
+.cs-card--beige {
+  background: #ebe8e0;
+  padding: clamp(48px, 6vw, 96px) clamp(40px, 6vw, 96px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: #C2BEB4 5px solid;
+}
+
+/* ---- Full-bleed photo card ---- */
+.cs-card--photo {
+  aspect-ratio: 16 / 7;
+  padding: 0;
+}
+
+.cs-card--photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- Dark photo card with phones overlay ---- */
+.cs-card--dark-photo {
+  position: relative;
+  min-height: clamp(480px, 50vw, 720px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(48px, 6vw, 96px) clamp(40px, 6vw, 96px);
+}
+
+.cs-card-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- Half card for quad grid ---- */
+.cs-card--half {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: clamp(32px, 4vw, 60px);
+}
+
+.cs-card--half img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
+   PHONE PAIRS
+============================================================ */
+
+.cs-phones {
+  display: flex;
+  gap: clamp(24px, 3vw, 56px);
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.cs-phones--dark {
+  position: relative;
+  z-index: 1;
+}
+
+.cs-phone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.cs-phone img {
+  height: clamp(280px, 27vw, 520px);
+  width: auto;
+  display: block;
+}
+
+/* ============================================================
+   CAPTIONS
+============================================================ */
+
+.cs-caption {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dark);
+  opacity: 0.55;
+  text-align: center;
+  display: block;
+  letter-spacing: 0.02em;
+}
+
+.cs-caption--white {
+  color: #fff;
+  opacity: 0.75;
+}
+
+.cs-caption--center {
+  text-align: center;
+}
+
+/* ============================================================
+   SCREENSHOT LAYOUTS
+============================================================ */
+
+/* Centered single screenshot */
+.cs-screenshot-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.cs-screenshot-center img {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+/* Full-width desktop screenshot */
+.cs-desktop-screenshot {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.cs-desktop-screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ============================================================
+   SPLIT LAYOUT (side by side)
+============================================================ */
+
+.cs-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 3vw, 48px);
+  width: 100%;
+}
+
+.cs-split-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.cs-split-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ============================================================
+   QUAD GRID (2×2)
+============================================================ */
+
+.cs-quad {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 900px) {
+  .cs-phones {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cs-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-hero-title {
+    font-size: clamp(32px, 7vw, 56px);
+  }
+
+  .cs-card--beige {
+    padding: clamp(28px, 6vw, 48px);
+  }
+
+  .cs-card--dark-photo {
+    padding: clamp(28px, 6vw, 48px);
+  }
+
+  .cs-quad {
+    grid-template-columns: 1fr;
+  }
+}

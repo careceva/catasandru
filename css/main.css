@@ -813,6 +813,39 @@ video { display: block; width: 100%; height: auto; }
 	width: 20%;
 	margin: auto;
 }
+
+.circular-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
+	height: 200px;
+	border: 12px solid #2d2d2d;
+	border-radius: 50%;
+	background-color: #e8e8e8;
+	position: relative;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12), inset 0px -2px 8px rgba(0, 0, 0, 0.08);
+	margin: 0 auto;
+}
+
+.circular-button:hover {
+	transform: translateY(-4px);
+	box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.16), inset 0px -2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.circular-dot {
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: #6db089;
+	border-radius: 50%;
+	position: absolute;
+	top: -30px;
+	left: 50%;
+	transform: translateX(-50%);
+}
 .social-links {
 	display: block;
 	position: relative;
