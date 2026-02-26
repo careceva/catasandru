@@ -109,6 +109,7 @@
 }
 
 .cs-quote-inner {
+  padding-top: 7vw;
   display: flex;
   flex-direction: column;
   gap: clamp(48px, 5vw, 80px);
@@ -174,192 +175,265 @@
   gap: 16px;
 }
 
-/* ---- Base card ---- */
+/* ============================================================
+   BASE CARD
+   All standard cards share the same height at every viewport.
+   Ratio matches Figma: 719 / 1282 ≈ 56.1 %
+============================================================ */
+
 .cs-card {
   border-radius: 36px;
   overflow: hidden;
   width: 100%;
+  position: relative;
+  /* consistent height across all standard cards */
+  height: clamp(320px, 56.1vw, 720px);
+  box-sizing: border-box;
 }
 
-/* ---- Beige card ---- */
+/* ---- Beige ---- */
 .cs-card--beige {
   background: #ebe8e0;
-  padding: clamp(48px, 6vw, 96px) clamp(40px, 6vw, 96px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: #C2BEB4 5px solid;
+  border: 5px solid #C2BEB4;
 }
 
-/* ---- Full-bleed photo card ---- */
-.cs-card--photo {
-  aspect-ratio: 16 / 7;
-  padding: 0;
-}
-
-.cs-card--photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* ---- Dark photo card with phones overlay ---- */
-.cs-card--dark-photo {
-  position: relative;
-  min-height: clamp(480px, 50vw, 720px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(48px, 6vw, 96px) clamp(40px, 6vw, 96px);
-}
-
-.cs-card-bg-img {
+/* ---- Full-bleed photo (city photo, dark-bg cards) ---- */
+.cs-bg-fill {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  z-index: 0;
 }
 
-/* ---- Half card for quad grid ---- */
-.cs-card--half {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  padding: clamp(32px, 4vw, 60px);
-}
-
-.cs-card--half img {
-  width: 100%;
-  height: auto;
-  display: block;
+/* ---- Tall card (large desktop view, Card 6) ---- */
+.cs-card--tall {
+  height: clamp(480px, 89.5vw, 1148px);
 }
 
 /* ============================================================
-   PHONE PAIRS
+   PHONE PAIRS  (Cards 1, 3, 4, 5)
+   Phones fill the card height minus padding.
 ============================================================ */
 
-.cs-phones {
-  display: flex;
-  gap: clamp(24px, 3vw, 56px);
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.cs-phones--dark {
+.cs-phones-wrap {
   position: relative;
   z-index: 1;
+  display: flex;
+  gap: clamp(20px, 3.5vw, 56px);
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  padding: clamp(28px, 4vw, 56px) clamp(32px, 5vw, 96px) clamp(20px, 2.5vw, 36px);
+  box-sizing: border-box;
 }
 
-.cs-phone {
+.cs-phone-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.cs-phone img {
-  height: clamp(280px, 27vw, 520px);
+.cs-phone-item img {
+  flex: 1;
+  min-height: 0;
   width: auto;
+  max-width: 100%;
+  object-fit: contain;
   display: block;
+}
+
+/* Shorter phone in Card 5 (Public user profile ~79% of tall phone) */
+.cs-phone-item--sm {
+  height: 79%;
+  align-self: flex-end;
+}
+
+/* Dark photo card — phones at 70% size, centered */
+.cs-phones-wrap--sm {
+  align-items: center;
+}
+
+.cs-phones-wrap--sm .cs-phone-item {
+  height: 70%;
+  width: 70%;
 }
 
 /* ============================================================
-   CAPTIONS
+   FIGCAPTION  (shared caption style)
 ============================================================ */
 
-.cs-caption {
-  font-size: 13px;
-  font-weight: 500;
+.cs-phone-item figcaption,
+.cs-wide-fig figcaption,
+.cs-desktop-fig figcaption,
+.cs-split-fig figcaption,
+.cs-half-fig figcaption,
+.cs-tall-fig figcaption {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--sans);
   color: var(--dark);
-  opacity: 0.55;
+  opacity: 0.4;
   text-align: center;
-  display: block;
-  letter-spacing: 0.02em;
+  /* pull up into the baked-in image shadow so caption sits at the visible edge */
+  margin-top: -75px;
+  padding: 0;
+  line-height: 24px;
+  position: relative;
+  z-index: 2;
 }
 
-.cs-caption--white {
+/* White caption (dark-bg cards) */
+.cs-phone-item--white figcaption,
+.cs-figcap--white {
   color: #fff;
   opacity: 0.75;
 }
 
-.cs-caption--center {
-  text-align: center;
-}
-
 /* ============================================================
-   SCREENSHOT LAYOUTS
+   WIDE SCREENSHOT  (Card 2 — User profile)
 ============================================================ */
 
-/* Centered single screenshot */
-.cs-screenshot-center {
+.cs-wide-fig {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  width: 100%;
+  justify-content: flex-end;
+  gap: 0;
+  height: 100%;
+  padding: clamp(40px, 5vw, 72px) clamp(24px, 6vw, 80px) clamp(20px, 2.5vw, 36px);
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.cs-screenshot-center img {
+.cs-wide-fig img {
+  flex: 1;
+  min-height: 0;
   width: 100%;
-  max-width: 640px;
-  height: auto;
+  max-width: 720px;
+  object-fit: contain;
   display: block;
-  border-radius: 16px;
-}
-
-/* Full-width desktop screenshot */
-.cs-desktop-screenshot {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.cs-desktop-screenshot img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
 }
 
 /* ============================================================
-   SPLIT LAYOUT (side by side)
+   LARGE DESKTOP  (Card 6 — tall card)
 ============================================================ */
 
-.cs-split {
+.cs-tall-fig {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: clamp(40px, 4vw, 64px) clamp(32px, 5vw, 80px) clamp(32px, 4vw, 64px);
+  box-sizing: border-box;
+}
+
+.cs-tall-fig img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================================
+   LOCATION + OFFICES SPLIT  (Card 8)
+============================================================ */
+
+.cs-split-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(24px, 3vw, 48px);
-  width: 100%;
+  height: 100%;
+  padding: clamp(28px, 4vw, 56px) clamp(32px, 5vw, 80px) clamp(20px, 2.5vw, 36px);
+  box-sizing: border-box;
 }
 
-.cs-split-item {
+.cs-split-fig {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  justify-content: flex-end;
+  gap: 0;
+  height: 100%;
+  margin: 0;
 }
 
-.cs-split-item img {
+.cs-split-fig img {
+  flex: 1;
+  min-height: 0;
   width: 100%;
-  height: auto;
+  object-fit: contain;
   display: block;
-  border-radius: 12px;
 }
 
 /* ============================================================
-   QUAD GRID (2×2)
+   HIERARCHY DESKTOP  (Card 9)
 ============================================================ */
 
-.cs-quad {
+.cs-desktop-fig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  height: 100%;
+  padding: clamp(20px, 2.5vw, 32px) clamp(32px, 5vw, 80px) clamp(20px, 2.5vw, 36px);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.cs-desktop-fig img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================================
+   HALF-ROW  (Rows 10 & 11 — two cards side by side)
+   Height: 610 / 1282 ≈ 47.6 %
+============================================================ */
+
+.cs-half-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+
+.cs-card--half {
+  height: clamp(240px, 47.6vw, 610px);
+}
+
+.cs-half-fig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  height: 100%;
+  padding: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 40px) clamp(20px, 2.5vw, 32px);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.cs-half-fig img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Overlay figure inside a photo-bg half card */
+.cs-half-fig--overlay {
+  position: relative;
+  z-index: 1;
 }
 
 /* ============================================================
@@ -367,13 +441,22 @@
 ============================================================ */
 
 @media (max-width: 900px) {
-  .cs-phones {
-    flex-wrap: wrap;
-    justify-content: center;
+  .cs-phones-wrap {
+    gap: clamp(12px, 3vw, 24px);
+    padding-left: clamp(20px, 4vw, 48px);
+    padding-right: clamp(20px, 4vw, 48px);
   }
 
-  .cs-split {
+  .cs-split-wrap {
     grid-template-columns: 1fr;
+  }
+
+  .cs-half-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-card--half {
+    height: clamp(280px, 56.1vw, 720px);
   }
 }
 
@@ -382,15 +465,12 @@
     font-size: clamp(32px, 7vw, 56px);
   }
 
-  .cs-card--beige {
-    padding: clamp(28px, 6vw, 48px);
+  .cs-phones-wrap {
+    flex-wrap: wrap;
+    align-items: center;
   }
 
-  .cs-card--dark-photo {
-    padding: clamp(28px, 6vw, 48px);
-  }
-
-  .cs-quad {
-    grid-template-columns: 1fr;
+  .cs-phone-item--sm {
+    height: 100%;
   }
 }
