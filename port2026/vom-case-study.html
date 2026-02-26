@@ -9,6 +9,28 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/vom-case-study.css">
+  <style>
+    /*
+     * Cards start VISIBLE so the browser fetches images immediately.
+     * The global [data-reveal] rule sets opacity:0 which can block image
+     * loading when combined with transform + overflow:hidden on the card.
+     * We override that here and use a keyframe animation instead of a
+     * transition, so images load before the animation fires.
+     */
+    .cs-screens [data-reveal],
+    .cs-screens [data-reveal="scale"] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .cs-screens [data-reveal].is-visible {
+      animation: cs-card-in 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+    @keyframes cs-card-in {
+      from { opacity: 0; transform: translateY(28px) scale(0.96); }
+      to   { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
 <body class="cs-page">
 
@@ -54,8 +76,8 @@
     <div class="cs-quote-layout">
       <div class="container">
         <div class="cs-quote-inner">
-          <h2 class="cs-quote-heading">Every corporate<br>adventure starts<br>with an idea</h2>
-          <div class="cs-quote-image">
+          <h2 class="cs-quote-heading" data-reveal>Every corporate<br>adventure starts<br>with an idea</h2>
+          <div class="cs-quote-image" data-reveal data-reveal-delay="2">
             <img src="https://www.figma.com/api/mcp/asset/48ebda0d-e9f0-4139-b282-34c22c66b100" alt="">
           </div>
         </div>
@@ -70,9 +92,9 @@
   <section class="cs-context">
     <div class="container">
       <div class="cs-context-inner">
-        <p>With 2.2 million customers across 28 countries, Visma is focused on future-proofing businesses at scale.</p>
-        <p>Through research and questionnaires, we identified several areas that were unnecessarily complex to manage online — workflows that required clarity, structure, and thoughtful attention.</p>
-        <p>Together with the tech team, I helped design a new experience that made navigating, managing, and planning corporate tasks simpler and more visual. The goal was to translate operational complexity into an interface that felt structured, intuitive, and scalable across markets.</p>
+        <p data-reveal>With 2.2 million customers across 28 countries, Visma is focused on future-proofing businesses at scale.</p>
+        <p data-reveal data-reveal-delay="1">Through research and questionnaires, we identified several areas that were unnecessarily complex to manage online — workflows that required clarity, structure, and thoughtful attention.</p>
+        <p data-reveal data-reveal-delay="2">Together with the tech team, I helped design a new experience that made navigating, managing, and planning corporate tasks simpler and more visual. The goal was to translate operational complexity into an interface that felt structured, intuitive, and scalable across markets.</p>
       </div>
     </div>
   </section>
@@ -83,122 +105,135 @@
   <div class="cs-screens">
     <div class="container">
 
-      <!-- Row 1: 2 phone mockups — Employee view / Stats -->
-      <div class="cs-card cs-card--beige">
-        <div class="cs-phones">
-          <div class="cs-phone">
-            <img src="https://www.figma.com/api/mcp/asset/cce4b858-eddc-4d52-b8a1-ed8f14c01a4d" alt="Employee view">
-            <span class="cs-caption">employee view</span>
-          </div>
-          <div class="cs-phone">
-            <img src="https://www.figma.com/api/mcp/asset/02320ae2-0fd4-4acc-b77a-2963cb8c2957" alt="Stats">
-            <span class="cs-caption">Stats</span>
-          </div>
+      <!-- 1 ── Employee view + Stats (2 phones) -->
+      <div class="cs-card cs-card--beige" data-reveal="scale">
+        <div class="cs-phones-wrap">
+          <figure class="cs-phone-item">
+            <img src="https://www.figma.com/api/mcp/asset/c24e813d-7da5-4f9b-b154-1c2433627038" alt="Employee view">
+            <figcaption>employee view</figcaption>
+          </figure>
+          <figure class="cs-phone-item">
+            <img src="https://www.figma.com/api/mcp/asset/296007a4-c74d-4404-a3ca-2e1855ee9137" alt="Stats">
+            <figcaption>Stats</figcaption>
+          </figure>
         </div>
       </div>
 
-      <!-- Row 2: Full-bleed dark photo card -->
-      <div class="cs-card cs-card--photo">
-        <img src="https://www.figma.com/api/mcp/asset/29c150cb-3a3a-481f-b730-bafe2cf8fda6" alt="">
+      <!-- 2 ── Wide screenshot (User profile) -->
+      <div class="cs-card cs-card--beige" data-reveal="scale">
+        <figure class="cs-wide-fig">
+          <img src="https://www.figma.com/api/mcp/asset/6b27777c-a9e8-45de-8b2e-f77a957990ca" alt="User profile">
+          <figcaption>User profile</figcaption>
+        </figure>
       </div>
 
-      <!-- Row 3: User profile (single screenshot) -->
-      <div class="cs-card cs-card--beige">
-        <div class="cs-screenshot-center">
-          <img src="https://www.figma.com/api/mcp/asset/da173aa2-dd93-4160-8827-cb4d8407e47d" alt="User profile">
-          <span class="cs-caption cs-caption--center">User profile</span>
+      <!-- 3 ── Dark photo bg + 2 phones (team hierarchy / edit user) -->
+      <div class="cs-card" data-reveal="scale">
+        <img class="cs-bg-fill" src="https://www.figma.com/api/mcp/asset/a0f386ef-8533-472b-89d9-cece76e7b7b6" alt="">
+        <div class="cs-phones-wrap cs-phones-wrap--sm">
+          <figure class="cs-phone-item cs-phone-item--white">
+            <img src="https://www.figma.com/api/mcp/asset/e38a4566-6af6-4163-8520-9c55631c1744" alt="Team hierarchy">
+            <figcaption>team hierarchy</figcaption>
+          </figure>
+          <figure class="cs-phone-item cs-phone-item--white">
+            <img src="https://www.figma.com/api/mcp/asset/580b1c5d-03bd-4db2-a554-05cafaee92d2" alt="Edit user">
+            <figcaption>edit user</figcaption>
+          </figure>
         </div>
       </div>
 
-      <!-- Row 4: Dark photo card with 2 phones -->
-      <div class="cs-card cs-card--dark-photo">
-        <img class="cs-card-bg-img" src="https://www.figma.com/api/mcp/asset/8d4c4a42-a6f6-4b79-bc0f-f374bced7ab2" alt="">
-        <div class="cs-phones cs-phones--dark">
-          <div class="cs-phone">
-            <img src="https://www.figma.com/api/mcp/asset/784989f4-1bd0-4d42-b29d-42d8cb213fe3" alt="Team hierarchy">
-            <span class="cs-caption cs-caption--white">team hierarchy</span>
-          </div>
-          <div class="cs-phone">
-            <img src="https://www.figma.com/api/mcp/asset/8a54f2e8-3811-4cda-92c6-7e4136e847ed" alt="Edit user">
-            <span class="cs-caption cs-caption--white">edit user</span>
-          </div>
+      <!-- 4 ── Admin view + Filters (2 phones) -->
+      <div class="cs-card cs-card--beige" data-reveal="scale">
+        <div class="cs-phones-wrap">
+          <figure class="cs-phone-item">
+            <img src="https://www.figma.com/api/mcp/asset/8f80bd00-ecf1-4311-926f-c8ff1c16b5a6" alt="Admin view">
+            <figcaption>Admin view</figcaption>
+          </figure>
+          <figure class="cs-phone-item">
+            <img src="https://www.figma.com/api/mcp/asset/8599eb93-4f55-4b97-93b3-51fd1990e87b" alt="Filters">
+            <figcaption>Filters</figcaption>
+          </figure>
         </div>
       </div>
 
-      <!-- Row 5: 2 phone mockups — Admin view / Filters -->
-      <div class="cs-card cs-card--beige">
-        <div class="cs-phones">
-          <div class="cs-phone">
-            <img src="https://www.figma.com/api/mcp/asset/14b981d9-9730-4d2c-b470-dab9c6d26ee2" alt="Admin view">
-            <span class="cs-caption">Admin view</span>
-          </div>
-          <div class="cs-phone">
-            <img src="https://www.figma.com/api/mcp/asset/af55ed69-cea5-4722-81b4-3f68a3b4a34a" alt="Filters">
-            <span class="cs-caption">Filters</span>
-          </div>
+      <!-- 5 ── Team structure + Public user profile -->
+      <div class="cs-card cs-card--beige" data-reveal="scale">
+        <div class="cs-phones-wrap">
+          <figure class="cs-phone-item">
+            <img src="https://www.figma.com/api/mcp/asset/9f572a6a-b865-4013-ab32-dd7f6bde44ab" alt="Team structure">
+            <figcaption>Team structure</figcaption>
+          </figure>
+          <figure class="cs-phone-item">
+            <img src="https://www.figma.com/api/mcp/asset/a25a588a-c264-4373-b25d-b43b2031b0d1" alt="Public user profile">
+            <figcaption>Public user profile</figcaption>
+          </figure>
         </div>
       </div>
 
-      <!-- Row 6: 2 phone mockups — Team structure / Public user profile -->
-      <div class="cs-card cs-card--beige">
-        <div class="cs-phones">
-          <div class="cs-phone">
-            <img src="https://www.figma.com/api/mcp/asset/af55ed69-cea5-4722-81b4-3f68a3b4a34a" alt="Team structure">
-            <span class="cs-caption">Team structure</span>
-          </div>
-          <div class="cs-phone">
-            <img src="https://www.figma.com/api/mcp/asset/7bdfef85-49f7-446b-b50d-0a8784f9d324" alt="Public user profile">
-            <span class="cs-caption">Public user profile</span>
-          </div>
+      <!-- 6 ── Large desktop view (TALL CARD) -->
+      <div class="cs-card cs-card--beige cs-card--tall" data-reveal="scale">
+        <figure class="cs-tall-fig">
+          <img src="https://www.figma.com/api/mcp/asset/8733ee79-0bb9-4fd5-99af-2b477e1a092f" alt="Desktop view">
+        </figure>
+      </div>
+
+      <!-- 7 ── City photo (full-bleed) -->
+      <div class="cs-card" data-reveal="scale">
+        <img class="cs-bg-fill" src="https://www.figma.com/api/mcp/asset/e03d7072-2340-4755-8a87-fa1d0bc0b465" alt="">
+      </div>
+
+      <!-- 8 ── Location view + Offices -->
+      <div class="cs-card cs-card--beige" data-reveal="scale">
+        <div class="cs-split-wrap">
+          <figure class="cs-split-fig">
+            <img src="https://www.figma.com/api/mcp/asset/0b27cabf-c2f5-4a83-b020-b1802d7f778e" alt="Location view">
+            <figcaption>Location view</figcaption>
+          </figure>
+          <figure class="cs-split-fig">
+            <img src="https://www.figma.com/api/mcp/asset/ee64d3a3-639c-4562-bb10-d0594bb3f341" alt="Offices">
+            <figcaption>Offices</figcaption>
+          </figure>
         </div>
       </div>
 
-      <!-- Row 7: Large desktop screenshot -->
-      <div class="cs-card cs-card--beige">
-        <div class="cs-desktop-screenshot">
-          <img src="https://www.figma.com/api/mcp/asset/f1797dfe-4097-4be5-8965-74644a727a5a" alt="Desktop view">
-        </div>
+      <!-- 9 ── Hierarchy (full-width desktop) -->
+      <div class="cs-card cs-card--beige" data-reveal="scale">
+        <figure class="cs-desktop-fig">
+          <img src="https://www.figma.com/api/mcp/asset/88cbb9be-90fa-42e0-a581-46728bf978bb" alt="Hierarchy">
+          <figcaption>Hierarchy</figcaption>
+        </figure>
       </div>
 
-      <!-- Row 8: Location view + Offices (side by side) -->
-      <div class="cs-card cs-card--beige">
-        <div class="cs-split">
-          <div class="cs-split-item">
-            <img src="https://www.figma.com/api/mcp/asset/2374fb01-a24b-4186-b8ef-feb0a783fecc" alt="Location view">
-            <span class="cs-caption">Location view</span>
-          </div>
-          <div class="cs-split-item">
-            <img src="https://www.figma.com/api/mcp/asset/86f88b2c-9633-4b14-890d-395ae2233690" alt="Offices">
-            <span class="cs-caption">Offices</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Row 9: Hierarchy -->
-      <div class="cs-card cs-card--beige">
-        <div class="cs-desktop-screenshot">
-          <img src="https://www.figma.com/api/mcp/asset/177b1c13-68a1-4ff4-93e9-2d0e00a00e42" alt="Hierarchy">
-          <span class="cs-caption cs-caption--center">Hierarchy</span>
-        </div>
-      </div>
-
-      <!-- Row 10: 2×2 detail cards -->
-      <div class="cs-quad">
+      <!-- 10 ── Corporate structure + Employee structure -->
+      <div class="cs-half-row" data-reveal="scale">
         <div class="cs-card cs-card--beige cs-card--half">
-          <img src="https://www.figma.com/api/mcp/asset/2db9a11c-bc31-46ae-92e1-7c8eb7ef9767" alt="Corporate structure">
-          <span class="cs-caption cs-caption--center">Corporate structure</span>
-        </div>
-        <div class="cs-card cs-card--beige cs-card--half">
-          <img src="https://www.figma.com/api/mcp/asset/ac20238b-d607-4bb3-85aa-c4a99ec8aa60" alt="Employee structure">
-          <span class="cs-caption cs-caption--center">Employee structure</span>
+          <figure class="cs-half-fig">
+            <img src="https://www.figma.com/api/mcp/asset/5d5b5120-cd35-40bd-b6be-0684af2aa9cb" alt="Corporate structure">
+            <figcaption>Corporate structure</figcaption>
+          </figure>
         </div>
         <div class="cs-card cs-card--beige cs-card--half">
-          <img src="https://www.figma.com/api/mcp/asset/6fd6856f-685a-4aa6-953c-6800427080fc" alt="Structure details">
-          <span class="cs-caption cs-caption--center">Structure details</span>
+          <figure class="cs-half-fig">
+            <img src="https://www.figma.com/api/mcp/asset/fed658fe-6bac-4dfb-aa1a-b594b6434dfd" alt="Employee structure">
+            <figcaption>Employee structure</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- 11 ── Structure details (photo bg) + Filter options -->
+      <div class="cs-half-row" data-reveal="scale">
+        <div class="cs-card cs-card--beige cs-card--half">
+          <img class="cs-bg-fill" src="https://www.figma.com/api/mcp/asset/09d7f001-fb1c-47c2-a7e4-61aac9f7a33f" alt="">
+          <figure class="cs-half-fig cs-half-fig--overlay">
+            <img src="https://www.figma.com/api/mcp/asset/68067c7f-d252-4077-8fd1-d27091bbecaf" alt="Structure details">
+            <figcaption class="cs-figcap--white">Structure details</figcaption>
+          </figure>
         </div>
         <div class="cs-card cs-card--beige cs-card--half">
-          <img src="https://www.figma.com/api/mcp/asset/eb80c761-dc49-4e18-811d-d29380b62444" alt="Filter options">
-          <span class="cs-caption cs-caption--center">Filter options</span>
+          <figure class="cs-half-fig">
+            <img src="https://www.figma.com/api/mcp/asset/fae0b213-1a0f-4801-91d9-8753d0203736" alt="Filter options">
+            <figcaption>Filter options</figcaption>
+          </figure>
         </div>
       </div>
 
@@ -271,6 +306,28 @@
       </form>
     </div>
   </div>
+
+  <!-- Scroll Reveal -->
+  <script>
+    (function () {
+      var revealEls = document.querySelectorAll('[data-reveal]');
+      if (!revealEls.length) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            obs.unobserve(el);
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                el.classList.add('is-visible');
+              });
+            });
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(function (el) { obs.observe(el); });
+    })();
+  </script>
 
   <script>
     const dialBtn    = document.getElementById('dialBtn');

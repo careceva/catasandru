@@ -140,22 +140,36 @@ em { font-style: normal; }
 }
 
 /* ---- Left pill ---- */
+@keyframes pillEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-48px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
 .hero-left {
   flex-shrink: 0;
   align-self: flex-start;
-  width: clamp(280px, 37vw, 475px);
+  width: clamp(280px, 49vw, 520px);
   margin-right: clamp(32px, 8vw, 120px);
   height: 287px;
-  background-image: url('https://www.figma.com/api/mcp/asset/22cf5eba-2a19-4002-a447-4662cec2cb11');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: var(--bg);
   border-radius: 0 999px 999px 0;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  opacity: 0;
+  animation: pillEnter 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-left { animation: none; opacity: 1; }
 }
 
 /* At wide viewports: pill background extends left to viewport edge */
@@ -171,10 +185,30 @@ em { font-style: normal; }
     top: 0;
     bottom: 0;
     width: calc((100vw - var(--max-w)) / 2);
-    background: inherit;
-    background-image: linear-gradient(to right, var(--green), transparent);
+    background: var(--bg);
     z-index: -1;
   }
+}
+
+/* ── Logo smiley: appear + eyebrow raise loop ── */
+@keyframes logoAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.82) translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes eyebrowRaise {
+  /* rest ───── raise ── return ── raise ── return ───── rest */
+  0%, 38%, 100% { transform: translateY(0); }
+  8%            { transform: translateY(-7px); }
+  17%           { transform: translateY(0); }
+  27%           { transform: translateY(-7px); }
+  35%           { transform: translateY(0); }
 }
 
 /* Wrapper keeps logo + "Hi, I'm" together */
@@ -182,6 +216,21 @@ em { font-style: normal; }
   position: relative;
   width: clamp(180px, 44%, 315px);
   flex-shrink: 0;
+  opacity: 0;
+  animation: logoAppear 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both;
+}
+
+.hero-logo-wrap.logo-floating {
+  opacity: 1;
+  animation: eyebrowRaise 5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo-wrap,
+  .hero-logo-wrap.logo-floating {
+    animation: none;
+    opacity: 1;
+  }
 }
 
 /* Cătă calligraphy */
@@ -303,7 +352,7 @@ em { font-style: normal; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 55% 45%;
+  object-position: 19% 45%;
 }
 
 /* ============================================================
@@ -890,4 +939,83 @@ em { font-style: normal; }
   font-weight: 700;
   font-size: 18px;
   color: #fff;
+}
+
+/* ============================================================
+   HERO HEADLINE — letter-by-letter reveal
+============================================================ */
+@keyframes charIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-headline .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: charIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: transform, opacity;
+}
+
+.hero-bio.bio-anim {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ============================================================
+   SCROLL REVEAL — Apple-style
+============================================================ */
+
+/* Default: fade up */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity  0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Scale variant: fade up + scale in */
+[data-reveal="scale"] {
+  transform: translateY(28px) scale(0.96);
+  transition:
+    opacity  1s   cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 1s   cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Fade only — no movement (decorative elements) */
+[data-reveal="fade"] {
+  transform: none;
+  transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Revealed state */
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delays */
+[data-reveal-delay="1"] { transition-delay: 0.12s; }
+[data-reveal-delay="2"] { transition-delay: 0.22s; }
+[data-reveal-delay="3"] { transition-delay: 0.34s; }
+[data-reveal-delay="4"] { transition-delay: 0.46s; }
+
+/* Honour reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
