@@ -172,7 +172,7 @@
 .cs-screens > .container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
 
 /* ============================================================
@@ -189,12 +189,13 @@
   /* consistent height across all standard cards */
   height: clamp(320px, 56.1vw, 720px);
   box-sizing: border-box;
+  outline: 1px solid rgba(26, 24, 20, 0.2);
+  outline-offset: 10px;
 }
 
 /* ---- Beige ---- */
 .cs-card--beige {
   background: #ebe8e0;
-  border: 5px solid #C2BEB4;
 }
 
 /* ---- Full-bleed photo (city photo, dark-bg cards) ---- */
@@ -403,7 +404,7 @@
 .cs-half-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 24px;
 }
 
 .cs-card--half {
