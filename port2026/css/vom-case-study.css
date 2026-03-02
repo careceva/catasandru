@@ -142,7 +142,7 @@
 ============================================================ */
 
 .cs-context {
-  padding: clamp(80px, 8vw, 10px) 0;
+  padding: clamp(40px, 8vw, 80px) 0;
 }
 
 .cs-context-inner {
@@ -473,5 +473,140 @@
 
   .cs-phone-item--sm {
     height: 100%;
+  }
+}
+
+/* ============================================================
+   MOBILE  ≤ 480px
+============================================================ */
+
+@media (max-width: 480px) {
+
+  /* ── Hero ── */
+  .cs-dark-bg {
+    height: 100%;               /* full dark section coverage on narrow screens */
+  }
+
+  .cs-hero-content {
+    height: 130svh;
+    padding-top: 0;
+    align-items: flex-end;      /* text anchored to bottom of viewport */
+    padding-bottom: 40px;
+  }
+
+  .cs-hero-inner {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .cs-hero-logo {
+    height: 36px;
+  }
+
+  .cs-hero-title {
+    font-size: 28px;
+    white-space: normal;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+  }
+
+  .cs-hero-body {
+    gap: 12px;
+  }
+
+  .cs-hero-body p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  /* ── Quote ── */
+  .cs-quote-layout {
+    margin-top: 40px;
+  }
+
+  .cs-quote-inner {
+    padding-top: 48px;
+    gap: 56px;
+  }
+
+  .cs-quote-heading {
+    font-size: 36px;
+    letter-spacing: -1px;
+    line-height: 1.05;
+  }
+
+  /* ── Context ── */
+  .cs-context {
+    padding: 40px 0;
+  }
+
+  .cs-context-inner p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── Screens grid ── */
+  .cs-screens > .container {
+    gap: 16px;
+  }
+
+  /* Standard card — reduce height, soften radius */
+  .cs-card {
+    height: clamp(260px, 72vw, 320px);
+    border-radius: 24px;
+    outline-offset: 6px;
+  }
+
+  /* Tall card (desktop view) */
+  .cs-card--tall {
+    height: clamp(320px, 88vw, 460px);
+  }
+
+  /* Phone pairs — tighter padding so phones get more room */
+  .cs-phones-wrap {
+    flex-wrap: nowrap;           /* keep side-by-side; images are tall enough */
+    padding: 16px 16px 10px;
+    gap: 8px;
+    align-items: flex-end;
+  }
+
+  /* Caption pull-up: smaller on mobile since images are smaller */
+  .cs-phone-item figcaption,
+  .cs-wide-fig figcaption,
+  .cs-desktop-fig figcaption,
+  .cs-split-fig figcaption,
+  .cs-half-fig figcaption,
+  .cs-tall-fig figcaption {
+    font-size: 12px;
+    margin-top: -48px;
+  }
+
+  /* Half-row: already collapses to 1-col at 900px; reduce height on mobile */
+  .cs-half-row {
+    gap: 16px;
+  }
+
+  .cs-card--half {
+    height: clamp(220px, 65vw, 300px);
+  }
+
+  /* Wide fig padding */
+  .cs-wide-fig {
+    padding: 20px 16px 10px;
+  }
+
+  /* Desktop fig padding */
+  .cs-desktop-fig {
+    padding: 16px 16px 10px;
+  }
+
+  /* Half fig padding */
+  .cs-half-fig {
+    padding: 20px 16px 10px;
+  }
+
+  /* Tall fig padding */
+  .cs-tall-fig {
+    padding: 24px 16px 16px;
   }
 }
