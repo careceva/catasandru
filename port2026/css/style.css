@@ -1132,7 +1132,7 @@ em { font-style: normal; }
   .hero-body {
     flex-direction: column;
     align-items: flex-start;
-    gap: 36px;
+    gap: 64px;
   }
 
   /* Pill: cream pill bleeding to left viewport edge, right side rounded — matches Figma */
