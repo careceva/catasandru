@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="page-index">
 
   <!-- ================================================================
        HERO
@@ -129,7 +129,7 @@
         <!-- Col 2: Heading + body + button -->
         <div class="about-text" data-reveal data-reveal-delay="2">
           <h2 class="transform-heading">Transforming<br>by <em class="th-script script script-green">design</em></h2>
-          <p>I helped shape design transformation through close collaboration—turning ideas into real products via interaction design, art direction, and code. Of course helped</p>
+          <p>I lead design transformation through close collaboration—turning complex ideas into real products via interaction design, art direction, and code.</p>
           <a href="about.html" class="btn btn-green">About me</a>
         </div>
 
@@ -279,7 +279,7 @@
         </div>
         <div class="footer-nav-cols" data-reveal data-reveal-delay="2">
           <nav class="footer-nav-col">
-            <a href="#">Home</a>
+            <a href="/">Home</a>
             <a href="#work">Work</a>
             <a href="about.html">About</a>
           </nav>
@@ -294,9 +294,6 @@
       <!-- Right: Dial button + contact info -->
       <div class="footer-right">
         <div class="dial-button-container">
-          <div class="dial-indicator">
-            <img src="https://www.figma.com/api/mcp/asset/51f2976b-10fe-49e2-b380-adfdfad82641" alt="" class="indicator-dot">
-          </div>
           <div class="dial-button-wrapper">
             <div class="dial-bezel">
               <img src="https://www.figma.com/api/mcp/asset/67fdcfa2-45f2-4c8b-af9e-0905b457992b" alt="" class="bezel-img">
@@ -306,6 +303,9 @@
               <img src="https://www.figma.com/api/mcp/asset/496c25e0-d8df-4f43-af9f-a017dc6f9dc1" alt="" class="dial-level">
               <img src="https://www.figma.com/api/mcp/asset/716ff30e-5674-48f2-a786-1fbf11c433a1" alt="" class="dial-base">
             </button>
+            <div class="dial-indicator">
+              <img src="https://www.figma.com/api/mcp/asset/51f2976b-10fe-49e2-b380-adfdfad82641" alt="" class="indicator-dot">
+            </div>
           </div>
         </div>
         <span class="dial-label script script-green">Work with me</span>
@@ -439,6 +439,27 @@
         bio.classList.add('bio-anim');
         bio.style.animationDelay = `${totalMs}ms`;
       }
+    })();
+  </script>
+
+  <!-- ── Nav logo: hidden until hero scrolls out of view (mobile only) ── -->
+  <script>
+    (function () {
+      var navLogo = document.querySelector('.nav-logo');
+      var trigger  = document.querySelector('.hero-lines');
+      if (!navLogo || !trigger) return;
+
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            navLogo.classList.remove('logo-visible');
+          } else {
+            navLogo.classList.add('logo-visible');
+          }
+        });
+      }, { threshold: 0 });
+
+      obs.observe(trigger);
     })();
   </script>
 
