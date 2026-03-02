@@ -29,25 +29,6 @@
   z-index: 0;
 }
 
-/* White nav — floats over the hero */
-.cs-dark-section .nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
-
-.nav--white .nav-link {
-  color: #fff;
-}
-
-.nav--white .nav-btn {
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-}
-
 /* Hero content — fills the full viewport, text starts ~400px from top */
 .cs-hero-content {
   position: relative;
@@ -494,8 +475,8 @@
   }
 
   .cs-hero-content {
-    height: 130svh;
-    padding-top: 0;
+    height: auto;                        /* let content flow naturally — no scroll cage, no overflow */
+    padding-top: calc(100svh - 240px);   /* nav (~80px) sits above dark section; logo+title land near fold */
     align-items: flex-start;
     padding-bottom: 0;
   }
@@ -503,7 +484,6 @@
   .cs-hero-inner {
     width: 100%;
     gap: 20px;
-    margin-top: calc(100svh - 130px); /* pushes content down within fixed-height container; background stays in place */
   }
 
   .cs-hero-logo {
@@ -622,4 +602,19 @@
   .cs-tall-fig {
     padding: 24px 16px 16px;
   }
+}
+
+/* ============================================================
+   IMAGE FADE-IN
+   Card images start invisible and fade in once loaded.
+   JS adds .img-loaded on the load / error event.
+============================================================ */
+
+.cs-screens img {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.cs-screens img.img-loaded {
+  opacity: 1;
 }
