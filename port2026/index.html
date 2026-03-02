@@ -21,7 +21,7 @@
       <div class="container">
         <div class="nav-inner">
           <a href="/" class="nav-logo">
-            <img src="https://www.figma.com/api/mcp/asset/d670fd77-f1d3-4624-a8c9-b2a1ba84ec69" alt="Cata">
+            <img src="img/logo-nav.svg" alt="Cata">
           </a>
           <div class="nav-links">
             <a href="#work"    class="nav-link">work</a>
@@ -40,7 +40,7 @@
           <div class="hero-logo-wrap">
             <span class="hero-hi-text script">Hi, I'm</span>
             <img
-              src="https://www.figma.com/api/mcp/asset/b40dcc01-ac87-42cc-a099-e54b37d473a5"
+              src="img/logo-cata.svg"
               alt="Cătă"
               class="hero-logo-img"
             >
@@ -439,27 +439,6 @@
         bio.classList.add('bio-anim');
         bio.style.animationDelay = `${totalMs}ms`;
       }
-    })();
-  </script>
-
-  <!-- ── Nav logo: hidden until hero scrolls out of view (mobile only) ── -->
-  <script>
-    (function () {
-      var navLogo = document.querySelector('.nav-logo');
-      var trigger  = document.querySelector('.hero-lines');
-      if (!navLogo || !trigger) return;
-
-      var obs = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            navLogo.classList.remove('logo-visible');
-          } else {
-            navLogo.classList.add('logo-visible');
-          }
-        });
-      }, { threshold: 0 });
-
-      obs.observe(trigger);
     })();
   </script>
 
