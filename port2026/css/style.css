@@ -682,13 +682,17 @@ em { font-style: normal; }
 
 /* Chassis LED indicator — sits above the button */
 .dial-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 16px;
   height: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 32px;
-  flex-shrink: 0;
+  z-index: 3;
+  pointer-events: none;
 }
 
 .indicator-dot {
@@ -1017,5 +1021,55 @@ em { font-style: normal; }
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+}
+
+/* ============================================================
+   FOOTER — MOBILE  (≤ 600px)
+   Layout: single column
+   Order: Let's Connect → nav cols → dial button + contact
+   Pill shape → rounded card (32px) so tall column doesn't look odd
+============================================================ */
+
+@media (max-width: 600px) {
+  .footer {
+    margin-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  /* Pill → card with room for outline */
+  .footer-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+    padding: 44px 32px;
+    border-radius: 32px;
+    min-height: auto;
+    margin: 0 16px;
+  }
+
+  .footer-left {
+    width: 100%;
+    gap: 24px;
+  }
+
+  /* Dial button area: center-align under the left content */
+  .footer-right {
+    width: 100%;
+    align-items: center;
+  }
+
+  /* Scale dial from 340px → 272px (0.8×) to fit viewport
+     transform-origin: center → 34px extra space top & bottom
+     Compensate with negative margin-top + reduced margin-bottom  */
+  .dial-button-wrapper {
+    transform: scale(0.8);
+    margin-top: -34px;
+    margin-bottom: 20px; /* was 54px; 54 - 34 = 20 */
+  }
+
+  /* Modal form: stack name+email to single column */
+  .form-row {
+    grid-template-columns: 1fr;
   }
 }

@@ -751,17 +751,18 @@
   }
 
   .expertise-grid {
-    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
   }
 
   .expertise-item h3 {
-    font-size: 17px;
-    margin-bottom: 14px;
+    font-size: 16px;
+    margin-bottom: 12px;
   }
 
   .expertise-item ul li {
-    font-size: 14px;
-    padding: 5px 0;
+    font-size: 13px;
+    padding: 4px 0;
   }
 
   /* ── CLOSING STATEMENT ── */
