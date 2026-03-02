@@ -7,12 +7,41 @@
 }
 
 /* ============================================================
+   NAV — transparent overlay, floats above the hero image.
+   position:absolute removes it from flow (dark section starts
+   at y:0) and overrides the mobile sticky rule in style.css.
+============================================================ */
+
+.cs-page .nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 10;
+}
+
+.cs-page .nav .nav-logo img {
+  filter: brightness(0) invert(1);
+}
+
+.cs-page .nav .nav-link {
+  color: #fff;
+}
+
+.cs-page .nav .nav-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* ============================================================
    DARK SECTION (hero + quote — one shared background)
 ============================================================ */
 
 .cs-dark-section {
   position: relative;
-  overflow-x: hidden;         /* clip horizontal only — allow vertical bleed for image overlap */
+  overflow-x: clip;           /* clip without creating a scroll container (fixes iOS scroll stutter) */
   display: flex;
   flex-direction: column;
   z-index: 1;                 /* sit above .cs-context so overlapping image paints on top */
@@ -476,7 +505,7 @@
 
   .cs-hero-content {
     height: auto;                        /* let content flow naturally — no scroll cage, no overflow */
-    padding-top: calc(100svh - 240px);   /* nav (~80px) sits above dark section; logo+title land near fold */
+    padding-top: calc(100svh - 160px);   /* nav is absolute so takes no space; logo+title land near fold */
     align-items: flex-start;
     padding-bottom: 0;
   }
