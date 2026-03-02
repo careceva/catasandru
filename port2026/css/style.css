@@ -303,7 +303,7 @@ em { font-style: normal; }
 }
 .featured-inner {
   max-width: var(--max-w);
-  margin: 0 auto;
+  margin: 46px auto;
   padding-left: var(--pad);
   display: flex;
   align-items: flex-end;
@@ -664,6 +664,7 @@ em { font-style: normal; }
 
 /* Dial button container */
 .dial-button-container {
+  position: relative;         /* anchors .dial-indicator's position: absolute */
   display: flex;
   flex-direction: column;
   align-items: center;

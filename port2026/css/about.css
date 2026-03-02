@@ -584,7 +584,7 @@
 
   /* ── HERO ── */
   .about-hero {
-    padding-top: 24px;
+    padding-top: 64px;
     padding-bottom: 36px;
   }
 
@@ -592,7 +592,7 @@
   .about-hero-content {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 64px;
     min-height: auto;
   }
 
