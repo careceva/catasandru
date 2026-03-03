@@ -647,3 +647,61 @@
 .cs-screens img.img-loaded {
   opacity: 1;
 }
+
+/* ============================================================
+   TABLET PORTRAIT + LANDSCAPE  768px – 1024px
+
+   Decisions:
+   · Hero inner: expand from 55% → 70% (55% = 389px at 834px — too narrow)
+   · cs-half-row + cs-split-wrap: override the 900px collapse, stay 2-col
+   · Card heights: tighten upper bound for tablet proportions
+   · Context paragraphs: cap reading width at 640px
+============================================================ */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* ── HERO ── */
+  .cs-hero-inner { width: 70%; }
+
+  .cs-hero-title { font-size: clamp(36px, 4.8vw, 52px); }
+
+  /* ── QUOTE ── */
+  .cs-quote-layout { margin-top: 18vw; }
+
+  /* ── CONTEXT ── */
+  .cs-context-inner { max-width: 640px; }
+
+  /* ── CARD HEIGHTS ── */
+  .cs-card        { height: clamp(300px, 50vw, 560px); }
+  .cs-card--tall  { height: clamp(420px, 75vw, 860px); }
+
+  /* ── HALF-ROW: keep 2-col at 768–900px ──
+     Override the max-width:900px collapse (this rule is later → wins). ── */
+  .cs-half-row            { grid-template-columns: 1fr 1fr; }
+  .cs-card--half          { height: clamp(240px, 40vw, 420px); }
+
+  /* ── SPLIT-WRAP: keep 2-col at 768–900px ── */
+  .cs-split-wrap          { grid-template-columns: 1fr 1fr; }
+
+  /* ── CAPTIONS ── */
+  .cs-phone-item figcaption,
+  .cs-wide-fig figcaption,
+  .cs-desktop-fig figcaption,
+  .cs-split-fig figcaption,
+  .cs-half-fig figcaption,
+  .cs-tall-fig figcaption {
+    font-size: 13px;
+    margin-top: -80px;
+  }
+}
+
+/* ============================================================
+   SMALL LAPTOP  1025px – 1280px
+============================================================ */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  .cs-hero-inner     { width: 62%; }
+
+  .cs-context-inner  { max-width: 720px; }
+}

@@ -26,7 +26,7 @@
   display: grid;
   /* use percentage columns so content aligns to container/menu width */
   grid-template-columns: 55% 45%;
-  gap: clamp(24px, 4vw, 40x);
+  gap: clamp(24px, 4vw, 40px);
   /* pick a viewport-driven pill height and reuse it for the image to keep parity */
   --pill-h: min(52vh, 40vw, 460px);
   min-height: calc(var(--pill-h) + 20px);
@@ -776,4 +776,82 @@
     font-size: 19px;
     line-height: 1.4;
   }
+}
+
+/* ============================================================
+   TABLET PORTRAIT + LANDSCAPE  768px – 1024px
+
+   The existing max-width:900px rule already stacks the about
+   hero to 1-col at 768–900px (correct for portrait).
+   The existing max-width:768px rule collapses the work grid
+   to 1-col at exactly 768px — this overrides that to keep
+   2-col, which is readable on portrait tablet.
+
+   The 901–1024px range keeps the desktop 2-col hero but with
+   a smaller --pill-h so proportions feel deliberate.
+============================================================ */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* ── WORK EXPERIENCE GRID ──
+     Override the max-width:768px collapse — 2-col is readable
+     at tablet portrait (this rule is later in the file, wins). ── */
+  .content-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(28px, 3.5vw, 56px);
+  }
+
+  .work-col--offset {
+    padding-top: calc(32px * 1.2 + 50px + 2px);
+  }
+
+  /* Expertise grid: restore 2-col (overrides max-width:768px stack) */
+  .expertise-grid {
+    grid-template-columns: 0.5fr 1fr;
+    gap: clamp(40px, 5vw, 64px);
+  }
+
+  .expertise-section { padding: 60px 0 80px; }
+
+  /* Reading width: optimal 65–75 chars at 16px ≈ 640px */
+  .section-text { max-width: 640px; }
+
+  /* About buttons: restore inline layout on tablet */
+  .about-buttons {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .about-buttons .btn {
+    width: auto;
+    min-height: auto;
+  }
+}
+
+/* ── LANDSCAPE TABLET HERO: 901–1024px ──
+   Below 900px the hero already stacks (max-width:900px rule).
+   This block tunes the 2-col version that appears above 900px. ── */
+@media (min-width: 901px) and (max-width: 1024px) {
+
+  .about-hero-content {
+    --pill-h: min(46vh, 38vw, 400px);
+  }
+
+  .intro-heading {
+    font-size: clamp(36px, 4vw, 44px);
+    line-height: 1.15;
+  }
+}
+
+/* ============================================================
+   SMALL LAPTOP  1025px – 1280px
+============================================================ */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  .intro-heading { font-size: clamp(40px, 4.2vw, 48px); }
+
+  .section-text { max-width: 720px; }
+
+  .expertise-grid { gap: clamp(48px, 6vw, 72px); }
 }
