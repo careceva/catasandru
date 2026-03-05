@@ -633,20 +633,6 @@
   }
 }
 
-/* ============================================================
-   IMAGE FADE-IN
-   Card images start invisible and fade in once loaded.
-   JS adds .img-loaded on the load / error event.
-============================================================ */
-
-.cs-screens img {
-  opacity: 0;
-  transition: opacity 0.45s ease;
-}
-
-.cs-screens img.img-loaded {
-  opacity: 1;
-}
 
 /* ============================================================
    TABLET PORTRAIT + LANDSCAPE  768px – 1024px

@@ -27,20 +27,18 @@
       animation: cs-card-in 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     }
 
-    /* Quote heading + quote image start visible — they're in the hero,
-       immediately in the viewport. Animate in once is-visible fires. */
-    .cs-dark-section [data-reveal] {
+    /* Quote heading + quote image are above-the-fold — always visible, no animation. */
+    .cs-dark-section [data-reveal],
+    .cs-dark-section [data-reveal].is-visible {
       opacity: 1;
       transform: none;
       transition: none;
-    }
-    .cs-dark-section [data-reveal].is-visible {
-      animation: cs-card-in 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation: none;
     }
 
     @keyframes cs-card-in {
-      from { opacity: 0; transform: translateY(28px) scale(0.96); }
-      to   { opacity: 1; transform: none; }
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
   </style>
 </head>
@@ -338,20 +336,6 @@
         });
       }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
       revealEls.forEach(function (el) { obs.observe(el); });
-    })();
-  </script>
-
-  <!-- Image fade-in: adds .img-loaded once each card image is ready -->
-  <script>
-    (function () {
-      document.querySelectorAll('.cs-screens img').forEach(function (img) {
-        function show() { img.classList.add('img-loaded'); }
-        if (img.complete && img.naturalWidth > 0) { show(); }
-        else {
-          img.addEventListener('load', show);
-          img.addEventListener('error', show);
-        }
-      });
     })();
   </script>
 
