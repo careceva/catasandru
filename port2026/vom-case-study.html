@@ -6,7 +6,7 @@
   <title>VOM — Visma Organization Master Case Study</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/vom-case-study.css">
   <style>
@@ -37,8 +37,8 @@
     }
 
     @keyframes cs-card-in {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+      from { opacity: 0; transform: translateY(28px) scale(0.96); }
+      to   { opacity: 1; transform: none; }
     }
   </style>
 </head>
@@ -88,7 +88,7 @@
         <div class="cs-quote-inner">
           <h2 class="cs-quote-heading" data-reveal>Every corporate<br>adventure starts<br>with an idea</h2>
           <div class="cs-quote-image" data-reveal data-reveal-delay="2">
-            <img src="https://www.figma.com/api/mcp/asset/48ebda0d-e9f0-4139-b282-34c22c66b100" alt="" loading="lazy">
+            <img src="img/cs-hero.png" alt="" loading="lazy">
           </div>
         </div>
       </div>
@@ -119,11 +119,11 @@
       <div class="cs-card cs-card--beige" data-reveal="scale">
         <div class="cs-phones-wrap">
           <figure class="cs-phone-item">
-            <img src="https://www.figma.com/api/mcp/asset/c24e813d-7da5-4f9b-b154-1c2433627038" alt="Employee view" loading="lazy">
+            <img src="img/cs-employee-view.png" alt="Employee view" loading="lazy">
             <figcaption>employee view</figcaption>
           </figure>
           <figure class="cs-phone-item">
-            <img src="https://www.figma.com/api/mcp/asset/296007a4-c74d-4404-a3ca-2e1855ee9137" alt="Stats" loading="lazy">
+            <img src="img/cs-stats.png" alt="Stats" loading="lazy">
             <figcaption>Stats</figcaption>
           </figure>
         </div>
@@ -132,21 +132,21 @@
       <!-- 2 ── Wide screenshot (User profile) -->
       <div class="cs-card cs-card--beige" data-reveal="scale">
         <figure class="cs-wide-fig">
-          <img src="https://www.figma.com/api/mcp/asset/6b27777c-a9e8-45de-8b2e-f77a957990ca" alt="User profile" loading="lazy">
+          <img src="img/cs-user-profile.png" alt="User profile" loading="lazy">
           <figcaption>User profile</figcaption>
         </figure>
       </div>
 
       <!-- 3 ── Dark photo bg + 2 phones (team hierarchy / edit user) -->
       <div class="cs-card" data-reveal="scale">
-        <img class="cs-bg-fill" src="https://www.figma.com/api/mcp/asset/a0f386ef-8533-472b-89d9-cece76e7b7b6" alt="" loading="lazy">
+        <img class="cs-bg-fill" src="img/cs-bg-1.jpg" alt="" loading="lazy">
         <div class="cs-phones-wrap cs-phones-wrap--sm">
           <figure class="cs-phone-item cs-phone-item--white">
-            <img src="https://www.figma.com/api/mcp/asset/e38a4566-6af6-4163-8520-9c55631c1744" alt="Team hierarchy" loading="lazy">
+            <img src="img/cs-team-hierarchy.png" alt="Team hierarchy" loading="lazy">
             <figcaption>team hierarchy</figcaption>
           </figure>
           <figure class="cs-phone-item cs-phone-item--white">
-            <img src="https://www.figma.com/api/mcp/asset/580b1c5d-03bd-4db2-a554-05cafaee92d2" alt="Edit user" loading="lazy">
+            <img src="img/cs-edit-user.png" alt="Edit user" loading="lazy">
             <figcaption>edit user</figcaption>
           </figure>
         </div>
@@ -156,11 +156,11 @@
       <div class="cs-card cs-card--beige" data-reveal="scale">
         <div class="cs-phones-wrap">
           <figure class="cs-phone-item">
-            <img src="https://www.figma.com/api/mcp/asset/8f80bd00-ecf1-4311-926f-c8ff1c16b5a6" alt="Admin view" loading="lazy">
+            <img src="img/cs-admin-view.png" alt="Admin view" loading="lazy">
             <figcaption>Admin view</figcaption>
           </figure>
           <figure class="cs-phone-item">
-            <img src="https://www.figma.com/api/mcp/asset/8599eb93-4f55-4b97-93b3-51fd1990e87b" alt="Filters" loading="lazy">
+            <img src="img/cs-filters.png" alt="Filters" loading="lazy">
             <figcaption>Filters</figcaption>
           </figure>
         </div>
@@ -170,11 +170,11 @@
       <div class="cs-card cs-card--beige" data-reveal="scale">
         <div class="cs-phones-wrap">
           <figure class="cs-phone-item">
-            <img src="https://www.figma.com/api/mcp/asset/9f572a6a-b865-4013-ab32-dd7f6bde44ab" alt="Team structure" loading="lazy">
+            <img src="img/cs-team-structure.png" alt="Team structure" loading="lazy">
             <figcaption>Team structure</figcaption>
           </figure>
           <figure class="cs-phone-item">
-            <img src="https://www.figma.com/api/mcp/asset/a25a588a-c264-4373-b25d-b43b2031b0d1" alt="Public user profile" loading="lazy">
+            <img src="img/cs-public-profile.png" alt="Public user profile" loading="lazy">
             <figcaption>Public user profile</figcaption>
           </figure>
         </div>
@@ -183,24 +183,24 @@
       <!-- 6 ── Large desktop view (TALL CARD) -->
       <div class="cs-card cs-card--beige cs-card--tall" data-reveal="scale">
         <figure class="cs-tall-fig">
-          <img src="https://www.figma.com/api/mcp/asset/8733ee79-0bb9-4fd5-99af-2b477e1a092f" alt="Desktop view" loading="lazy">
+          <img src="img/cs-desktop-view.png" alt="Desktop view" loading="lazy">
         </figure>
       </div>
 
       <!-- 7 ── City photo (full-bleed) -->
       <div class="cs-card" data-reveal="scale">
-        <img class="cs-bg-fill" src="https://www.figma.com/api/mcp/asset/e03d7072-2340-4755-8a87-fa1d0bc0b465" alt="" loading="lazy">
+        <img class="cs-bg-fill" src="img/cs-bg-2.jpg" alt="" loading="lazy">
       </div>
 
       <!-- 8 ── Location view + Offices -->
       <div class="cs-card cs-card--beige" data-reveal="scale">
         <div class="cs-split-wrap">
           <figure class="cs-split-fig">
-            <img src="https://www.figma.com/api/mcp/asset/0b27cabf-c2f5-4a83-b020-b1802d7f778e" alt="Location view" loading="lazy">
+            <img src="img/cs-location-view.png" alt="Location view" loading="lazy">
             <figcaption>Location view</figcaption>
           </figure>
           <figure class="cs-split-fig">
-            <img src="https://www.figma.com/api/mcp/asset/ee64d3a3-639c-4562-bb10-d0594bb3f341" alt="Offices" loading="lazy">
+            <img src="img/cs-offices.png" alt="Offices" loading="lazy">
             <figcaption>Offices</figcaption>
           </figure>
         </div>
@@ -209,7 +209,7 @@
       <!-- 9 ── Hierarchy (full-width desktop) -->
       <div class="cs-card cs-card--beige" data-reveal="scale">
         <figure class="cs-desktop-fig">
-          <img src="https://www.figma.com/api/mcp/asset/88cbb9be-90fa-42e0-a581-46728bf978bb" alt="Hierarchy" loading="lazy">
+          <img src="img/cs-hierarchy.png" alt="Hierarchy" loading="lazy">
           <figcaption>Hierarchy</figcaption>
         </figure>
       </div>
@@ -218,13 +218,13 @@
       <div class="cs-half-row" data-reveal="scale">
         <div class="cs-card cs-card--beige cs-card--half">
           <figure class="cs-half-fig">
-            <img src="https://www.figma.com/api/mcp/asset/5d5b5120-cd35-40bd-b6be-0684af2aa9cb" alt="Corporate structure" loading="lazy">
+            <img src="img/cs-corporate-structure.png" alt="Corporate structure" loading="lazy">
             <figcaption>Corporate structure</figcaption>
           </figure>
         </div>
         <div class="cs-card cs-card--beige cs-card--half">
           <figure class="cs-half-fig">
-            <img src="https://www.figma.com/api/mcp/asset/fed658fe-6bac-4dfb-aa1a-b594b6434dfd" alt="Employee structure" loading="lazy">
+            <img src="img/cs-employee-structure.png" alt="Employee structure" loading="lazy">
             <figcaption>Employee structure</figcaption>
           </figure>
         </div>
@@ -233,15 +233,15 @@
       <!-- 11 ── Structure details (photo bg) + Filter options -->
       <div class="cs-half-row" data-reveal="scale">
         <div class="cs-card cs-card--beige cs-card--half">
-          <img class="cs-bg-fill" src="https://www.figma.com/api/mcp/asset/09d7f001-fb1c-47c2-a7e4-61aac9f7a33f" alt="" loading="lazy">
+          <img class="cs-bg-fill" src="img/cs-bg-3.png" alt="" loading="lazy">
           <figure class="cs-half-fig cs-half-fig--overlay">
-            <img src="https://www.figma.com/api/mcp/asset/68067c7f-d252-4077-8fd1-d27091bbecaf" alt="Structure details" loading="lazy">
+            <img src="img/cs-structure-details.png" alt="Structure details" loading="lazy">
             <figcaption class="cs-figcap--white">Structure details</figcaption>
           </figure>
         </div>
         <div class="cs-card cs-card--beige cs-card--half">
           <figure class="cs-half-fig">
-            <img src="https://www.figma.com/api/mcp/asset/fae0b213-1a0f-4801-91d9-8753d0203736" alt="Filter options" loading="lazy">
+            <img src="img/cs-filter-options.png" alt="Filter options" loading="lazy">
             <figcaption>Filter options</figcaption>
           </figure>
         </div>
@@ -277,15 +277,15 @@
         <div class="dial-button-container">
           <div class="dial-button-wrapper">
             <div class="dial-bezel">
-              <img src="https://www.figma.com/api/mcp/asset/67fdcfa2-45f2-4c8b-af9e-0905b457992b" alt="" class="bezel-img">
+              <img src="img/dial-bezel.svg" alt="" class="bezel-img">
             </div>
             <button class="dial-btn" id="dialBtn" aria-label="Open contact form">
-              <img src="https://www.figma.com/api/mcp/asset/406eb6f1-b995-4509-b138-b7f8f750d69e" alt="" class="button-center">
-              <img src="https://www.figma.com/api/mcp/asset/496c25e0-d8df-4f43-af9f-a017dc6f9dc1" alt="" class="dial-level">
-              <img src="https://www.figma.com/api/mcp/asset/716ff30e-5674-48f2-a786-1fbf11c433a1" alt="" class="dial-base">
+              <img src="img/dial-center.svg" alt="" class="button-center">
+              <img src="img/dial-level.svg" alt="" class="dial-level">
+              <img src="img/dial-base.svg" alt="" class="dial-base">
             </button>
             <div class="dial-indicator">
-              <img src="https://www.figma.com/api/mcp/asset/51f2976b-10fe-49e2-b380-adfdfad82641" alt="" class="indicator-dot">
+              <img src="img/dial-indicator.svg" alt="" class="indicator-dot">
             </div>
           </div>
         </div>
