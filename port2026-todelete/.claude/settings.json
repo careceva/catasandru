@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/catalin.sandru/Downloads/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/index.html)",
+      "Bash(kill 66189)",
+      "Bash(xargs kill:*)",
+      "Skill(ux-designer)",
+      "Skill(ux-designer:*)",
+      "Skill(ui-designer)",
+      "Skill(ui-designer:*)",
+      "Read(//Users/catalin.sandru/Documents/Claudiu/Port/catasandru/**)",
+      "Bash(rm -f index.html projects-cloudfinity.html projects-mBank.html projects-places.html apple-touch-icon.png favicon.ico)",
+      "Bash(rm -rf css/ img/ font/)",
+      "Bash(cp -r port2026/css .)",
+      "Bash(cp -r port2026/img .)",
+      "Bash(cp -r port2026/js .)",
+      "Bash(cp -r port2026/downloads .)",
+      "Bash(cp port2026/index.html .)",
+      "Bash(cp port2026/about.html .)",
+      "Bash(cp port2026/vom-case-study.html .)",
+      "Bash(cp port2026/index.mp4 .)",
+      "Bash(cp port2026/Resume2024_Cata-Sandru.pdf .)"
+    ],
+    "additionalDirectories": [
+      "/Users/catalin.sandru/Downloads",
+      "/Users/catalin.sandru/Documents/Claudiu/Port/catasandru"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 91.2679 85.7591" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Ill">
+<g id="Mask group">
+<mask id="mask0_0_4" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="4" width="74" height="75">
+<circle id="Ellipse 38" cx="36.6478" cy="41.3588" r="36.6478" fill="var(--fill-0, #FFC4FF)"/>
+</mask>
+<g mask="url(#mask0_0_4)">
+<rect id="Rectangle 165" x="-5.99048" y="37.4829" width="83.8671" height="40.524" fill="var(--fill-0, #FFC4FF)"/>
+</g>
+</g>
+<circle id="Ellipse 39" cx="83.1629" cy="44.8829" r="8.1048" fill="var(--fill-0, white)"/>
+<rect id="Rectangle 166" x="3.17195" y="79.4162" width="65.5432" height="6.34289" rx="3.17145" fill="var(--fill-0, black)"/>
+<g id="Group 112">
+<path id="Vector" d="M49.4739 28.1088C51.986 25.6012 52.9861 21.9139 52.29 17.7356C51.6178 13.7069 49.432 9.67078 46.134 6.37271C42.8359 3.07464 38.7983 0.888907 34.7711 0.216718C30.5928 -0.479424 26.9099 0.516135 24.3978 3.03273C22.4067 5.02235 21.3663 7.74853 21.3663 10.8729C21.3687 11.7218 21.4408 12.569 21.5818 13.406C22.254 17.4346 24.4398 21.4708 27.7378 24.7688C31.0359 28.0669 35.0735 30.2526 39.1007 30.9248C43.279 31.621 46.9663 30.6209 49.4739 28.1088Z" fill="var(--fill-0, #0F0F10)"/>
+<path id="Vector 41" d="M48.3751 26.5372C48.1336 24.7965 46.3261 20.6925 43.5477 18.8237C38.4267 15.3792 34.0013 15.938 30.9546 13.1568C27.5225 10.0238 26.4344 7.14064 25.3259 4.76854" stroke="var(--stroke-0, white)" stroke-width="2.46296" stroke-linecap="round"/>
+</g>
+</g>
+</svg>
