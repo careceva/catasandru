@@ -6,7 +6,12 @@
   <title>Catalin Sandru — Lead Product Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Manrope:wght@300;400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/logo-nav.svg">
+  <meta name="description" content="Cătălin Șandru — Lead Product Designer with 15+ years turning complex ideas into simple, usable products.">
+  <meta property="og:title" content="Cătălin Șandru — Lead Product Designer">
+  <meta property="og:description" content="Turning complex ideas into simple, usable products. Led design at Visma for 4 years.">
+  <meta property="og:type" content="website">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page-index">
@@ -50,7 +55,7 @@
         <!-- Right: headline + bio -->
         <div class="hero-right">
           <h1 class="hero-headline">Lead Product Designer<br><em class="hl-script script">helping</em> founders <em class="hl-script script">build</em><br>products people love</h1>
-          <p class="hero-bio">I spent last 4 years leading design at <strong>Visma</strong> and over a decade turning complex ideas into simple, usable products.<br>Occasionally overthinks buttons (on purpose).</p>
+          <p class="hero-bio">I spent the last 3 years leading design at <strong>Visma</strong> and over a decade turning complex ideas into simple, usable products.<br>Occasionally overthinks buttons (on purpose).</p>
         </div>
       </div>
     </div>
@@ -75,7 +80,9 @@
       <!-- Rotator card: app screenshot -->
       <div class="rotator-card" data-reveal="scale">
         <div class="rotator-screenshot">
-          <img src="img/rotator-screenshot.png" alt="Visma Organization Master">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="index.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
 
@@ -176,7 +183,7 @@
                 <span class="oss-text">OSS</span>
               </div>
               <h3 class="project-title">All in one<br>market place<br>for business</h3>
-              <a href="#" class="btn btn-light">Coming soon</a>
+              <a class="btn btn-light" aria-disabled="true" tabindex="-1">Coming soon</a>
             </div>
             <div class="project-laptop">
               <img src="img/laptop-OSS.png" alt="Laptop mockup">
@@ -194,7 +201,7 @@
                 <img src="img/lead-logo.png" alt="Logo" class="object-contain-full logo-white">
               </div>
               <h3 class="project-title">Lead collection<br>made easy</h3>
-              <a href="#" class="btn btn-light">Coming soon</a>
+              <a class="btn btn-light" aria-disabled="true" tabindex="-1">Coming soon</a>
             </div>
           </div>
         </div>
@@ -210,7 +217,7 @@
                 <img src="img/vinst-logo-white.png" alt="Vinst" class="object-contain-full logo-white">
               </div>
               <h3 class="project-title">Vinst branding<br>collection</h3>
-              <a href="#" class="btn btn-light">Coming soon</a>
+              <a class="btn btn-light" aria-disabled="true" tabindex="-1">Coming soon</a>
             </div>
             <!-- Branding tiles -->
             <div class="branding-grid">
@@ -256,7 +263,7 @@
       <div class="playground-content" data-reveal>
         <span class="playground-label script script-green">my <span class="label-word">playground</span></span>
         <h2 class="playground-heading">Challenge everyday life through design</h2>
-        <a href="#" class="btn btn-green">Take a look</a>
+        <a class="btn btn-coming-soon" aria-disabled="true" tabindex="-1">Coming soon</a>
       </div>
     </div>
 
@@ -284,9 +291,9 @@
             <a href="about.html">About</a>
           </nav>
           <nav class="footer-nav-col">
-            <a href="#">Linkedin</a>
-            <a href="#">Instagram</a>
-            <a href="#">Unsplash</a>
+            <a href="https://www.linkedin.com/in/catalinsandru/" target="_blank" rel="noopener">Linkedin</a>
+            <a href="https://www.instagram.com/careceva/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://unsplash.com/@catalinsandru" target="_blank" rel="noopener">Unsplash</a>
           </nav>
         </div>
       </div>
@@ -310,7 +317,7 @@
         </div>
         <span class="dial-label script script-green">Work with me</span>
         <p class="footer-location">Bucharest, Romania</p>
-        <p class="footer-email">catalin.sandru@gmail.com</p>
+        <a href="mailto:catalin.sandru18@gmail.com" class="footer-email">catalin.sandru18@gmail.com</a>
       </div>
 
     </div>
@@ -318,7 +325,7 @@
     <!-- Copyright -->
     <div class="footer-copyright">
       <div class="container">
-        <p>2026 Catalin Sandru. <span>All rights reserved</span></p>
+        <p>&copy; 2026 Cătălin Șandru. <span>All rights reserved</span></p>
       </div>
     </div>
 
@@ -331,15 +338,58 @@
   <div class="modal-overlay" id="contactModal">
     <div class="modal-card">
       <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
-      <h3 class="modal-heading">Let's <em class="script script-green">work</em> together</h3>
-      <form class="contact-form" id="contactForm">
-        <div class="form-row">
-          <input type="text" name="name" placeholder="Your name" required>
-          <input type="email" name="email" placeholder="Your email" required>
+
+      <!-- Form state -->
+      <div id="modalFormState" class="modal-body">
+        <div class="modal-form-col">
+          <p class="modal-eyebrow">Get in touch</p>
+          <h3 class="modal-heading">Let's <em class="script script-green">work</em> together</h3>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="field-name">Name</label>
+                <input id="field-name" type="text" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-field">
+                <label for="field-email">Email</label>
+                <input id="field-email" type="email" name="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="field-message">Message</label>
+              <textarea id="field-message" name="message" placeholder="Tell me about your project…" rows="5" required></textarea>
+            </div>
+            <p class="form-error" id="formError" hidden>Please fill in all fields before sending.</p>
+            <button type="submit" class="btn btn-green btn-full">Send message</button>
+          </form>
         </div>
-        <textarea name="message" placeholder="Tell me about your project…" rows="5" required></textarea>
-        <button type="submit" class="btn btn-green">Send message</button>
-      </form>
+        <div class="modal-info-col">
+          <div class="modal-info-block">
+            <p class="modal-info-label">Location</p>
+            <p class="modal-info-value">Bucharest, Romania</p>
+          </div>
+          <div class="modal-info-block">
+            <p class="modal-info-label">Email</p>
+            <a href="mailto:catalin.sandru18@gmail.com" class="modal-info-link">catalin.sandru18@gmail.com</a>
+          </div>
+          <div class="modal-info-block">
+            <p class="modal-info-label">Socials</p>
+            <div class="modal-info-links">
+              <a href="https://www.linkedin.com/in/catalinsandru/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.instagram.com/careceva/" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://unsplash.com/@catalinsandru" target="_blank" rel="noopener">Unsplash</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success state -->
+      <div id="modalSuccessState" class="modal-success" hidden>
+        <div class="success-icon">✓</div>
+        <h3 class="modal-heading">Message sent!</h3>
+        <p class="modal-success-text">I'll get back to you within 24 hours.</p>
+      </div>
+
     </div>
   </div>
 
@@ -443,20 +493,58 @@
   </script>
 
   <script>
-    const dialBtn    = document.getElementById('dialBtn');
-    const modal      = document.getElementById('contactModal');
-    const modalClose = document.getElementById('modalClose');
+    (function () {
+      var dialBtn      = document.getElementById('dialBtn');
+      var modal        = document.getElementById('contactModal');
+      var modalClose   = document.getElementById('modalClose');
+      var contactForm  = document.getElementById('contactForm');
+      var formState    = document.getElementById('modalFormState');
+      var successState = document.getElementById('modalSuccessState');
+      var formError    = document.getElementById('formError');
 
-    dialBtn.addEventListener('click', () => {
-      dialBtn.classList.add('pressed');
-      setTimeout(() => {
-        dialBtn.classList.remove('pressed');
-        modal.classList.add('active');
-      }, 180);
-    });
+      function closeModal() {
+        modal.classList.remove('active');
+        setTimeout(function () {
+          contactForm.reset();
+          formState.hidden = false;
+          successState.hidden = true;
+          formError.hidden = true;
+        }, 300);
+      }
 
-    modalClose.addEventListener('click', () => modal.classList.remove('active'));
-    modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('active'); });
+      if (dialBtn) {
+        dialBtn.addEventListener('click', function () {
+          dialBtn.classList.add('pressed');
+          setTimeout(function () {
+            dialBtn.classList.remove('pressed');
+            modal.classList.add('active');
+          }, 180);
+        });
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+      });
+
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name    = document.getElementById('field-name').value.trim();
+        var email   = document.getElementById('field-email').value.trim();
+        var message = document.getElementById('field-message').value.trim();
+        if (!name || !email || !message) {
+          formError.hidden = false;
+          return;
+        }
+        formError.hidden = true;
+        var subject = encodeURIComponent('Portfolio inquiry from ' + name);
+        var body    = encodeURIComponent(message + '\n\nFrom: ' + name + '\nEmail: ' + email);
+        window.location.href = 'mailto:catalin.sandru18@gmail.com?subject=' + subject + '&body=' + body;
+        formState.hidden    = true;
+        successState.hidden = false;
+      });
+    })();
   </script>
 
 </body>

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/catalin.sandru/Downloads/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/index.html)",
+      "Bash(kill 66189)",
+      "Bash(xargs kill:*)",
+      "Skill(ux-designer)",
+      "Skill(ux-designer:*)",
+      "Skill(ui-designer)",
+      "Skill(ui-designer:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/catalin.sandru/Downloads"
+    ]
+  }
+}
