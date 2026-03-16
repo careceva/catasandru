@@ -324,6 +324,57 @@ em { font-style: normal; }
   flex-shrink: 0;
   align-self: flex-end;
   overflow: hidden;
+  position: relative;
+}
+
+/* ── Subtle gradient scrim so the bar always reads over any video frame ── */
+.rotator-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: linear-gradient(to top, rgba(0,0,0,0.38) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 9;
+}
+
+/* ── Progress bar — TikTok/Instagram style ── */
+.video-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;           /* tall invisible hit zone for easy tap/click */
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.video-progress-track {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.22);
+  position: relative;
+  transition: height 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  flex-shrink: 0;
+}
+
+.video-progress:hover .video-progress-track {
+  height: 4px;
+}
+
+.video-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 0 1px 1px 0;
+  will-change: width;
 }
 .rotator-screenshot {
   width: 100%;
@@ -1204,11 +1255,13 @@ em { font-style: normal; }
 
 @media (max-width: 480px) {
 
-  /* ── NAV — index page mobile: matches hero green, sticky, compressed ── */
+  /* ── NAV — index page mobile: matches hero green, fixed, compressed ── */
   .nav {
     background: var(--green);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     padding: 14px 0;
   }
@@ -1239,6 +1292,7 @@ em { font-style: normal; }
     height: auto;
     min-height: 0;
     padding-bottom: 0;
+    padding-top: 66px; /* offset fixed nav */
   }
 
   .hero-content {
@@ -1291,7 +1345,7 @@ em { font-style: normal; }
     font-size: 8vw;
     white-space: normal;
     letter-spacing: -0.8px;
-    line-height: 1.1;
+    line-height: 1.35;
   }
 
   .hero-right {
@@ -1369,6 +1423,12 @@ em { font-style: normal; }
     height: 100%;
     object-fit: cover;
     object-position: top center;
+  }
+
+  .rotator-screenshot video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   /* ── ABOUT / LOGOS SECTION ── */
@@ -1563,20 +1623,29 @@ em { font-style: normal; }
   .featured-section { margin-top: -12vh; }
 
   .featured-inner {
-    gap: 20px;
+    gap: clamp(12px, 2vw, 24px);
     align-items: flex-end;
+    justify-content: flex-start;
+    padding-right: var(--pad);
   }
 
+  /* Rotator: 670/981 ≈ 68.3% of combined card width */
   .rotator-card {
-    flex: 1;
-    min-width: 0;
-    width: auto;
-    max-width: none;
+    flex: 0 0 clamp(380px, 65.4vw, 670px);
+    width: clamp(380px, 65.4vw, 670px);
+    height: clamp(460px, 63.9vw, 654px);
   }
 
+  /* Me arch: 311/981 ≈ 31.7% of combined card width */
   .me-arch {
-    width: clamp(160px, 22vw, 240px);
-    height: clamp(272px, 37vw, 408px);
+    flex: 0 0 clamp(190px, 30.4vw, 311px);
+    width: clamp(190px, 30.4vw, 311px);
+    height: clamp(320px, 51.6vw, 528px);
+  }
+
+  /* Keep face centred — pull vertical position up so face stays in frame */
+  .me-arch img {
+    object-position: 30% 12%;
   }
 
   /* ── ABOUT / LOGOS SECTION ── */
@@ -1654,6 +1723,30 @@ em { font-style: normal; }
   .hero-left {
     width: clamp(280px, 38vw, 420px);
     margin-right: clamp(32px, 5vw, 80px);
+  }
+
+  /* ── FEATURED — keep 2-col proportions into small laptop ── */
+  .featured-inner {
+    gap: clamp(16px, 2vw, 32px);
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-right: var(--pad);
+  }
+
+  .rotator-card {
+    flex: 0 0 clamp(600px, 60vw, 780px);
+    width: clamp(600px, 60vw, 780px);
+    height: clamp(580px, 58.8vw, 762px);
+  }
+
+  .me-arch {
+    flex: 0 0 clamp(260px, 27vw, 350px);
+    width: clamp(260px, 27vw, 350px);
+    height: clamp(440px, 45.9vw, 595px);
+  }
+
+  .me-arch img {
+    object-position: 30% 12%;
   }
 
   /* ── ABOUT ── */
