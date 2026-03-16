@@ -80,9 +80,14 @@
       <!-- Rotator card: app screenshot -->
       <div class="rotator-card" data-reveal="scale">
         <div class="rotator-screenshot">
-          <video autoplay muted loop playsinline preload="metadata">
+          <video id="rotatorVideo" autoplay muted loop playsinline preload="metadata">
             <source src="index.mp4" type="video/mp4">
           </video>
+        </div>
+        <div class="video-progress" id="videoProgress" role="progressbar" aria-label="Video progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="video-progress-track">
+            <div class="video-progress-fill" id="videoProgressFill"></div>
+          </div>
         </div>
       </div>
 
@@ -538,11 +543,72 @@
           return;
         }
         formError.hidden = true;
-        var subject = encodeURIComponent('Portfolio inquiry from ' + name);
-        var body    = encodeURIComponent(message + '\n\nFrom: ' + name + '\nEmail: ' + email);
-        window.location.href = 'mailto:catalin.sandru18@gmail.com?subject=' + subject + '&body=' + body;
-        formState.hidden    = true;
-        successState.hidden = false;
+
+        var submitBtn = contactForm.querySelector('[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        fetch('https://formsubmit.co/ajax/catalin.sandru18@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ name: name, email: email, message: message })
+        })
+        .then(function (res) {
+          if (res.ok) {
+            formState.hidden    = true;
+            successState.hidden = false;
+          } else {
+            formError.textContent = 'Something went wrong. Please try again.';
+            formError.hidden = false;
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send message';
+          }
+        })
+        .catch(function () {
+          formError.textContent = 'Network error. Please try again.';
+          formError.hidden = false;
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send message';
+        });
+      });
+    })();
+  </script>
+
+  <!-- ── Video progress bar ── -->
+  <script>
+    (function () {
+      var video   = document.getElementById('rotatorVideo');
+      var bar     = document.getElementById('videoProgress');
+      var fill    = document.getElementById('videoProgressFill');
+      if (!video || !fill || !bar) return;
+
+      var rafId = null;
+
+      function tick() {
+        if (video.duration) {
+          var pct = (video.currentTime / video.duration) * 100;
+          fill.style.width = pct + '%';
+          bar.setAttribute('aria-valuenow', Math.round(pct));
+        }
+        rafId = requestAnimationFrame(tick);
+      }
+
+      function start() { if (!rafId) rafId = requestAnimationFrame(tick); }
+      function stop()  { cancelAnimationFrame(rafId); rafId = null; }
+
+      video.addEventListener('play',  start);
+      video.addEventListener('pause', stop);
+      video.addEventListener('ended', stop);
+
+      /* autoplay may already be running before this script executes */
+      if (!video.paused) start();
+
+      /* Click / tap to seek */
+      bar.addEventListener('click', function (e) {
+        if (!video.duration) return;
+        var rect = bar.getBoundingClientRect();
+        var pct  = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        video.currentTime = pct * video.duration;
       });
     })();
   </script>
