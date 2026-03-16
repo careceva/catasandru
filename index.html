@@ -1,269 +1,551 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-		
-<div id="video-viewport">
-	<video width="1920" height="1280" poster="img/catalin_sandru.jpg" id="bgvid" playsinline autoplay muted loop>
-  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-<source src="img/NEF_6843_1.mp4" type="video/webm">
-<source src="img/NEF_6843_1.mp4" type="video/mp4">
-	</video>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalin Sandru — Lead Product Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Manrope:wght@300;400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/logo-nav.svg">
+  <meta name="description" content="Cătălin Șandru — Lead Product Designer with 15+ years turning complex ideas into simple, usable products.">
+  <meta property="og:title" content="Cătălin Șandru — Lead Product Designer">
+  <meta property="og:description" content="Turning complex ideas into simple, usable products. Led design at Visma for 4 years.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-index">
 
+  <!-- ================================================================
+       HERO
+  ================================================================ -->
+  <section class="hero">
 
-<!--    Menu   -->
-<div class="outer-menu">
-  <input class="checkbox-toggle" type="checkbox" />
-  <div class="hamburger">
-    <div></div>
-  </div>
-  <div class="menu">
-    <div>
-      <div>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projects-places.html">Places2go.co</a></li>
-          <li><a href="projects-mBank.html">mBank</a></li>
-          <li><a href="projects-cloudfinity.html">Cloudfinity</a></li>
-        </ul>
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="/" class="nav-logo">
+            <img src="img/logo-nav.svg" alt="Cata">
+          </a>
+          <div class="nav-links">
+            <a href="#work"    class="nav-link">work</a>
+            <a href="about.html"   class="nav-link">about</a>
+            <a href="#contact" class="nav-btn">work with me</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO CONTENT WRAPPER: constrained to nav width, pill background bleeds beyond -->
+    <div class="hero-content">
+      <div class="hero-body">
+        <!-- Left: pill — background bleeds to viewport left edge -->
+        <div class="hero-left">
+          <div class="hero-logo-wrap">
+            <span class="hero-hi-text script">Hi, I'm</span>
+            <img
+              src="img/logo-cata.svg"
+              alt="Cătă"
+              class="hero-logo-img"
+            >
+          </div>
+        </div>
+
+        <!-- Right: headline + bio -->
+        <div class="hero-right">
+          <h1 class="hero-headline">Lead Product Designer<br><em class="hl-script script">helping</em> founders <em class="hl-script script">build</em><br>products people love</h1>
+          <p class="hero-bio">I spent the last 3 years leading design at <strong>Visma</strong> and over a decade turning complex ideas into simple, usable products.<br>Occasionally overthinks buttons (on purpose).</p>
+        </div>
       </div>
     </div>
+
+  </section>
+
+  <!-- FADING LINES -->
+  <div class="hero-lines">
+    <div class="hl1"></div>
+    <div class="hl2"></div>
+    <div class="hl3"></div>
+    <div class="hl4"></div>
+    <div class="hl5"></div>
   </div>
-</div>
-<div class="logo-mark">
-	<a href="index.html"><img src="img/logo-mark.png"></img></a>						
-</div>
-	 
-<section class="logo">
-    <div class="logo-name">Catalin Sandru</div>
-    <div class="brand">Product Designer</div>
-</section>
-<div class="contact">
-    <span class="email">hi@catasandru.com</span>
-    <span class="divider footer"></span>
-    <div class="social">
-        <span class="dribbble">
-            <a href="https://dribbble.com/Catalin_S">
-                <img src="img/dribbble.png" alt="dribbble" height="24" width="24"></span>
-            </a>
-        <span> 
-            <a href="https://www.instagram.com/careceva/">
-                <img src="img/instagram.png" alt="instagram" height="24" width="24"></span>
-            </a>
-        <span>
-            <a href="https://www.behance.net/catalinsandru">
-                <img src="img/behance.png" alt="behance" height="24" width="24"></span>
-            </a>
-        <span class="skype">
-            <a href="skype:sandru.cata?userinfo">
-                <img src="img/skype.png" alt="skype" height="24" width="24"></span>
-            </a>
-    </div>
-</div>
 
-</contact>
-     <div class="hero-grid">
-        <div class="hero">
-            <h1>PRODUCT DESIGNER </h1>
-            <div class="contet-hero">
-                <p class="hero-text">I'm Catalin Sandru a <span class="blue">Product designer</span> born in Romania, currently living in <strike>Luxembourg</strike> Bucharest, and working as an in-house designer.
-					<br>Strengths - website and app design.</br>
-                Co-founder of <span class="blue">Places2Go.co</span>
-                If you want to know more about me, my work or if you're a Nigerian prince who wants to offer me a lot of money, feel free to contact me on <a href="mailto:hi@catasandru.com?subject="> hi[at]catasandru.com.</a></br>
-            </div>
+  <!-- ================================================================
+       FEATURED  (200px below hero paragraph)
+  ================================================================ -->
+  <section class="featured-section">
+    <div class="featured-inner">
+
+      <!-- Rotator card: app screenshot -->
+      <div class="rotator-card" data-reveal="scale">
+        <div class="rotator-screenshot">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="index.mp4" type="video/mp4">
+          </video>
         </div>
+      </div>
+
+      <!-- Me: arch photo -->
+      <div class="me-arch" data-reveal data-reveal-delay="2">
+        <img src="img/me-photo.png" alt="Catalin Sandru">
+      </div>
+
     </div>
-    <div class="body-bg">
-        <div class="grid">
-            <div class="grid-area grid-area-1" data-aos="fade-up">Selected Projects</div>
-            <div class="grid-area grid-area-2" data-aos="fade-up"></div>
-            <div class="grid-area grid-area-3">
-                <div class="project-content" data-aos="fade-up">
-                    <h1>Places2go.co</h1>
-                    <span class="text-block">Personal projects are usually the most complicated ones. This was not the case for Places2Go. Yeah... it actually was. A website for traveling with locals that focuses on making website interactions so easy that even grandmas understand how to use the platform.</span>
-                
-                    <div class="info">
-                        <div class="role">
-                            <ul>
-                                <li class="list-title">My role</li>
-                                <li class="list-item">Co-Founder</li>
-                            </ul>
-                        </div>
-                        <div class="year">
-                            <ul>
-                            <li class="list-title">Year</li>
-                            <li class="list-item">2017 - Present</li>
-                            </ul>
-                        </div>
-                    </div>
-                        <a href="projects-places.html"><button class="button button4">VIEW PROJECT</button></a>
-                </div>
+  </section>
+
+
+  <!-- ================================================================
+       TRANSFORMING / ABOUT
+  ================================================================ -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Col 1: Logos card (839px wide, 398px tall) -->
+        <div class="logos-card" data-reveal="scale">
+
+          <!-- Left column: Visma | Printec | Aera -->
+          <div class="logos-col">
+            <div class="logo-cell">
+              <img src="img/Visma.png" alt="Visma" class="logo-h-47">
             </div>
-                
-            <div class="grid-area grid-area-4" data-aos="fade-up"></div>
-            <div class="grid-area grid-area-5" data-aos="fade-up">
-                <div class="project-content" data-aos="fade-up">
-                    <h1>Mobile Banking App</h1>
-                    <span class="text-block">In-house UI designer, UX and project manager - my roles in this project. This meant a 360 degrees view of a behavior-learning mobile banking app.
-In addition to regular banking features, savings are automatically sent to a separate account based on the clients' buying behavior and the financial goals set.
-</span>
-                
-                    <div class="info">
-                        <div class="role">
-                            <ul>
-                                <li class="list-title">My role</li>
-                                <li class="list-item">Product Designer</li>
-                            </ul>
-                        </div>
-                        <div class="year">
-                            <ul>
-                            <li class="list-title">Year</li>
-                            <li class="list-item">2017</li>
-                            </ul>
-                        </div>
-                    </div>
-                        <a href="projects-mBank.html"><button class="button button4">View Project</button></a>
-                </div>
+            <div class="logo-cell">
+              <img src="img/Printec.png" alt="Printec" class="logo-h-56">
             </div>
-                
-            <div class="grid-area grid-area-6" data-aos="fade-up"></div>
-            <div class="grid-area grid-area-7" data-aos="fade-up">
-                <div class="project-content" data-aos="fade-up">
-                    <h1>Cloudfinity Responsive App</h1>
-                    <span class="text-block">A project that started with an idea. No features, no plans.
-Lots of meetings and Skype calls, product goals and wireframes later, the project turned into a 46 pages responsive app. 
-</span>
-                
-                    <div class="info">
-                        <div class="role">
-                            <ul>
-                                <li class="list-title">My role</li>
-                                <li class="list-item">Product Designer</li>
-                            </ul>
-                        </div>
-                        <div class="year">
-                            <ul>
-                            <li class="list-title">Year</li>
-                            <li class="list-item">2016 - Present</li>
-                            </ul>
-                        </div>
-                    </div>
-                        <a href="projects-cloudfinity.html"><button class="button button4">View Project</button></a>
-                </div>
+            <div class="logo-cell">
+              <img src="img/Aera.png" alt="Aera Technology" class="logo-h-55">
             </div>
-</div>
-<div class="body-about">
-	<div class="grid-about" data-aos="fade-up">
-		<div class="experience"><h1 class="dark">Experience</h1>
-			<div class="experience-content text-block">
-				<ul>
-					<li><span class="blue bold">2016 - Present </span><span class="company">Docler Holding Luxembourg</span></li>
-					<li><span class="blue bold">2013 - 2016 </span> <span class="company">Commercial Carpatica Bank, Sibiu, Romania</span></li>
-					<li><span class="blue bold">2010 - 2013</span> <span class="company">Commercial Carpatica Bank, Sibiu, Romania</span></li>
-					<li><span class="blue bold">2006 - 2010</span> <span class="company">Freelancer</span></li>
-				</ul>
-			</div>
-		</div>
-		<div class="language">
-			<div class="language-list"><h1 class="dark">Languages</h1>
-				<ul class="text-block">
-					<li><span class="blue bold">English </span> <span class="language-level">Fluent</span></li>
-					<li><span class="blue bold">Italian </span><span class="language-level">Intermediate</span></li>
-					<li><span class="blue bold">Romanian </span><span class="language-level">Native</span></li>
-				</ul>
-			</div>
-			<div class="skills text-block">
-				<h1 class="dark">Skills</h1>
-				<p>Photoshop, Sketch, Illustrator, Lightroom. Invision and a good understanding of front end development.</p>
-			</div>
-		</div>
-		<div class="social-footer">
-			<div class="footer-buton">
-				<a href="https://ro.linkedin.com/in/catalinsandru" class="circular-button">
-					<span class="circular-dot"></span>
-				</a>
-			</div>
-			<div class="social-links">
-				<div class="footer-email"> <a href="mailto:hi@catasandru.com?Subject=Hello%20" target="_top"> <span class="footer-email">hi@catasandru.com</span></a></div>
-				<div class="divider footer-divider"></div>
-				<div class="social social-footer">
-					<div class="social-icons">
-						<span class="dribbble">
-							<a href="#"><img src="img/dribbble.png" alt="dribbble" height="24" width="24"></a>
-						</span>
-						<span> 
-							<a href="#"> <img src="img/instagram.png" alt="instagram" height="24" width="24"></a>
-						</span>
-						<span>
-							<a href="#"><img src="img/behance.png" alt="behance" height="24" width="24"></a>
-						</span>
-						<span class="skype">
-							<a href="#"><img src="img/skype.png" alt="skype" height="24" width="24"></a>
-						</span>
-					</div>
-				</div>
-			</div>
-		</div>	
-	</div>
-</div>
-</section>
-<script>
-$(document).ready(function() {
-    var load_flag = true;
-    $(document).scroll(function() {
-        var mywindow = $(window);
-        var mypos = mywindow.scrollTop();
-        var up = false;
-        var newscroll;
-        mywindow.scroll(function () {
-            newscroll = mywindow.scrollTop();
-            if (newscroll > mypos && !up) {
-                $('.logo- ').fadeOut();
-                up = !up;
-                console.log(up);
-            } else if(newscroll < mypos && up) {
-                $('.logo ').fadeIn();
-                up = !up;
-            }
-            mypos = newscroll;
+          </div>
+
+          <!-- Right column: Allianz | OSS | Dx -->
+          <div class="logos-col">
+            <div class="logo-cell">
+              <img src="img/Allianz.png" alt="Allianz Tiriac" class="logo-h-55">
+            </div>
+            <div class="logo-cell">
+              <img src="img/OSS.png" alt="OSS" class="logo-h-56">
+            </div>
+            <div class="logo-cell">
+              <img src="img/Dx.png" alt="dx365" class="logo-h-87">
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Col 2: Heading + body + button -->
+        <div class="about-text" data-reveal data-reveal-delay="2">
+          <h2 class="transform-heading">Transforming<br>by <em class="th-script script script-green">design</em></h2>
+          <p>I lead design transformation through close collaboration—turning complex ideas into real products via interaction design, art direction, and code.</p>
+          <a href="about.html" class="btn btn-green">About me</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       SELECTED WORK
+  ================================================================ -->
+  <section class="work-section" id="work">
+    <div class="container">
+      <h2 class="work-title" data-reveal>Selected work</h2>
+
+      <!-- ── Project 1: Huly ── -->
+      <article class="project-card" data-reveal="scale">
+        <div class="project-bg" style="background-image:url('img/vom-bg.png')">
+          <div class="project-overlay" style="background:linear-gradient(257.5deg,rgba(0,0,0,0) 4.6%,rgba(0,0,0,0) 55.4%,rgba(0,0,0,1) 114.6%)"></div>
+          <div class="project-inner">
+            <div class="project-text">
+              <div class="project-logo">
+                <img src="img/vom-logo.png" alt="Visma" class="logo-h-51">
+              </div>
+              <h3 class="project-title">An app for<br>hr and business<br>management</h3>
+              <a href="vom-case-study.html" class="btn btn-light">View case study</a>
+            </div>
+            <!-- Phone mockups -->
+            <div class="project-phones">
+              <img src="img/phone-1.png" alt="" class="img-phone-1">
+              <img src="img/phone-2.png" alt="" class="img-phone-2">
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Project 2: OSS ── -->
+      <article class="project-card" data-reveal="scale">
+        <div class="project-bg" style="background-image:url('img/oss-bg.jpg')">
+          <div class="project-overlay" style="background:linear-gradient(261deg,rgba(0,0,0,0) 3%,rgba(0,0,0,0) 46%,rgba(0,0,0,0.7) 103%)"></div>
+          <div class="project-inner">
+            <div class="project-text">
+              <div class="project-logo flex-center">
+                <span class="oss-text">OSS</span>
+              </div>
+              <h3 class="project-title">All in one<br>market place<br>for business</h3>
+              <a class="btn btn-light" aria-disabled="true" tabindex="-1">Coming soon</a>
+            </div>
+            <div class="project-laptop">
+              <img src="img/laptop-OSS.png" alt="Laptop mockup">
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Project 3: Lead collection ── -->
+      <article class="project-card" data-reveal="scale">
+        <div class="project-bg" style="background-image:url('img/lead-bg.jpg')">
+          <div class="project-inner">
+            <div class="project-text">
+              <div class="project-logo logo-h-21">
+                <img src="img/lead-logo.png" alt="Logo" class="object-contain-full logo-white">
+              </div>
+              <h3 class="project-title">Lead collection<br>made easy</h3>
+              <a class="btn btn-light" aria-disabled="true" tabindex="-1">Coming soon</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Project 4: Vinst ── -->
+      <article class="project-card" data-reveal="scale">
+        <div class="project-bg" style="background-image:url('img/vinst-bg.png')">
+          <div class="project-overlay" style="background:linear-gradient(77deg,rgba(0,0,0,1) 8%,rgba(102,102,102,0) 52%)"></div>
+          <div class="project-inner">
+            <div class="project-text">
+              <div class="project-logo logo-h-57">
+                <img src="img/vinst-logo-white.png" alt="Vinst" class="object-contain-full logo-white">
+              </div>
+              <h3 class="project-title">Vinst branding<br>collection</h3>
+              <a class="btn btn-light" aria-disabled="true" tabindex="-1">Coming soon</a>
+            </div>
+            <!-- Branding tiles -->
+            <div class="branding-grid">
+              <div class="brand-tile">
+                <img src="img/vinst-tile-1.svg" alt="">
+              </div>
+              <div class="brand-tile">
+                <img src="img/vinst-tile-2.svg" alt="">
+              </div>
+              <div class="brand-tile">
+                <img src="img/vinst-tile-3.svg" alt="">
+              </div>
+              <div class="brand-tile">
+                <img src="img/vinst-tile-4.svg" alt="">
+              </div>
+              <div class="brand-tile brand-tile-green">
+                <img src="img/vinst-tile-5.svg" alt="">
+              </div>
+              <div class="brand-tile brand-tile-green">
+                <img src="img/vinst-tile-6.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       PLAYGROUND
+  ================================================================ -->
+  <section class="playground-section">
+
+    <!-- Decorations -->
+    <img src="img/deco-tl.png" alt="" class="playground-deco deco-tl">
+    <img src="img/deco-tr.png" alt="" class="playground-deco deco-tr">
+    <img src="img/deco-bl.png" alt="" class="playground-deco deco-bl">
+    <img src="img/deco-br.png" alt="" class="playground-deco deco-br">
+
+    <div class="container">
+      <div class="playground-content" data-reveal>
+        <span class="playground-label script script-green">my <span class="label-word">playground</span></span>
+        <h2 class="playground-heading">Challenge everyday life through design</h2>
+        <a class="btn btn-coming-soon" aria-disabled="true" tabindex="-1">Coming soon</a>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <footer class="footer" id="contact">
+
+    <!-- Pill card — same max-width as nav, no extra container wrapper -->
+    <div class="footer-card">
+
+      <!-- Left: Connect + nav -->
+      <div class="footer-left">
+        <div class="footer-connect" data-reveal>
+          <span class="footer-lets script script-green">Let's</span>
+          <h2 class="footer-connect-heading">Connect</h2>
+        </div>
+        <div class="footer-nav-cols" data-reveal data-reveal-delay="2">
+          <nav class="footer-nav-col">
+            <a href="/">Home</a>
+            <a href="#work">Work</a>
+            <a href="about.html">About</a>
+          </nav>
+          <nav class="footer-nav-col">
+            <a href="https://www.linkedin.com/in/catalinsandru/" target="_blank" rel="noopener">Linkedin</a>
+            <a href="https://www.instagram.com/careceva/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://unsplash.com/@catalinsandru" target="_blank" rel="noopener">Unsplash</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Right: Dial button + contact info -->
+      <div class="footer-right">
+        <div class="dial-button-container">
+          <div class="dial-button-wrapper">
+            <div class="dial-bezel">
+              <img src="img/dial-bezel.svg" alt="" class="bezel-img">
+            </div>
+            <button class="dial-btn" id="dialBtn" aria-label="Open contact form">
+              <img src="img/dial-center.svg" alt="" class="button-center">
+              <img src="img/dial-level.svg" alt="" class="dial-level">
+              <img src="img/dial-base.svg" alt="" class="dial-base">
+            </button>
+            <div class="dial-indicator">
+              <img src="img/dial-indicator.svg" alt="" class="indicator-dot">
+            </div>
+          </div>
+        </div>
+        <span class="dial-label script script-green">Work with me</span>
+        <p class="footer-location">Bucharest, Romania</p>
+        <a href="mailto:catalin.sandru18@gmail.com" class="footer-email">catalin.sandru18@gmail.com</a>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright">
+      <div class="container">
+        <p>&copy; 2026 Cătălin Șandru. <span>All rights reserved</span></p>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <!-- ================================================================
+       CONTACT MODAL
+  ================================================================ -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+
+      <!-- Form state -->
+      <div id="modalFormState" class="modal-body">
+        <div class="modal-form-col">
+          <p class="modal-eyebrow">Get in touch</p>
+          <h3 class="modal-heading">Let's <em class="script script-green">work</em> together</h3>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="field-name">Name</label>
+                <input id="field-name" type="text" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-field">
+                <label for="field-email">Email</label>
+                <input id="field-email" type="email" name="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="field-message">Message</label>
+              <textarea id="field-message" name="message" placeholder="Tell me about your project…" rows="5" required></textarea>
+            </div>
+            <p class="form-error" id="formError" hidden>Please fill in all fields before sending.</p>
+            <button type="submit" class="btn btn-green btn-full">Send message</button>
+          </form>
+        </div>
+        <div class="modal-info-col">
+          <div class="modal-info-block">
+            <p class="modal-info-label">Location</p>
+            <p class="modal-info-value">Bucharest, Romania</p>
+          </div>
+          <div class="modal-info-block">
+            <p class="modal-info-label">Email</p>
+            <a href="mailto:catalin.sandru18@gmail.com" class="modal-info-link">catalin.sandru18@gmail.com</a>
+          </div>
+          <div class="modal-info-block">
+            <p class="modal-info-label">Socials</p>
+            <div class="modal-info-links">
+              <a href="https://www.linkedin.com/in/catalinsandru/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.instagram.com/careceva/" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://unsplash.com/@catalinsandru" target="_blank" rel="noopener">Unsplash</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success state -->
+      <div id="modalSuccessState" class="modal-success" hidden>
+        <div class="success-icon">✓</div>
+        <h3 class="modal-heading">Message sent!</h3>
+        <p class="modal-success-text">I'll get back to you within 24 hours.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Logo smiley: appear → float loop ── -->
+  <script>
+    (function () {
+      var wrap = document.querySelector('.hero-logo-wrap');
+      if (!wrap) return;
+      wrap.addEventListener('animationend', function onDone(e) {
+        if (e.animationName === 'logoAppear') {
+          wrap.classList.add('logo-floating');
+          wrap.removeEventListener('animationend', onDone);
+        }
+      });
+    })();
+  </script>
+
+  <!-- ── Scroll Reveal + Hero Parallax ── -->
+  <script>
+    (function () {
+      // IntersectionObserver — reveal elements as they enter the viewport
+      var revealEls = document.querySelectorAll('[data-reveal]');
+      if (!revealEls.length) return;
+
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            obs.unobserve(el);
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                el.classList.add('is-visible');
+              });
+            });
+          }
         });
-    });
-});
+      }, {
+        threshold: 0,
+        rootMargin: '0px 0px -40px 0px'
+      });
 
-// Initialize AOS
-AOS.init({
-    easing: 'ease-in-out-sine'
-});
-</script>
+      revealEls.forEach(function (el) { obs.observe(el); });
 
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-<script>
-    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-    e.src='//www.google-analytics.com/analytics.js';
-    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-</script>
-    </body>
+      // Hero parallax — left pill rises gently as page is scrolled
+      var heroLeft = document.querySelector('.hero-left');
+      if (heroLeft) {
+        window.addEventListener('scroll', function () {
+          var y = window.scrollY;
+          if (y < window.innerHeight) {
+            heroLeft.style.transform = 'translateY(' + (y * 0.12) + 'px)';
+          }
+        }, { passive: true });
+      }
+    })();
+  </script>
+
+  <!-- Hero headline letter-by-letter animation -->
+  <script>
+    (function () {
+      const hl  = document.querySelector('.hero-headline');
+      const bio = document.querySelector('.hero-bio');
+      if (!hl) return;
+
+      const STAGGER = 22;   // ms between each character
+      const START   = 80;   // ms before first character appears
+      let idx = 0;
+
+      function processNode(parent, node) {
+        if (node.nodeType === 3) {
+          // Text node — wrap every character in a .char span
+          [...node.textContent].forEach(ch => {
+            const s = document.createElement('span');
+            s.className = 'char';
+            s.textContent = ch === ' ' ? '\u00A0' : ch;
+            s.style.animationDelay = `${START + idx * STAGGER}ms`;
+            parent.appendChild(s);
+            idx++;
+          });
+        } else if (node.nodeName === 'BR') {
+          parent.appendChild(document.createElement('br'));
+        } else if (node.nodeType === 1) {
+          // Element node (em, strong…) — preserve tag + class, recurse
+          const el = document.createElement(node.tagName.toLowerCase());
+          el.className = node.className;
+          node.childNodes.forEach(c => processNode(el, c));
+          parent.appendChild(el);
+        }
+      }
+
+      const nodes = [...hl.childNodes];
+      hl.innerHTML = '';
+      nodes.forEach(n => processNode(hl, n));
+
+      // Bio fades in as a whole after the last character settles
+      if (bio) {
+        const totalMs = START + idx * STAGGER + 120;
+        bio.classList.add('bio-anim');
+        bio.style.animationDelay = `${totalMs}ms`;
+      }
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var dialBtn      = document.getElementById('dialBtn');
+      var modal        = document.getElementById('contactModal');
+      var modalClose   = document.getElementById('modalClose');
+      var contactForm  = document.getElementById('contactForm');
+      var formState    = document.getElementById('modalFormState');
+      var successState = document.getElementById('modalSuccessState');
+      var formError    = document.getElementById('formError');
+
+      function closeModal() {
+        modal.classList.remove('active');
+        setTimeout(function () {
+          contactForm.reset();
+          formState.hidden = false;
+          successState.hidden = true;
+          formError.hidden = true;
+        }, 300);
+      }
+
+      if (dialBtn) {
+        dialBtn.addEventListener('click', function () {
+          dialBtn.classList.add('pressed');
+          setTimeout(function () {
+            dialBtn.classList.remove('pressed');
+            modal.classList.add('active');
+          }, 180);
+        });
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+      });
+
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name    = document.getElementById('field-name').value.trim();
+        var email   = document.getElementById('field-email').value.trim();
+        var message = document.getElementById('field-message').value.trim();
+        if (!name || !email || !message) {
+          formError.hidden = false;
+          return;
+        }
+        formError.hidden = true;
+        var subject = encodeURIComponent('Portfolio inquiry from ' + name);
+        var body    = encodeURIComponent(message + '\n\nFrom: ' + name + '\nEmail: ' + email);
+        window.location.href = 'mailto:catalin.sandru18@gmail.com?subject=' + subject + '&body=' + body;
+        formState.hidden    = true;
+        successState.hidden = false;
+      });
+    })();
+  </script>
+
+</body>
 </html>

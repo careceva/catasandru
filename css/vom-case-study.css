@@ -1,0 +1,693 @@
+/* ============================================================
+   VOM CASE STUDY — PAGE STYLES
+============================================================ */
+
+.cs-page {
+  background: #EBE8E0;
+}
+
+/* ============================================================
+   NAV — transparent overlay, floats above the hero image.
+   position:absolute removes it from flow (dark section starts
+   at y:0) and overrides the mobile sticky rule in style.css.
+============================================================ */
+
+.cs-page .nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 10;
+}
+
+.cs-page .nav .nav-logo img {
+  filter: brightness(0) invert(1);
+}
+
+.cs-page .nav .nav-link {
+  color: #fff;
+}
+
+.cs-page .nav .nav-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* ============================================================
+   DARK SECTION (hero + quote — one shared background)
+============================================================ */
+
+.cs-dark-section {
+  position: relative;
+  overflow-x: clip;           /* clip without creating a scroll container (fixes iOS scroll stutter) */
+  display: flex;
+  flex-direction: column;
+  z-index: 1;                 /* sit above .cs-context so overlapping image paints on top */
+}
+
+.cs-dark-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height:80%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  z-index: 0;
+}
+
+/* Hero content — fills the full viewport, text starts ~400px from top */
+.cs-hero-content {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 70vh;
+}
+
+.cs-hero-inner {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4.5vw, 40px);
+}
+
+.cs-hero-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  align-self: flex-start;
+  filter: brightness(0) invert(1);
+}
+
+.cs-hero-title {
+  font-weight: 700;
+  font-size: clamp(40px, 4.4vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -1.28px;
+  color: #fff;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.cs-hero-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cs-hero-body p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  letter-spacing: -0.32px;
+}
+
+/* ============================================================
+   QUOTE
+============================================================ */
+
+.cs-quote-layout {
+  position: relative;
+  z-index: 1;
+  margin-top: 25vw;
+  padding-bottom: clamp(0px, 1vw, 0px);
+}
+
+.cs-quote-inner {
+  padding-top: 7vw;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 5vw, 80px);
+  align-items: center;
+}
+
+.cs-quote-heading {
+  font-weight: 700;
+  font-size: clamp(48px, 6.9vw, 100px);
+  line-height: 1;
+  letter-spacing: -2px;
+  color: #fff;
+  margin: 0;
+}
+
+.cs-quote-image {
+  width: 100%;
+}
+
+.cs-quote-image img {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  display: block;
+  margin: 0 auto -110px;      /* bleed 110px (~20%) into the beige section below */
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================================
+   CONTEXT BODY TEXT
+============================================================ */
+
+.cs-context {
+  position: relative;
+  z-index: 0;                              /* sits below .cs-dark-section (z-index:1) */
+  padding-top: clamp(150px, 16vw, 190px);  /* 110px overlap + ~40–80px breathing room */
+  padding-bottom: clamp(40px, 8vw, 80px);
+}
+
+.cs-context-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: left;
+}
+
+.cs-context-inner p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--body);
+  margin: 0;
+}
+
+/* ============================================================
+   SCREENS GRID
+============================================================ */
+
+.cs-screens {
+  padding-bottom: clamp(80px, 8vw, 160px);
+}
+
+.cs-screens > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ============================================================
+   BASE CARD
+   All standard cards share the same height at every viewport.
+   Ratio matches Figma: 719 / 1282 ≈ 56.1 %
+============================================================ */
+
+.cs-card {
+  border-radius: 36px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  /* consistent height across all standard cards */
+  height: clamp(320px, 56.1vw, 720px);
+  box-sizing: border-box;
+  outline: 1px solid rgba(26, 24, 20, 0.2);
+  outline-offset: 10px;
+}
+
+/* ---- Beige ---- */
+.cs-card--beige {
+  background: #ebe8e0;
+}
+
+/* ---- Full-bleed photo (city photo, dark-bg cards) ---- */
+.cs-bg-fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 0;
+}
+
+/* ---- Tall card (large desktop view, Card 6) ---- */
+.cs-card--tall {
+  height: clamp(480px, 89.5vw, 1148px);
+}
+
+/* ============================================================
+   PHONE PAIRS  (Cards 1, 3, 4, 5)
+   Phones fill the card height minus padding.
+============================================================ */
+
+.cs-phones-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: clamp(20px, 3.5vw, 56px);
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  padding: clamp(28px, 4vw, 56px) clamp(32px, 5vw, 96px) clamp(20px, 2.5vw, 36px);
+  box-sizing: border-box;
+}
+
+.cs-phone-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.cs-phone-item img {
+  flex: 1;
+  min-height: 0;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Shorter phone in Card 5 (Public user profile ~79% of tall phone) */
+.cs-phone-item--sm {
+  height: 79%;
+  align-self: flex-end;
+}
+
+/* Dark photo card — phones at 70% size, centered */
+.cs-phones-wrap--sm {
+  align-items: center;
+}
+
+.cs-phones-wrap--sm .cs-phone-item {
+  height: 70%;
+  width: 70%;
+}
+
+/* ============================================================
+   FIGCAPTION  (shared caption style)
+============================================================ */
+
+.cs-phone-item figcaption,
+.cs-wide-fig figcaption,
+.cs-desktop-fig figcaption,
+.cs-split-fig figcaption,
+.cs-half-fig figcaption,
+.cs-tall-fig figcaption {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--sans);
+  color: var(--dark);
+  opacity: 0.4;
+  text-align: center;
+  /* pull up into the baked-in image shadow so caption sits at the visible edge */
+  margin-top: -75px;
+  padding: 0;
+  line-height: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+/* White caption (dark-bg cards) */
+.cs-phone-item--white figcaption,
+.cs-figcap--white {
+  color: #fff;
+  opacity: 0.75;
+}
+
+/* ============================================================
+   WIDE SCREENSHOT  (Card 2 — User profile)
+============================================================ */
+
+.cs-wide-fig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  height: 100%;
+  padding: clamp(40px, 5vw, 72px) clamp(24px, 6vw, 80px) clamp(20px, 2.5vw, 36px);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.cs-wide-fig img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: 720px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================================
+   LARGE DESKTOP  (Card 6 — tall card)
+============================================================ */
+
+.cs-tall-fig {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: clamp(40px, 4vw, 64px) clamp(32px, 5vw, 80px) clamp(32px, 4vw, 64px);
+  box-sizing: border-box;
+}
+
+.cs-tall-fig img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================================
+   LOCATION + OFFICES SPLIT  (Card 8)
+============================================================ */
+
+.cs-split-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 3vw, 48px);
+  height: 100%;
+  padding: clamp(28px, 4vw, 56px) clamp(32px, 5vw, 80px) clamp(20px, 2.5vw, 36px);
+  box-sizing: border-box;
+}
+
+.cs-split-fig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  height: 100%;
+  margin: 0;
+}
+
+.cs-split-fig img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================================
+   HIERARCHY DESKTOP  (Card 9)
+============================================================ */
+
+.cs-desktop-fig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  height: 100%;
+  padding: clamp(20px, 2.5vw, 32px) clamp(32px, 5vw, 80px) clamp(20px, 2.5vw, 36px);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.cs-desktop-fig img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================================
+   HALF-ROW  (Rows 10 & 11 — two cards side by side)
+   Height: 610 / 1282 ≈ 47.6 %
+============================================================ */
+
+.cs-half-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.cs-card--half {
+  height: clamp(240px, 47.6vw, 610px);
+}
+
+.cs-half-fig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  height: 100%;
+  padding: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 40px) clamp(20px, 2.5vw, 32px);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.cs-half-fig img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Overlay figure inside a photo-bg half card */
+.cs-half-fig--overlay {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 900px) {
+  .cs-phones-wrap {
+    gap: clamp(12px, 3vw, 24px);
+    padding-left: clamp(20px, 4vw, 48px);
+    padding-right: clamp(20px, 4vw, 48px);
+  }
+
+  .cs-split-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-half-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-card--half {
+    height: clamp(280px, 56.1vw, 720px);
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-hero-title {
+    font-size: clamp(32px, 7vw, 56px);
+  }
+
+  .cs-phones-wrap {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .cs-phone-item--sm {
+    height: 100%;
+  }
+}
+
+/* ============================================================
+   MOBILE  ≤ 480px
+============================================================ */
+
+@media (max-width: 480px) {
+
+  /* ── Hero ── */
+  .cs-dark-bg {
+    height: 100%;               /* full dark section coverage on narrow screens */
+  }
+
+  .cs-hero-content {
+    height: auto;                        /* let content flow naturally — no scroll cage, no overflow */
+    padding-top: calc(100svh - 160px);   /* nav is absolute so takes no space; logo+title land near fold */
+    align-items: flex-start;
+    padding-bottom: 0;
+  }
+
+  .cs-hero-inner {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .cs-hero-logo {
+    height: 36px;
+  }
+
+  .cs-hero-title {
+    font-size: 28px;
+    white-space: normal;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+  }
+
+  .cs-hero-body {
+    gap: 12px;
+  }
+
+  .cs-hero-body p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  /* ── Quote ── */
+  .cs-quote-layout {
+    margin-top: 60px;
+  }
+
+  .cs-quote-inner {
+    padding-top: 48px;
+    gap: 56px;
+  }
+
+  .cs-quote-heading {
+    font-size: 36px;
+    letter-spacing: -1px;
+    line-height: 1.05;
+  }
+
+  /* ── Quote image — smaller overlap on narrow screens ── */
+  .cs-quote-image img {
+    margin-bottom: -70px;
+  }
+
+  /* ── Context ── */
+  .cs-context {
+    padding-top: 110px;   /* 70px overlap + 40px breathing room */
+    padding-bottom: 40px;
+  }
+
+  .cs-context-inner p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── Screens grid ── */
+  .cs-screens > .container {
+    gap: 16px;
+  }
+
+  /* Standard card — reduce height, soften radius */
+  .cs-card {
+    height: clamp(260px, 72vw, 320px);
+    border-radius: 24px;
+    outline-offset: 6px;
+  }
+
+  /* Tall card (desktop view) */
+  .cs-card--tall {
+    height: clamp(320px, 88vw, 460px);
+  }
+
+  /* Phone pairs — tighter padding so phones get more room */
+  .cs-phones-wrap {
+    flex-wrap: nowrap;           /* keep side-by-side; images are tall enough */
+    padding: 16px 16px 10px;
+    gap: 8px;
+    align-items: flex-end;
+  }
+
+  /* Caption pull-up: smaller on mobile since images are smaller */
+  .cs-phone-item figcaption,
+  .cs-wide-fig figcaption,
+  .cs-desktop-fig figcaption,
+  .cs-split-fig figcaption,
+  .cs-half-fig figcaption,
+  .cs-tall-fig figcaption {
+    font-size: 12px;
+    margin-top: -48px;
+  }
+
+  /* Half-row: already collapses to 1-col at 900px; reduce height on mobile */
+  .cs-half-row {
+    gap: 16px;
+  }
+
+  .cs-card--half {
+    height: clamp(220px, 65vw, 300px);
+  }
+
+  /* Wide fig padding */
+  .cs-wide-fig {
+    padding: 20px 16px 10px;
+  }
+
+  /* Desktop fig padding */
+  .cs-desktop-fig {
+    padding: 16px 16px 10px;
+  }
+
+  /* Half fig padding */
+  .cs-half-fig {
+    padding: 20px 16px 10px;
+  }
+
+  /* Tall fig padding */
+  .cs-tall-fig {
+    padding: 24px 16px 16px;
+  }
+}
+
+
+/* ============================================================
+   TABLET PORTRAIT + LANDSCAPE  768px – 1024px
+
+   Decisions:
+   · Hero inner: expand from 55% → 70% (55% = 389px at 834px — too narrow)
+   · cs-half-row + cs-split-wrap: override the 900px collapse, stay 2-col
+   · Card heights: tighten upper bound for tablet proportions
+   · Context paragraphs: cap reading width at 640px
+============================================================ */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* ── HERO ── */
+  .cs-hero-inner { width: 70%; }
+
+  .cs-hero-title { font-size: clamp(36px, 4.8vw, 52px); }
+
+  /* ── QUOTE ── */
+  .cs-quote-layout { margin-top: 18vw; }
+
+  /* ── CONTEXT ── */
+  .cs-context-inner { max-width: 640px; }
+
+  /* ── CARD HEIGHTS ── */
+  .cs-card        { height: clamp(300px, 50vw, 560px); }
+  .cs-card--tall  { height: clamp(420px, 75vw, 860px); }
+
+  /* ── HALF-ROW: keep 2-col at 768–900px ──
+     Override the max-width:900px collapse (this rule is later → wins). ── */
+  .cs-half-row            { grid-template-columns: 1fr 1fr; }
+  .cs-card--half          { height: clamp(240px, 40vw, 420px); }
+
+  /* ── SPLIT-WRAP: keep 2-col at 768–900px ── */
+  .cs-split-wrap          { grid-template-columns: 1fr 1fr; }
+
+  /* ── CAPTIONS ── */
+  .cs-phone-item figcaption,
+  .cs-wide-fig figcaption,
+  .cs-desktop-fig figcaption,
+  .cs-split-fig figcaption,
+  .cs-half-fig figcaption,
+  .cs-tall-fig figcaption {
+    font-size: 13px;
+    margin-top: -80px;
+  }
+}
+
+/* ============================================================
+   SMALL LAPTOP  1025px – 1280px
+============================================================ */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  .cs-hero-inner     { width: 62%; }
+
+  .cs-context-inner  { max-width: 720px; }
+}

@@ -1,0 +1,857 @@
+/* ============================================================
+   ABOUT PAGE STYLES
+============================================================ */
+
+.about-page {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+.about-container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+/* ============================================================
+   ABOUT HERO
+============================================================ */
+
+.about-hero {
+  padding-top: 64px;
+  padding-bottom: clamp(60px, 6vw, 120px);
+}
+
+.about-hero-content {
+  display: grid;
+  /* use percentage columns so content aligns to container/menu width */
+  grid-template-columns: 55% 45%;
+  gap: clamp(24px, 4vw, 40px);
+  /* pick a viewport-driven pill height and reuse it for the image to keep parity */
+  --pill-h: min(52vh, 40vw, 460px);
+  min-height: calc(var(--pill-h) + 20px);
+  align-items: center;
+  width: 100%;
+}
+
+.intro-pill {
+  /* bleed to viewport left edge; text aligns with nav logo + summary */
+  --bleed: calc(var(--pad) + max(0px, (100vw - var(--max-w)) / 2));
+  width: calc(100% + var(--bleed));
+  margin-left: calc(-1 * var(--bleed));
+  min-height: var(--pill-h);
+  background-color: var(--bg);
+  background-image: radial-gradient(circle, var(--green) 2px, transparent 2px);
+  background-size: 4px 4px;
+  border-radius: 0 999px 999px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  /* left padding re-aligns text with container content (nav logo, summary) */
+  padding: clamp(36px, 4.5vw, 72px) clamp(36px, 4vw, 88px) clamp(36px, 4.5vw, 72px) var(--bleed);
+}
+
+.intro-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1.2vw, 12px);
+}
+
+.hi-greeting {
+  font-family: var(--script);
+  font-size: 22px;
+  color: var(--dark);
+  opacity: 1;
+  line-height: 1;
+  margin: 0 0 3px 0;
+}
+
+.intro-heading {
+  font-family: var(--sans);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 53px;
+  color: var(--dark);
+  margin: 0;
+  position: relative;
+  z-index: 10;
+  padding: 0;
+  max-width: 100%;
+}
+
+.intro-heading strong {
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.about-right {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  position: relative;
+}
+
+/* Back card — slightly tilted, same proportions as the front photo */
+.about-right::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  height: var(--pill-h);
+  aspect-ratio: 5 / 7;
+  max-width: 520px;
+  border-radius: 10px;
+  background-color: var(--bg);
+  background-image: radial-gradient(circle, var(--green) 2px, transparent 2px);
+  background-size: 4px 4px;
+  outline: 1px solid rgba(26, 24, 20, 0.18);
+  outline-offset: 10px;
+  transform: rotate(-4deg) translateY(6px);
+  z-index: 0;
+  animation: backCardEnter 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+.about-photo {
+  /* occupy the right grid column and match pill height with a 5:7 aspect ratio */
+  aspect-ratio: 5 / 7;
+  /* height drives size; width computed from aspect-ratio */
+  height: var(--pill-h);
+  width: auto;
+  max-width: 520px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: block;
+  flex-shrink: 0;
+  outline: 1px solid rgba(26, 24, 20, 0.2);
+  outline-offset: 10px;
+  position: relative;
+  z-index: 1;
+  /* entrance animation */
+  animation: photoEnter 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes photoEnter {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes backCardEnter {
+  from {
+    opacity: 0;
+    transform: rotate(-4deg) translateY(18px) scale(1.03);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-4deg) translateY(6px) scale(1);
+  }
+}
+
+/* Stack on narrow viewports and scale elements proportionally */
+@media (max-width: 900px) {
+  .about-hero-content {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 6vw, 48px);
+  }
+
+  .intro-pill {
+    min-height: auto;
+    height: auto;
+  }
+
+  .about-photo {
+    width: 100%;
+    min-height: auto;
+    height: auto;
+  }
+
+  .about-photo img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 7;
+  }
+}
+
+/* ============================================================
+   ABOUT CONTENT
+============================================================ */
+
+.about-content {
+  padding: clamp(60px, 6vw, 0px) 0;
+}
+
+.content-section {
+  margin-bottom: clamp(80px, 8vw, 150px);
+  max-width: clamp(360px, 46vw, 820px);
+  margin-top: 0px;
+}
+
+.content-section h2 {
+  font-size: clamp(28px, 3vw, 32px);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 40px;
+}
+
+.section-text {
+  max-width: 800px;
+}
+
+.section-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--body);
+  margin-bottom: 24px;
+}
+
+.section-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   CONTENT GRID (Work Experience + Education)
+============================================================ */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: clamp(40px, 4vw, 80px);
+  margin-bottom: clamp(80px, 8vw, 150px);
+  width: 100%;
+  max-width: 100%;
+}
+
+.work-experience-grid {
+  width: 100%;
+  max-width: 100%;
+}
+
+.work-col h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 40px 0;
+}
+
+/* Align col 2 (no heading) so first entry starts level with Visma in col 1 */
+.work-col--offset {
+  padding-top: calc(32px * 1.2 + 50px + 2px);
+}
+
+/* --- Experience entry --- */
+.experience-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 64px;
+}
+
+.experience-entry:last-child {
+  margin-bottom: 0;
+}
+
+.exp-company-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.exp-company {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 36px;
+}
+
+.exp-period {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 36px;
+}
+
+.exp-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  opacity: 0.6;
+}
+
+.exp-meta p {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--dark);
+  margin: 0;
+}
+
+/* --- Role sub-entries inside an experience --- */
+.exp-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 26px;
+}
+
+.exp-role {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.role-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark);
+  opacity: 0.6;
+  line-height: 36px;
+  margin: 0;
+}
+
+.role-date {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--dark);
+  opacity: 0.6;
+  line-height: 20px;
+  margin: 0;
+}
+
+/* --- Education entries --- */
+.education-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 32px;
+}
+
+.education-entry:last-of-type {
+  margin-bottom: 40px;
+}
+
+.exp-company-block {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.exp-meta-line {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark);
+  opacity: 0.6;
+  margin: 0;
+  line-height: 24px;
+}
+
+/* --- Software / Soft Skills blocks --- */
+.skills-block {
+  margin-bottom: 32px;
+}
+
+.skills-block:last-child {
+  margin-bottom: 0;
+}
+
+.skills-title {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 36px;
+  margin-bottom: 6px;
+}
+
+.skills-block p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark);
+  opacity: 0.6;
+  line-height: 24px;
+  margin: 0;
+}
+
+/* ============================================================
+   EXPERTISE SECTION
+============================================================ */
+
+.expertise-section {
+  margin-top: 46px;
+  margin-bottom: clamp(80px, 8vw, 150px);
+}
+
+.expertise-title {
+  font-size: clamp(28px, 4vw, 300px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--dark);
+  max-width: 100%;
+  margin-bottom: 80px;
+  letter-spacing: -0.02em;
+}
+
+/* Word-by-word reveal */
+.expertise-title .wr-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.expertise-title.words-visible .wr-word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  gap: clamp(60px, 8vw, 100px);
+}
+
+.expertise-item h3 {
+  font-size: clamp(20px, 2.2vw, 200px);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 24px;
+}
+
+.expertise-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expertise-item ul li {
+  font-size: clamp(14px, 1.1vw, 100px);
+  color: var(--body);
+  padding: 8px 0;
+}
+
+/* ============================================================
+   CLOSING STATEMENT
+============================================================ */
+
+.closing-statement {
+  margin-bottom: clamp(80px, 8vw, 150px);
+  padding: clamp(40px, 6vw, 80px);
+  background: rgba(134, 181, 143, 0.08);
+  border-radius: 12px;
+}
+
+.closing-statement h2 {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--dark);
+  margin: 0;
+}
+
+/* ============================================================
+   ABOUT PAGE BUTTONS
+============================================================ */
+
+.about-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.about-buttons .btn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.about-buttons .btn-green {
+  background: var(--green);
+  color: black;
+}
+
+.about-buttons .btn-green:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+.about-buttons .btn-light {
+  background: rgba(134, 181, 143, 0.18);
+  color: black;
+  border: 1px solid var(--green);
+}
+
+.about-buttons .btn-light:hover {
+  background: var(--green);
+  color: black;
+  transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .work-experience-grid .work-col:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-col--offset {
+    padding-top: 0;
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-buttons {
+    flex-direction: column;
+  }
+}
+
+/* ============================================================
+   MOBILE  320px – 480px
+   UX decisions:
+   · Text-first hero → photo below (DOM order, no reorder needed)
+   · Left-bleed pill preserved as brand signature; font scaled down
+   · Back card hidden (decorative, adds visual noise at small sizes)
+   · Photo aspect ratio 4:5 (saves ~120px vertical vs 5:7)
+   · Both CTAs full-width stacked, 48px touch targets
+   · Nav compressed: 14px type, 16px gap — no hamburger needed for 3 items
+   · Work grid single-column; offset padding zeroed
+   · Skills rendered as readable list (tags would need JS; list is cleaner)
+   · Expertise statement scaled with clamp, still reads as hero text
+   · All section gaps tightened 20–30% vs tablet
+============================================================ */
+
+@media (max-width: 480px) {
+
+  /* ── NAV ── */
+  /* Compress so 3 items fit from 320px */
+  .nav {
+    padding: 14px 0;
+  }
+  .nav-link,
+  .nav-btn {
+    font-size: 13px;
+  }
+  .nav-links {
+    gap: 12px;
+  }
+  .nav-btn {
+    padding: 6px 12px;
+  }
+
+  /* ── HERO ── */
+  .about-hero {
+    padding-top: 64px;
+    padding-bottom: 36px;
+  }
+
+  /* Switch grid to flex so min-height doesn't force empty space */
+  .about-hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    min-height: auto;
+  }
+
+  /* Pill: keep left-bleed brand signature, tighten vertical padding */
+  .intro-pill {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    padding-right: 28px;
+    min-height: auto;
+  }
+
+  .hi-greeting {
+    font-size: 18px;
+  }
+
+  .intro-heading {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  /* Hide decorative stacked card — adds visual clutter on small screens */
+  .about-right::before {
+    display: none;
+  }
+
+  /* Photo: portrait but 4:5 saves ~120px vs 5:7 on a 375px screen */
+  .about-photo {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 4 / 5;
+    outline-offset: 6px;
+  }
+
+  /* CTAs: full-width stacked, 48px min for touch */
+  .about-buttons {
+    margin-top: 16px;
+    gap: 10px;
+    justify-content: stretch;
+  }
+
+  .about-buttons .btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: 15px;
+    justify-content: center;
+    padding: 0 20px;
+    border-radius: 8px;
+  }
+
+  /* ── CONTENT SECTIONS ── */
+  .about-content {
+    padding-top: 36px;
+  }
+
+  .content-section {
+    max-width: 100%;
+    margin-bottom: 48px;
+  }
+
+  .content-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .section-text p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  /* ── WORK EXPERIENCE GRID ── */
+  .content-grid {
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  .work-col h2 {
+    font-size: 22px;
+    margin: 0 0 24px 0;
+  }
+
+  .experience-entry {
+    margin-bottom: 40px;
+  }
+
+  .exp-company {
+    font-size: 17px;
+    line-height: 1.3;
+  }
+
+  .exp-period {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .exp-meta p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .exp-roles {
+    gap: 20px;
+    margin-top: 16px;
+  }
+
+  .role-title {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .role-date {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  /* ── EDUCATION / SKILLS ── */
+  .exp-company-block {
+    font-size: 17px;
+  }
+
+  .exp-meta-line {
+    font-size: 14px;
+  }
+
+  .education-entry {
+    margin-bottom: 24px;
+  }
+
+  .education-entry:last-of-type {
+    margin-bottom: 28px;
+  }
+
+  .skills-title {
+    font-size: 17px;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .skills-block p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── EXPERTISE ── */
+  .expertise-section {
+    margin-top: 0;
+    margin-bottom: 48px;
+  }
+
+  /* Fluid type that reads strong at 320px, expansive at 480px */
+  .expertise-title {
+    font-size: clamp(20px, 5.5vw, 28px);
+    margin-bottom: 40px;
+    letter-spacing: -0.015em;
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .expertise-item h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .expertise-item ul li {
+    font-size: 13px;
+    padding: 4px 0;
+  }
+
+  /* ── CLOSING STATEMENT ── */
+  .closing-statement {
+    padding: 24px 20px;
+    margin-bottom: 48px;
+    border-radius: 8px;
+  }
+
+  .closing-statement h2 {
+    font-size: 19px;
+    line-height: 1.4;
+  }
+}
+
+/* ============================================================
+   TABLET PORTRAIT + LANDSCAPE  768px – 1024px
+
+   The existing max-width:900px rule already stacks the about
+   hero to 1-col at 768–900px (correct for portrait).
+   The existing max-width:768px rule collapses the work grid
+   to 1-col at exactly 768px — this overrides that to keep
+   2-col, which is readable on portrait tablet.
+
+   The 901–1024px range keeps the desktop 2-col hero but with
+   a smaller --pill-h so proportions feel deliberate.
+============================================================ */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* ── WORK EXPERIENCE GRID ──
+     Override the max-width:768px collapse — 2-col is readable
+     at tablet portrait (this rule is later in the file, wins). ── */
+  .content-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(28px, 3.5vw, 56px);
+  }
+
+  .work-col--offset {
+    padding-top: calc(32px * 1.2 + 50px + 2px);
+  }
+
+  /* Expertise grid: restore 2-col (overrides max-width:768px stack) */
+  .expertise-grid {
+    grid-template-columns: 0.5fr 1fr;
+    gap: clamp(40px, 5vw, 64px);
+  }
+
+  .expertise-section { padding: 60px 0 80px; }
+
+  /* Reading width: optimal 65–75 chars at 16px ≈ 640px */
+  .section-text { max-width: 640px; }
+
+  /* About buttons: restore inline layout on tablet */
+  .about-buttons {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .about-buttons .btn {
+    width: auto;
+    min-height: auto;
+  }
+}
+
+/* ── LANDSCAPE TABLET HERO: 901–1024px ──
+   Below 900px the hero already stacks (max-width:900px rule).
+   This block tunes the 2-col version that appears above 900px. ── */
+@media (min-width: 901px) and (max-width: 1024px) {
+
+  .about-hero-content {
+    --pill-h: min(46vh, 38vw, 400px);
+  }
+
+  .intro-heading {
+    font-size: clamp(36px, 4vw, 44px);
+    line-height: 1.15;
+  }
+}
+
+/* ============================================================
+   SMALL LAPTOP  1025px – 1280px
+============================================================ */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  .intro-heading { font-size: clamp(40px, 4.2vw, 48px); }
+
+  .section-text { max-width: 720px; }
+
+  .expertise-grid { gap: clamp(48px, 6vw, 72px); }
+}
