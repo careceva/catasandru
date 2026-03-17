@@ -224,169 +224,289 @@
   margin-bottom: 0;
 }
 
+
 /* ============================================================
-   CONTENT GRID (Work Experience + Education)
+   RESUME GRID — Experience + Sidebar
 ============================================================ */
 
-.content-grid {
+.resume-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: clamp(40px, 4vw, 80px);
+  grid-template-columns: 1fr 320px;
+  gap: clamp(48px, 6vw, 96px);
   margin-bottom: clamp(80px, 8vw, 150px);
-  width: 100%;
-  max-width: 100%;
+  align-items: start;
 }
 
-.work-experience-grid {
-  width: 100%;
-  max-width: 100%;
-}
+/* ── Experience timeline (left column) ── */
 
-.work-col h2 {
+.resume-main h2 {
   font-size: 32px;
   font-weight: 700;
   color: var(--dark);
-  margin: 0 0 40px 0;
+  margin: 0 0 48px 0;
 }
 
-/* Align col 2 (no heading) so first entry starts level with Visma in col 1 */
-.work-col--offset {
-  padding-top: calc(32px * 1.2 + 50px + 2px);
+.exp-block {
+  border-top: 1px solid rgba(38, 20, 7, 0.1);
+  padding-top: 32px;
+  margin-bottom: 48px;
 }
 
-/* --- Experience entry --- */
-.experience-entry {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 64px;
-}
-
-.experience-entry:last-child {
+.exp-block:last-child {
   margin-bottom: 0;
 }
 
-.exp-company-row {
+.exp-block-header {
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  gap: 10px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
 }
 
-.exp-company {
+.exp-block-company {
   font-size: 20px;
   font-weight: 700;
   color: var(--dark);
-  line-height: 36px;
+  line-height: 1.3;
 }
 
-.exp-period {
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--dark);
-  line-height: 36px;
-}
-
-.exp-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  opacity: 0.6;
-}
-
-.exp-meta p {
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--dark);
-  margin: 0;
-}
-
-/* --- Role sub-entries inside an experience --- */
-.exp-roles {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin-top: 26px;
-}
-
-.exp-role {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.role-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--dark);
-  opacity: 0.6;
-  line-height: 36px;
-  margin: 0;
-}
-
-.role-date {
+.exp-block-location {
   font-size: 14px;
   font-weight: 400;
   color: var(--dark);
-  opacity: 0.6;
-  line-height: 20px;
-  margin: 0;
+  opacity: 0.45;
 }
 
-/* --- Education entries --- */
-.education-entry {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 32px;
+.exp-role-entry {
+  margin-bottom: 28px;
 }
 
-.education-entry:last-of-type {
-  margin-bottom: 40px;
-}
-
-.exp-company-block {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--dark);
-  line-height: 1.35;
-  margin: 0;
-}
-
-.exp-meta-line {
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--dark);
-  opacity: 0.6;
-  margin: 0;
-  line-height: 24px;
-}
-
-/* --- Software / Soft Skills blocks --- */
-.skills-block {
-  margin-bottom: 32px;
-}
-
-.skills-block:last-child {
+.exp-role-entry:last-child {
   margin-bottom: 0;
 }
 
-.skills-title {
-  display: block;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--dark);
-  line-height: 36px;
-  margin-bottom: 6px;
+.exp-role-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
-.skills-block p {
+.exp-role-title {
   font-size: 16px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.4;
+}
+
+.exp-role-dates {
+  font-size: 13px;
   font-weight: 400;
   color: var(--dark);
-  opacity: 0.6;
-  line-height: 24px;
+  opacity: 0.45;
+  white-space: nowrap;
+}
+
+.exp-role-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--body);
+  opacity: 0.85;
   margin: 0;
+}
+
+.exp-role-bullets {
+  list-style: disc outside;
+  /* negative margin pulls bullet into the left margin;
+     padding-left brings the text back flush with everything else */
+  margin: 0 0 0 -1.1em;
+  padding-left: 1.1em;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.exp-role-bullets li {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--body);
+  opacity: 0.85;
+}
+
+/* ── Sidebar (right column) ── */
+
+.resume-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sidebar-block {
+  border-top: 1px solid rgba(38, 20, 7, 0.1);
+  padding: 28px 0;
+}
+
+.sidebar-block:last-child {
+  padding-bottom: 0;
+}
+
+.sidebar-heading {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--green-dark);
+  margin: 0 0 16px 0;
+}
+
+/* Product launches */
+.launch-card {
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  background: rgba(134, 181, 143, 0.08);
+  border-radius: 8px;
+  border-left: 3px solid var(--green);
+}
+
+.launch-card:last-child {
+  margin-bottom: 0;
+}
+
+.launch-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.launch-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--body);
+  opacity: 0.75;
+  margin: 0;
+}
+
+/* Education */
+.sidebar-item-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.sidebar-item-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--body);
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* Skill / Tool tags */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--dark);
+  background: rgba(38, 20, 7, 0.06);
+  border-radius: 99px;
+  padding: 4px 12px;
+  line-height: 1.5;
+}
+
+/* Languages */
+.lang-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lang-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lang-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.lang-level {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--green-dark);
+  background: rgba(134, 181, 143, 0.14);
+  border-radius: 99px;
+  padding: 2px 10px;
+}
+
+/* ── Responsive: sidebar stacks below experience on tablet/mobile ── */
+
+@media (max-width: 900px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-grid {
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .resume-main h2 {
+    font-size: 22px;
+    margin-bottom: 28px;
+  }
+
+  .exp-block {
+    padding-top: 24px;
+    margin-bottom: 32px;
+  }
+
+  .exp-block-company {
+    font-size: 17px;
+  }
+
+  .exp-role-entry {
+    margin-bottom: 20px;
+  }
+
+  .exp-role-title {
+    font-size: 14px;
+  }
+
+  .exp-role-dates {
+    font-size: 12px;
+  }
+
+  .exp-role-desc,
+  .exp-role-bullets li {
+    font-size: 14px;
+  }
+
+  .sidebar-heading {
+    font-size: 10px;
+  }
+
+  .launch-card {
+    padding: 12px 14px;
+  }
 }
 
 /* ============================================================
@@ -517,27 +637,9 @@
    RESPONSIVE
 ============================================================ */
 
-@media (max-width: 900px) {
-  .content-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .work-experience-grid .work-col:last-child {
-    grid-column: 1 / -1;
-  }
-}
-
 @media (max-width: 768px) {
   .about-hero-content {
     grid-template-columns: 1fr;
-  }
-
-  .content-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .work-col--offset {
-    padding-top: 0;
   }
 
   .expertise-grid {
@@ -664,79 +766,6 @@
     margin-bottom: 16px;
   }
 
-  /* ── WORK EXPERIENCE GRID ── */
-  .content-grid {
-    gap: 40px;
-    margin-bottom: 48px;
-  }
-
-  .work-col h2 {
-    font-size: 22px;
-    margin: 0 0 24px 0;
-  }
-
-  .experience-entry {
-    margin-bottom: 40px;
-  }
-
-  .exp-company {
-    font-size: 17px;
-    line-height: 1.3;
-  }
-
-  .exp-period {
-    font-size: 14px;
-    line-height: 1.3;
-  }
-
-  .exp-meta p {
-    font-size: 14px;
-    line-height: 22px;
-  }
-
-  .exp-roles {
-    gap: 20px;
-    margin-top: 16px;
-  }
-
-  .role-title {
-    font-size: 14px;
-    line-height: 1.4;
-  }
-
-  .role-date {
-    font-size: 13px;
-    line-height: 1.4;
-  }
-
-  /* ── EDUCATION / SKILLS ── */
-  .exp-company-block {
-    font-size: 17px;
-  }
-
-  .exp-meta-line {
-    font-size: 14px;
-  }
-
-  .education-entry {
-    margin-bottom: 24px;
-  }
-
-  .education-entry:last-of-type {
-    margin-bottom: 28px;
-  }
-
-  .skills-title {
-    font-size: 17px;
-    line-height: 1.4;
-    margin-bottom: 4px;
-  }
-
-  .skills-block p {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
   /* ── EXPERTISE ── */
   .expertise-section {
     margin-top: 0;
@@ -793,19 +822,7 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
-  /* ── WORK EXPERIENCE GRID ──
-     Override the max-width:768px collapse — 2-col is readable
-     at tablet portrait (this rule is later in the file, wins). ── */
-  .content-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(28px, 3.5vw, 56px);
-  }
-
-  .work-col--offset {
-    padding-top: calc(32px * 1.2 + 50px + 2px);
-  }
-
-  /* Expertise grid: restore 2-col (overrides max-width:768px stack) */
+  /* Expertise grid: restore 2-col */
   .expertise-grid {
     grid-template-columns: 0.5fr 1fr;
     gap: clamp(40px, 5vw, 64px);
@@ -813,10 +830,8 @@
 
   .expertise-section { padding: 60px 0 80px; }
 
-  /* Reading width: optimal 65–75 chars at 16px ≈ 640px */
   .section-text { max-width: 640px; }
 
-  /* About buttons: restore inline layout on tablet */
   .about-buttons {
     flex-direction: row;
     justify-content: flex-end;
