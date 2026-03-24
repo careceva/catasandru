@@ -13,8 +13,8 @@
   --white:       #ffffff;
   --green-brand: #229959;
 
-  --sans:   'Maison Neue', 'Manrope', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --script: 'SignPainter', 'Dancing Script', cursive;
+  --sans:   'Manrope', 'DM Sans', 'Maison Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+  --script: 'Dancing Script', 'SignPainter', cursive;
 
   --max-w: 1284px;
   --pad:   clamp(20px, 4vw, 80px);
@@ -1107,7 +1107,7 @@ em { font-style: normal; }
 
 /* Text styling for OSS */
 .oss-text {
-  font-family: 'Akzidenz-Grotesk Next', 'DM Sans', sans-serif;
+  font-family: 'DM Sans', 'Akzidenz-Grotesk Next', sans-serif;
   font-weight: 700;
   font-size: 18px;
   color: #fff;

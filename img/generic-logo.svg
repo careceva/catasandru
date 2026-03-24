@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" fill="none">
+  <!-- Mark: two overlapping rounded squares -->
+  <rect x="0" y="8" width="32" height="32" rx="8" fill="#1A1814"/>
+  <rect x="14" y="8" width="32" height="32" rx="8" fill="#1A1814" opacity="0.55"/>
+  <!-- Wordmark -->
+  <text x="56" y="32" font-family="DM Sans, sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#1A1814">Platform</text>
+</svg>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fieldwork — UX Case Study · Cătălin Șandru</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Manrope:wght@300;400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/logo-nav.svg">
+  <meta name="description" content="Fieldwork UX Case Study — from user interviews to AI-assisted synthesis, UX pillars, and greyscale wireframes. By Cătălin Șandru.">
+  <meta property="og:title" content="Fieldwork UX Case Study · Cătălin Șandru">
+  <meta property="og:description" content="From user interviews to greyscale wireframes — a research-first design process, powered partly by AI.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/vinst-case-study.css">
+  <style>
+    /* Cards start hidden, transition in when observed. */
+    .cs-screens [data-reveal],
+    .cs-screens [data-reveal="scale"] {
+      opacity: 0;
+      transform: translateY(24px) scale(0.97);
+      will-change: transform, opacity;
+    }
+    .cs-screens [data-reveal].is-visible {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Dark section elements are above the fold — always visible. */
+    .cs-dark-section [data-reveal],
+    .cs-dark-section [data-reveal].is-visible {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  </style>
+</head>
+<body class="vi-page">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo">
+          <img src="img/logo-nav.svg" alt="Cata">
+        </a>
+        <div class="nav-links">
+          <a href="index.html#work" class="nav-link">work</a>
+          <a href="about.html"      class="nav-link">about</a>
+          <a href="#contact"        class="nav-btn">work with me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================================================================
+       DARK SECTION — hero + quote share one background image
+  ================================================================ -->
+  <div class="cs-dark-section">
+    <img class="cs-dark-bg" src="img/vinst-bg.png" alt="" fetchpriority="high">
+    <div class="vi-dark-overlay"></div>
+
+    <!-- HERO CONTENT -->
+    <div class="cs-hero-content">
+      <div class="container">
+        <div class="cs-hero-inner">
+          <img class="cs-hero-logo" src="img/generic-logo.svg" alt="Fieldwork">
+          <div class="vi-role-pills">
+            <span class="vi-role-pill">Lead UX Designer</span>
+            <span class="vi-role-pill">User Research</span>
+            <span class="vi-role-pill">IA &amp; Wireframing</span>
+            <span class="vi-role-pill">Stakeholder Facilitation</span>
+          </div>
+          <h1 class="cs-hero-title">From user pain<br>to product clarity</h1>
+          <div class="cs-hero-body">
+            <p>A few months ago, after long negotiations with the leadership group, we made a decision: build a new face and a new experience for the main product — from scratch, with almost no constraints. No compromises for legacy code. No shortcuts because of infrastructure debt. Me and the development team knew the product well — its friction points, its red flags — but we wanted something fresh. While Christian, the lead developer, analysed what the platform could technically support, I had one job: start from the user and work forward.</p>
+            <p>I started with structured user interviews and feedback sessions. What came back was rich and messy — overlapping needs, contradicting mental models, and a long list of frustrations buried in workarounds.</p>
+            <p>That's where AI entered the process — not as a shortcut, but as a thinking partner. I used it to translate and group feedback across formats and languages, audit my UX pillars against the real data, and co-build personas grounded in behaviour patterns rather than assumption.</p>
+            <p>When it came to wireframes, everything was kept deliberately grey. Stakeholder reviews need to stay focused on flows, content, and journeys — not colour. It's the fastest way to get the right feedback at the right time, and avoid the "I don't like this blue" conversation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUOTE -->
+    <div class="cs-quote-layout">
+      <div class="container">
+        <div class="cs-quote-inner">
+          <h2 class="cs-quote-heading" data-reveal>Good design<br>starts with<br>better questions</h2>
+          <div class="cs-quote-image" data-reveal data-reveal-delay="2">
+            <img src="img/v-case/laptop.png" alt="Laptop mockup" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================================================================
+       CONTEXT BODY TEXT
+  ================================================================ -->
+  <section class="cs-context">
+    <div class="container">
+      <div class="cs-context-inner">
+        <p data-reveal>Fieldwork is a platform built for professionals navigating complex, multi-step workflows every day — people who need tools that reduce friction, not add to it.</p>
+        <p data-reveal data-reveal-delay="1">The research phase surfaced four recurring pain points: unclear status tracking, steep onboarding for new team members, missing mobile-optimised flows, and structures that prioritised data storage over actual decision-making.</p>
+        <p data-reveal data-reveal-delay="2">By the time wireframes began, every element on screen had a reason — traced back to interviews, shaped by pillars, validated by AI, and agreed on with the team. That's what a grounded design process looks like.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       PROCESS + SCREENS GRID
+  ================================================================ -->
+  <div class="cs-screens">
+    <div class="container">
+
+      <!-- 1 ── Research stats -->
+      <div class="vi-card vi-card--dark vi-card--stats" data-reveal="scale">
+        <div class="vi-stats-wrap">
+          <div class="vi-stat">
+            <span class="vi-stat-num">24</span>
+            <span class="vi-stat-label">user interviews</span>
+          </div>
+          <div class="vi-stat">
+            <span class="vi-stat-num">6</span>
+            <span class="vi-stat-label">user types identified</span>
+          </div>
+          <div class="vi-stat">
+            <span class="vi-stat-num">4</span>
+            <span class="vi-stat-label">core pain points</span>
+          </div>
+          <div class="vi-stat">
+            <span class="vi-stat-num">3</span>
+            <span class="vi-stat-label">AI-built personas</span>
+          </div>
+        </div>
+        <p class="vi-stat-caption">Research &amp; discovery phase</p>
+      </div>
+
+      <!-- 2 ── AI callout -->
+      <div class="vi-card vi-card--ai" data-reveal="scale">
+        <div class="vi-ai-inner">
+          <span class="vi-ai-badge">AI-assisted process</span>
+          <h3 class="vi-ai-heading">Where AI entered<br>my process</h3>
+          <ul class="vi-ai-list">
+            <li>Translated and grouped raw user feedback across languages and session formats — reducing weeks of manual synthesis to days</li>
+            <li>Audited UX pillars against interview data to surface gaps, blind spots, and overlapping assumptions</li>
+            <li>Co-created user personas grounded in real behaviour patterns, not gut feel or educated guesses</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3 ── UX Pillars -->
+      <div class="vi-card vi-card--beige vi-card--auto" data-reveal="scale">
+        <div class="vi-pillars-wrap">
+          <p class="vi-label">UX Pillars</p>
+          <div class="vi-pillars-grid">
+            <div class="vi-pillar">
+              <span class="vi-pillar-num">01</span>
+              <h4 class="vi-pillar-title">Clarity over features</h4>
+              <p class="vi-pillar-desc">Every screen should answer one question at a time. No information overload, no hidden complexity.</p>
+            </div>
+            <div class="vi-pillar">
+              <span class="vi-pillar-num">02</span>
+              <h4 class="vi-pillar-title">Trust through transparency</h4>
+              <p class="vi-pillar-desc">Users need to know where they are, what changed, and what to do next — at every step of the journey.</p>
+            </div>
+            <div class="vi-pillar">
+              <span class="vi-pillar-num">03</span>
+              <h4 class="vi-pillar-title">Speed for power users</h4>
+              <p class="vi-pillar-desc">Experienced users shouldn't be slowed down by onboarding flows designed for newcomers.</p>
+            </div>
+            <div class="vi-pillar">
+              <span class="vi-pillar-num">04</span>
+              <h4 class="vi-pillar-title">Mobile-first workflows</h4>
+              <p class="vi-pillar-desc">Most fieldwork happens on the go. The product had to follow the user, not the other way around.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 ── From pillars to features (tiles) -->
+      <div class="vi-card vi-card--beige vi-card--tiles" data-reveal="scale">
+        <div class="vi-tiles-wrap">
+          <p class="vi-label vi-label--muted">From pillars to features</p>
+          <div class="vi-tiles-grid">
+            <div class="vi-tile">
+              <img src="img/vinst-tile-1.svg" alt="">
+            </div>
+            <div class="vi-tile">
+              <img src="img/vinst-tile-2.svg" alt="">
+            </div>
+            <div class="vi-tile">
+              <img src="img/vinst-tile-3.svg" alt="">
+            </div>
+            <div class="vi-tile">
+              <img src="img/vinst-tile-4.svg" alt="">
+            </div>
+            <div class="vi-tile vi-tile--green">
+              <img src="img/vinst-tile-5.svg" alt="">
+            </div>
+            <div class="vi-tile vi-tile--green">
+              <img src="img/vinst-tile-6.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 ── My role card -->
+      <div class="vi-card vi-card--beige vi-card--auto" data-reveal="scale">
+        <div class="vi-role-card-inner">
+          <div class="vi-role-card-left">
+            <p class="vi-label">My role</p>
+            <h3 class="vi-role-card-title">Lead UX Designer</h3>
+            <p class="vi-role-card-desc">End-to-end ownership — from running interviews and synthesising research to defining the product direction, facilitating stakeholder reviews, and delivering validated wireframes ready for development handoff.</p>
+          </div>
+          <div class="vi-role-card-right">
+            <div class="vi-resp-tag">User Interviews</div>
+            <div class="vi-resp-tag">Research Synthesis</div>
+            <div class="vi-resp-tag vi-resp-tag--ai">AI-assisted Analysis</div>
+            <div class="vi-resp-tag">Persona Creation</div>
+            <div class="vi-resp-tag">UX Pillars</div>
+            <div class="vi-resp-tag">Feature Definition</div>
+            <div class="vi-resp-tag">Information Architecture</div>
+            <div class="vi-resp-tag">Greyscale Wireframes</div>
+            <div class="vi-resp-tag">Stakeholder Facilitation</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 ── "Grey by design" text card -->
+      <div class="vi-card vi-card--dark vi-card--auto" data-reveal="scale">
+        <div class="vi-text-inner">
+          <p class="vi-label vi-label--dim">Wireframes</p>
+          <h3 class="vi-text-heading">Grey by design</h3>
+          <p class="vi-text-body">Greyscale wireframes focus stakeholder reviews on what actually matters — flows, content hierarchy, and user journeys. No colour means no distraction. It's how you get the right feedback at the right stage, and keep conversations on the work that moves the product forward.</p>
+        </div>
+      </div>
+
+      <!-- ── ITERATION 01 ── -->
+      <div class="vi-iter-divider" data-reveal>
+        <span class="vi-iter-line"></span>
+        <span class="vi-iter-label">Iteration 01 — Initial flows</span>
+        <span class="vi-iter-line"></span>
+      </div>
+
+      <!-- 7 ── Wide wireframe (full overview) -->
+      <div class="vi-card vi-card--beige" data-reveal="scale">
+        <figure class="vi-wide-fig">
+          <img src="img/placeholder-image.svg" alt="Wireframe — overview" loading="lazy">
+          <figcaption>Full flow overview</figcaption>
+        </figure>
+      </div>
+
+      <!-- 8 & 9 ── Half row -->
+      <div class="vi-half-row" data-reveal="scale">
+        <div class="vi-card vi-card--beige vi-card--half">
+          <figure class="vi-half-fig">
+            <img src="img/placeholder-image.svg" alt="Wireframe — onboarding" loading="lazy">
+            <figcaption>Onboarding</figcaption>
+          </figure>
+        </div>
+        <div class="vi-card vi-card--beige vi-card--half">
+          <figure class="vi-half-fig">
+            <img src="img/placeholder-image.svg" alt="Wireframe — dashboard" loading="lazy">
+            <figcaption>Dashboard</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- 10 & 11 ── Half row -->
+      <div class="vi-half-row" data-reveal="scale">
+        <div class="vi-card vi-card--beige vi-card--half">
+          <figure class="vi-half-fig">
+            <img src="img/placeholder-image.svg" alt="Wireframe — detail view" loading="lazy">
+            <figcaption>Detail view</figcaption>
+          </figure>
+        </div>
+        <div class="vi-card vi-card--beige vi-card--half">
+          <figure class="vi-half-fig">
+            <img src="img/placeholder-image.svg" alt="Wireframe — list view" loading="lazy">
+            <figcaption>List view</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Feedback text card -->
+      <div class="vi-card vi-card--dark vi-card--auto" data-reveal="scale">
+        <div class="vi-text-inner">
+          <p class="vi-label vi-label--dim">Stakeholder review</p>
+          <h3 class="vi-text-heading">What round one taught us</h3>
+          <p class="vi-text-body">The first review confirmed the main flow — and surfaced two structural gaps. Navigation between context levels wasn't intuitive for new users, and the dashboard prioritised too much data at once. We took the notes, reworked the IA, and went back to the board.</p>
+        </div>
+      </div>
+
+      <!-- ── ITERATION 02 ── -->
+      <div class="vi-iter-divider" data-reveal>
+        <span class="vi-iter-line"></span>
+        <span class="vi-iter-label">Iteration 02 — Revised structure</span>
+        <span class="vi-iter-line"></span>
+      </div>
+
+      <!-- 12 & 13 ── Half row -->
+      <div class="vi-half-row" data-reveal="scale">
+        <div class="vi-card vi-card--beige vi-card--half">
+          <figure class="vi-half-fig">
+            <img src="img/placeholder-image.svg" alt="Wireframe — revised nav" loading="lazy">
+            <figcaption>Revised navigation</figcaption>
+          </figure>
+        </div>
+        <div class="vi-card vi-card--beige vi-card--half">
+          <figure class="vi-half-fig">
+            <img src="img/placeholder-image.svg" alt="Wireframe — simplified dashboard" loading="lazy">
+            <figcaption>Simplified dashboard</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- 14 ── Wide wireframe (v2 full overview) -->
+      <div class="vi-card vi-card--beige" data-reveal="scale">
+        <figure class="vi-wide-fig">
+          <img src="img/placeholder-image.svg" alt="Wireframe — revised full flow" loading="lazy">
+          <figcaption>Revised flow — stakeholder review v2</figcaption>
+        </figure>
+      </div>
+
+      <!-- 15 & 16 ── Half row -->
+      <div class="vi-half-row" data-reveal="scale">
+        <div class="vi-card vi-card--beige vi-card--half">
+          <figure class="vi-half-fig">
+            <img src="img/placeholder-image.svg" alt="Wireframe — mobile view" loading="lazy">
+            <figcaption>Mobile view</figcaption>
+          </figure>
+        </div>
+        <div class="vi-card vi-card--beige vi-card--half">
+          <figure class="vi-half-fig">
+            <img src="img/placeholder-image.svg" alt="Wireframe — empty states" loading="lazy">
+            <figcaption>Empty states</figcaption>
+          </figure>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <footer class="footer" id="contact">
+    <div class="footer-card">
+      <div class="footer-left">
+        <div class="footer-connect" data-reveal>
+          <span class="footer-lets script script-green">Let's</span>
+          <h2 class="footer-connect-heading">Connect</h2>
+        </div>
+        <div class="footer-nav-cols" data-reveal data-reveal-delay="2">
+          <nav class="footer-nav-col">
+            <a href="index.html">Home</a>
+            <a href="index.html#work">Work</a>
+            <a href="about.html">About</a>
+          </nav>
+          <nav class="footer-nav-col">
+            <a href="https://www.linkedin.com/in/catalinsandru/" target="_blank" rel="noopener">Linkedin</a>
+            <a href="https://www.instagram.com/careceva/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://unsplash.com/@catalinsandru" target="_blank" rel="noopener">Unsplash</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="dial-button-container">
+          <div class="dial-button-wrapper">
+            <div class="dial-bezel">
+              <img src="img/dial-bezel.svg" alt="" class="bezel-img">
+            </div>
+            <button class="dial-btn" id="dialBtn" aria-label="Open contact form">
+              <img src="img/dial-center.svg" alt="" class="button-center">
+              <img src="img/dial-level.svg" alt="" class="dial-level">
+              <img src="img/dial-base.svg" alt="" class="dial-base">
+            </button>
+            <div class="dial-indicator">
+              <img src="img/dial-indicator.svg" alt="" class="indicator-dot">
+            </div>
+          </div>
+        </div>
+        <span class="dial-label script script-green">Work with me</span>
+        <p class="footer-location">Bucharest, Romania</p>
+        <a href="mailto:catalin.sandru18@gmail.com" class="footer-email">catalin.sandru18@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <p>&copy; 2026 Cătălin Șandru. <span>All rights reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+
+      <!-- Form state -->
+      <div id="modalFormState" class="modal-body">
+        <div class="modal-form-col">
+          <p class="modal-eyebrow">Get in touch</p>
+          <h3 class="modal-heading">Let's <em class="script script-green">work</em> together</h3>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="field-name">Name</label>
+                <input id="field-name" type="text" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-field">
+                <label for="field-email">Email</label>
+                <input id="field-email" type="email" name="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="field-message">Message</label>
+              <textarea id="field-message" name="message" placeholder="Tell me about your project…" rows="5" required></textarea>
+            </div>
+            <p class="form-error" id="formError" hidden>Please fill in all fields before sending.</p>
+            <button type="submit" class="btn btn-green btn-full">Send message</button>
+          </form>
+        </div>
+        <div class="modal-info-col">
+          <div class="modal-info-block">
+            <p class="modal-info-label">Location</p>
+            <p class="modal-info-value">Bucharest, Romania</p>
+          </div>
+          <div class="modal-info-block">
+            <p class="modal-info-label">Email</p>
+            <a href="mailto:catalin.sandru18@gmail.com" class="modal-info-link">catalin.sandru18@gmail.com</a>
+          </div>
+          <div class="modal-info-block">
+            <p class="modal-info-label">Socials</p>
+            <div class="modal-info-links">
+              <a href="https://www.linkedin.com/in/catalinsandru/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.instagram.com/careceva/" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://unsplash.com/@catalinsandru" target="_blank" rel="noopener">Unsplash</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success state -->
+      <div id="modalSuccessState" class="modal-success" hidden>
+        <div class="success-icon">✓</div>
+        <h3 class="modal-heading">Message sent!</h3>
+        <p class="modal-success-text">I'll get back to you within 24 hours.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll Reveal -->
+  <script>
+    (function () {
+      var revealEls = document.querySelectorAll('[data-reveal]');
+      if (!revealEls.length) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            obs.unobserve(el);
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                el.classList.add('is-visible');
+              });
+            });
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(function (el) { obs.observe(el); });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var dialBtn      = document.getElementById('dialBtn');
+      var modal        = document.getElementById('contactModal');
+      var modalClose   = document.getElementById('modalClose');
+      var contactForm  = document.getElementById('contactForm');
+      var formState    = document.getElementById('modalFormState');
+      var successState = document.getElementById('modalSuccessState');
+      var formError    = document.getElementById('formError');
+
+      function closeModal() {
+        modal.classList.remove('active');
+        setTimeout(function () {
+          contactForm.reset();
+          formState.hidden = false;
+          successState.hidden = true;
+          formError.hidden = true;
+        }, 300);
+      }
+
+      if (dialBtn) {
+        dialBtn.addEventListener('click', function () {
+          dialBtn.classList.add('pressed');
+          setTimeout(function () {
+            dialBtn.classList.remove('pressed');
+            modal.classList.add('active');
+          }, 180);
+        });
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+      });
+
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name    = document.getElementById('field-name').value.trim();
+        var email   = document.getElementById('field-email').value.trim();
+        var message = document.getElementById('field-message').value.trim();
+        if (!name || !email || !message) {
+          formError.hidden = false;
+          return;
+        }
+        formError.hidden = true;
+        var subject = encodeURIComponent('Portfolio inquiry from ' + name);
+        var body    = encodeURIComponent(message + '\n\nFrom: ' + name + '\nEmail: ' + email);
+        window.location.href = 'mailto:catalin.sandru18@gmail.com?subject=' + subject + '&body=' + body;
+        formState.hidden    = true;
+        successState.hidden = false;
+      });
+    })();
+  </script>
+
+</body>
+</html>
