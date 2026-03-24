@@ -1,0 +1,909 @@
+/* ============================================================
+   VINST CASE STUDY — PAGE STYLES
+============================================================ */
+
+.vi-page {
+  background: #EBE8E0;
+}
+
+/* ============================================================
+   NAV — transparent overlay, floats above the hero image.
+============================================================ */
+
+.vi-page .nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 10;
+}
+
+.vi-page .nav .nav-logo img {
+  filter: brightness(0) invert(1);
+}
+
+.vi-page .nav .nav-link {
+  color: #fff;
+}
+
+.vi-page .nav .nav-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* ============================================================
+   DARK SECTION (hero + quote — one shared background)
+============================================================ */
+
+.cs-dark-section {
+  position: relative;
+  overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.cs-dark-bg {
+  position: absolute;
+  right: 0;
+  bottom: 22vw;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  z-index: 0;
+}
+
+/* Dark gradient overlay — fades out before the laptop so it lands on beige */
+.vi-dark-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 22vw;
+  left: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.45) 60%,
+    rgba(0, 0, 0, 0.70) 100%
+  );
+  z-index: 0;
+}
+
+/* Hero content — starts near bottom of viewport, grows with content */
+.cs-hero-content {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 70vh;
+}
+
+.cs-hero-inner {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4.5vw, 40px);
+}
+
+.cs-hero-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  align-self: flex-start;
+  filter: brightness(0) invert(1);
+}
+
+.cs-hero-title {
+  font-weight: 700;
+  font-size: clamp(40px, 4.4vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -1.28px;
+  color: #fff;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.cs-hero-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cs-hero-body p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  letter-spacing: -0.32px;
+}
+
+/* ============================================================
+   QUOTE
+============================================================ */
+
+.cs-quote-layout {
+  position: relative;
+  z-index: 1;
+  margin-top: 25vw;
+  padding-bottom: clamp(60px, 8vw, 100px);
+}
+
+.cs-quote-inner {
+  padding-top: 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 5vw, 80px);
+  align-items: center;
+}
+
+.cs-quote-heading {
+  font-weight: 700;
+  font-size: clamp(48px, 6.9vw, 100px);
+  line-height: 1;
+  letter-spacing: -2px;
+  color: #fff;
+  margin: 0;
+  text-align: center;
+}
+
+/* ============================================================
+   QUOTE MOCKUP
+============================================================ */
+
+.cs-quote-image {
+  width: 100%;
+}
+
+.cs-quote-image img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 0 auto -150px;
+  position: relative;
+}
+
+/* ============================================================
+   CONTEXT BODY TEXT
+============================================================ */
+
+.cs-context {
+  position: relative;
+  padding-bottom: clamp(40px, 8vw, 80px);
+}
+
+.cs-context-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: left;
+}
+
+.cs-context-inner p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--body);
+  margin: 0;
+}
+
+/* ============================================================
+   SCREENS GRID
+============================================================ */
+
+.cs-screens {
+  padding-bottom: clamp(80px, 8vw, 160px);
+}
+
+.cs-screens > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ============================================================
+   ROLE PILLS — hero tags
+============================================================ */
+
+.vi-role-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vi-role-pill {
+  display: inline-flex;
+  padding: 5px 12px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   ITERATION DIVIDERS
+============================================================ */
+
+.vi-iter-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: clamp(8px, 1vw, 12px) 0;
+}
+
+.vi-iter-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(38, 20, 7, 0.18);
+}
+
+.vi-iter-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(38, 20, 7, 0.4);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   BASE CARD
+   Same height ratio as VOM: 719 / 1282 ≈ 56.1%
+============================================================ */
+
+.vi-card {
+  border-radius: 36px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  height: clamp(320px, 56.1vw, 720px);
+  box-sizing: border-box;
+  outline: 1px solid rgba(26, 24, 20, 0.2);
+  outline-offset: 10px;
+}
+
+.vi-card--beige { background: #ebe8e0; }
+.vi-card--dark  { background: #111111; }
+.vi-card--ai    { background: #0a2916; }
+
+/* Auto-height cards — driven by content, min-height ensures they breathe */
+.vi-card--auto {
+  height: auto;
+  min-height: clamp(260px, 30vw, 480px);
+}
+
+/* ============================================================
+   1 — RESEARCH STATS CARD
+============================================================ */
+
+.vi-stats-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(32px, 6vw, 100px);
+  height: calc(100% - 40px); /* leave room for caption */
+  padding: clamp(40px, 5vw, 72px) clamp(32px, 5vw, 80px) 0;
+  box-sizing: border-box;
+}
+
+.vi-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.vi-stat-num {
+  font-size: clamp(52px, 5.5vw, 88px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.vi-stat-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  max-width: 110px;
+  line-height: 1.4;
+}
+
+.vi-stat-caption {
+  position: absolute;
+  bottom: clamp(20px, 2.5vw, 32px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   2 — AI CALLOUT CARD
+============================================================ */
+
+.vi-ai-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(20px, 2.5vw, 32px);
+  padding: clamp(40px, 5vw, 72px) clamp(40px, 6vw, 96px);
+  box-sizing: border-box;
+}
+
+.vi-ai-badge {
+  display: inline-flex;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  width: fit-content;
+}
+
+.vi-ai-heading {
+  font-size: clamp(28px, 3.2vw, 52px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.vi-ai-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.5vw, 20px);
+  max-width: 600px;
+}
+
+.vi-ai-list li {
+  font-size: clamp(14px, 1.2vw, 16px);
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.65;
+  padding-left: 24px;
+  position: relative;
+}
+
+.vi-ai-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #229959;
+  font-weight: 600;
+}
+
+/* ============================================================
+   3 — UX PILLARS CARD
+============================================================ */
+
+.vi-pillars-wrap {
+  padding: clamp(40px, 5vw, 64px) clamp(40px, 6vw, 80px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vw, 40px);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Shared label style */
+.vi-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(38, 20, 7, 0.45);
+}
+
+.vi-label--muted  { color: rgba(38, 20, 7, 0.45); }
+.vi-label--dim    { color: rgba(255, 255, 255, 0.35); }
+
+.vi-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 3vw, 40px) clamp(24px, 4vw, 64px);
+  flex: 1;
+  align-content: center;
+}
+
+.vi-pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vi-pillar-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: #229959;
+  letter-spacing: 0.08em;
+}
+
+.vi-pillar-title {
+  font-size: clamp(15px, 1.4vw, 19px);
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.vi-pillar-desc {
+  font-size: 13px;
+  color: var(--body);
+  line-height: 1.65;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* ============================================================
+   4 — FEATURE TILES CARD
+============================================================ */
+
+.vi-card--tiles {
+  height: clamp(260px, 38vw, 500px);
+}
+
+.vi-tiles-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(28px, 4vw, 48px) clamp(32px, 5vw, 64px);
+  gap: clamp(20px, 3vw, 36px);
+  box-sizing: border-box;
+}
+
+.vi-tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(10px, 1.5vw, 20px);
+  flex: 1;
+  align-items: center;
+}
+
+.vi-tile {
+  aspect-ratio: 1;
+  border-radius: clamp(12px, 1.5vw, 20px);
+  background: rgba(38, 20, 7, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(10px, 1.5vw, 18px);
+}
+
+.vi-tile img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.vi-tile--green {
+  background: #229959;
+}
+
+/* ============================================================
+   5 — "GREY BY DESIGN" TEXT CARD
+============================================================ */
+
+.vi-text-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(12px, 1.5vw, 20px);
+  padding: clamp(40px, 5vw, 72px) clamp(40px, 6vw, 96px);
+  box-sizing: border-box;
+}
+
+.vi-text-heading {
+  font-size: clamp(32px, 3.5vw, 56px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -1.2px;
+  margin: 0;
+}
+
+.vi-text-body {
+  font-size: clamp(14px, 1.2vw, 16px);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.75;
+  max-width: 560px;
+  margin: 0;
+}
+
+/* ============================================================
+   MY ROLE CARD
+============================================================ */
+
+.vi-role-card-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  height: 100%;
+  align-items: center;
+  padding: clamp(40px, 5vw, 64px) clamp(40px, 6vw, 80px);
+  box-sizing: border-box;
+}
+
+.vi-role-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.5vw, 20px);
+}
+
+.vi-role-card-title {
+  font-size: clamp(28px, 3vw, 48px);
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.vi-role-card-desc {
+  font-size: clamp(13px, 1.1vw, 15px);
+  color: var(--body);
+  line-height: 1.7;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.vi-role-card-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: center;
+}
+
+.vi-resp-tag {
+  display: inline-flex;
+  padding: 7px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(38, 20, 7, 0.18);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dark);
+  background: transparent;
+}
+
+.vi-resp-tag--ai {
+  background: #0a2916;
+  color: #fff;
+  border-color: transparent;
+}
+
+/* ============================================================
+   HALF-ROW  (rows 6 & 7 — two cards side by side)
+============================================================ */
+
+.vi-half-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.vi-card--half {
+  height: clamp(240px, 47.6vw, 610px);
+}
+
+.vi-half-fig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  height: 100%;
+  padding: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 40px) clamp(20px, 2.5vw, 32px);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.vi-half-fig img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================================
+   WIDE FIGURE  (card 8 — full-width wireframe)
+============================================================ */
+
+.vi-wide-fig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  height: 100%;
+  padding: clamp(40px, 5vw, 72px) clamp(24px, 6vw, 80px) clamp(20px, 2.5vw, 36px);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.vi-wide-fig img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: 900px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================================
+   FIGCAPTIONS
+============================================================ */
+
+.vi-half-fig figcaption,
+.vi-wide-fig figcaption {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--sans);
+  color: var(--dark);
+  opacity: 0.4;
+  text-align: center;
+  margin-top: -48px;
+  padding: 0;
+  line-height: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================================
+   RESPONSIVE  ≤ 900px
+============================================================ */
+
+@media (max-width: 900px) {
+  .vi-half-row {
+    grid-template-columns: 1fr;
+  }
+
+  .vi-card--half {
+    height: clamp(280px, 56.1vw, 720px);
+  }
+
+  .vi-stats-wrap {
+    flex-wrap: wrap;
+    gap: clamp(24px, 4vw, 48px);
+  }
+
+  .vi-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE  ≤ 768px
+============================================================ */
+
+@media (max-width: 768px) {
+  .cs-hero-title {
+    font-size: clamp(32px, 7vw, 56px);
+    white-space: normal;
+  }
+
+  .vi-tiles-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .vi-ai-inner {
+    padding: clamp(28px, 4vw, 48px);
+  }
+
+  .vi-pillars-wrap {
+    padding: clamp(28px, 4vw, 48px);
+  }
+}
+
+/* ============================================================
+   MOBILE  ≤ 480px
+============================================================ */
+
+@media (max-width: 480px) {
+
+  /* Hero */
+  .cs-dark-bg {
+    height: 100%;
+  }
+
+  .cs-hero-content {
+    height: auto;
+    padding-top: calc(100svh - 160px);
+    align-items: flex-start;
+    padding-bottom: 0;
+  }
+
+  .cs-hero-inner {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .cs-hero-logo { height: 36px; }
+
+  .cs-hero-title {
+    font-size: 28px;
+    white-space: normal;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+  }
+
+  .cs-hero-body { gap: 12px; }
+
+  .cs-hero-body p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  /* Quote */
+  .cs-quote-layout {
+    margin-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .cs-quote-inner { padding-top: 32px; }
+
+  .cs-quote-image img {
+    margin-bottom: -80px;
+  }
+
+  .cs-context {
+    padding-top: 110px;
+  }
+
+  .cs-quote-heading {
+    font-size: 36px;
+    letter-spacing: -1px;
+    line-height: 1.05;
+  }
+
+  /* Context */
+  .cs-context {
+    padding-top: 48px;
+    padding-bottom: 40px;
+  }
+
+  .cs-context-inner p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* Screens grid */
+  .cs-screens > .container { gap: 16px; }
+
+  /* Standard cards */
+  .vi-card {
+    height: clamp(260px, 72vw, 360px);
+    border-radius: 24px;
+    outline-offset: 6px;
+  }
+
+  .vi-card--auto {
+    height: auto;
+    min-height: 0;
+  }
+
+  /* Role pills */
+  .vi-role-pills { gap: 6px; }
+  .vi-role-pill  { font-size: 11px; padding: 4px 10px; }
+
+  /* Role card */
+  .vi-role-card-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 28px 24px;
+    align-items: flex-start;
+  }
+
+  .vi-role-card-title { font-size: 24px; letter-spacing: -0.5px; }
+
+  /* Stats */
+  .vi-stats-wrap {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 24px 24px 0;
+  }
+
+  .vi-stat-num {
+    font-size: 44px;
+  }
+
+  /* AI card */
+  .vi-ai-inner {
+    padding: 28px 24px;
+    gap: 16px;
+  }
+
+  .vi-ai-heading { font-size: 24px; letter-spacing: -0.5px; }
+
+  .vi-ai-list li { font-size: 13px; }
+
+  /* Pillars */
+  .vi-pillars-wrap { padding: 28px 24px; }
+
+  .vi-pillars-grid { grid-template-columns: 1fr; gap: 20px; }
+
+  /* Tiles */
+  .vi-card--tiles {
+    height: clamp(200px, 55vw, 280px);
+  }
+
+  .vi-tiles-wrap { padding: 20px 20px; gap: 16px; }
+
+  .vi-tiles-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+  /* Text card */
+  .vi-text-inner { padding: 28px 24px; }
+
+  .vi-text-heading { font-size: 26px; }
+
+  /* Half row */
+  .vi-half-row { gap: 16px; }
+
+  .vi-card--half { height: clamp(220px, 65vw, 300px); }
+
+  .vi-half-fig { padding: 20px 16px 10px; }
+
+  .vi-wide-fig { padding: 20px 16px 10px; }
+
+  .vi-half-fig figcaption,
+  .vi-wide-fig figcaption {
+    font-size: 12px;
+    margin-top: -32px;
+  }
+}
+
+/* ============================================================
+   TABLET PORTRAIT + LANDSCAPE  768px – 1024px
+============================================================ */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .cs-hero-inner { width: 70%; }
+
+  .cs-hero-title { font-size: clamp(36px, 4.8vw, 52px); }
+
+  .cs-quote-layout { margin-top: 8vw; }
+
+  .cs-context-inner { max-width: 640px; }
+
+  .vi-card         { height: clamp(300px, 50vw, 560px); }
+  .vi-card--tiles  { height: clamp(200px, 28vw, 340px); }
+
+  .vi-half-row          { grid-template-columns: 1fr 1fr; }
+  .vi-card--half        { height: clamp(240px, 40vw, 420px); }
+
+  .vi-role-card-inner   { gap: clamp(24px, 3vw, 48px); }
+
+  .vi-half-fig figcaption,
+  .vi-wide-fig figcaption {
+    font-size: 13px;
+    margin-top: -56px;
+  }
+}
+
+/* ============================================================
+   SMALL LAPTOP  1025px – 1280px
+============================================================ */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .cs-hero-inner    { width: 62%; }
+  .cs-context-inner { max-width: 720px; }
+}
