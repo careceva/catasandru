@@ -14,7 +14,7 @@
   --green-brand: #229959;
 
   --sans:   'Manrope', 'DM Sans', 'Maison Neue', -apple-system, BlinkMacSystemFont, sans-serif;
-  --script: 'Dancing Script', 'SignPainter', cursive;
+  --script: 'Allison', 'SignPainter', cursive;
 
   --max-w: 1284px;
   --pad:   clamp(20px, 4vw, 80px);
@@ -42,7 +42,7 @@ em { font-style: normal; }
 /* ============================================================
    TYPOGRAPHY HELPERS
 ============================================================ */
-.script        { font-family: var(--script); }
+.script        { font-family: var(--script); font-weight: 400; }
 .script-green  { color: var(--green); }
 .script-cream  { color: var(--cream); }
 
