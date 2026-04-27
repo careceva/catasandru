@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloudfinity — A web app to unify cloud files · Cătălin Șandru</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Manrope:wght@300;400;500;600;700;800&family=Allison&display=swap" rel="stylesheet">
+  <link rel="icon" href="fav.png?v=2" type="image/png">
+  <meta name="description" content="Cloudfinity — a web app to unify and categorize all your cloud files. Archive case study (2017) by Cătălin Șandru.">
+  <meta property="og:title" content="Cloudfinity Case Study · Cătălin Șandru">
+  <meta property="og:description" content="A web app to unify and categorize all your cloud files. 2017 archive.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/vinst-case-study.css">
+  <link rel="stylesheet" href="css/archive-case.css">
+  <style>
+    .cs-screens [data-reveal],
+    .cs-screens [data-reveal="scale"] {
+      opacity: 0;
+      transform: translateY(24px) scale(0.97);
+      will-change: transform, opacity;
+    }
+    .cs-screens [data-reveal].is-visible {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .cs-dark-section [data-reveal],
+    .cs-dark-section [data-reveal].is-visible {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  </style>
+</head>
+<body class="vi-page">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo">
+          <img src="img/logo-nav.svg" alt="Cata">
+        </a>
+        <div class="nav-links">
+          <a href="work.html"  class="nav-link">work</a>
+          <a href="about.html" class="nav-link">about</a>
+          <a href="#contact"   class="nav-btn">work with me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================================================================
+       DARK SECTION — hero + quote share one background image
+  ================================================================ -->
+  <div class="cs-dark-section">
+    <img class="cs-dark-bg" src="img/cloudfinity/hero-unsplash.jpg" alt="" fetchpriority="high">
+    <div class="vi-dark-overlay"></div>
+
+    <!-- HERO CONTENT -->
+    <div class="cs-hero-content">
+      <div class="container">
+        <div class="cs-hero-inner">
+          <span class="cs-hero-wordmark">Cloudfinity.io</span>
+          <div class="vi-role-pills">
+            <span class="vi-role-pill vi-role-pill--archive">Archive</span>
+            <span class="vi-role-pill">In-house Designer</span>
+            <span class="vi-role-pill">UX &amp; UI</span>
+            <span class="vi-role-pill">Wireframing</span>
+            <span class="vi-role-pill">Web App</span>
+          </div>
+          <h1 class="cs-hero-title">A web app to unify<br>all your cloud files</h1>
+          <div class="cs-hero-body">
+            <p>One of my most challenging projects.</p>
+            <p>The client's request: "Build me a web app that will unify and categorize all cloud files." Only an idea. No features, no plans.</p>
+            <p>So I knew I should start writing, not designing. First thing: I drafted the product goals, the use cases, and the happy cases, to create a clear picture of the product and to set the client's expectations.</p>
+            <p>After several meetings and Skype calls, we agreed on the minimum viable product (MVP), and I got the go-ahead to start building.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUOTE -->
+    <div class="cs-quote-layout">
+      <div class="container">
+        <div class="cs-quote-inner">
+          <h2 class="cs-quote-heading" data-reveal>Writing before<br>designing</h2>
+          <div class="cs-quote-image" data-reveal data-reveal-delay="2">
+            <img src="img/cloudfinity/mobile.png" alt="Cloudfinity mobile preview" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================================================================
+       CONTEXT BODY TEXT
+  ================================================================ -->
+  <section class="cs-context">
+    <div class="container">
+      <div class="cs-context-inner">
+        <p data-reveal>I always get a project off the ground by preparing the wireframes for the product's main pages. I make sure the clients know the wireframes are just for structure and flow.</p>
+        <p data-reveal data-reveal-delay="1">This way, they are informed that the wireframes' colors, fonts, and dividers are intermediate elements of the website.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SCREENS GRID
+  ================================================================ -->
+  <div class="cs-screens">
+    <div class="container">
+
+      <!-- 1 ── Wireframes wide -->
+      <div class="vi-card vi-card--beige" data-reveal="scale">
+        <figure class="vi-wide-fig">
+          <img src="img/cloudfinity/Wires.png" alt="Cloudfinity wireframes" loading="lazy">
+          <figcaption>Initial wireframes</figcaption>
+        </figure>
+      </div>
+
+      <!-- 2 ── Design mode (dark text) -->
+      <div class="vi-card vi-card--dark vi-card--auto" data-reveal="scale">
+        <div class="vi-text-inner">
+          <p class="vi-label vi-label--dim">Design phase</p>
+          <h3 class="vi-text-heading">Design mode</h3>
+          <p class="vi-text-body">After the stakeholders approved the wires, it was time for the design part. With little to no time to make more design iterations, I had to present what I had, right from the oven.</p>
+          <p class="vi-text-body">We decided to go for a bolder approach, using a gradient instead of a plain color, like most of the cloud hosting companies opt for. The homepage structure also went through modifications along the way, due to our approaches being submitted to user testing.</p>
+        </div>
+      </div>
+
+      <!-- 3 ── List page main wide -->
+      <div class="vi-card vi-card--beige" data-reveal="scale">
+        <figure class="vi-wide-fig">
+          <img src="img/cloudfinity/List_Page.png" alt="Cloudfinity list page" loading="lazy">
+          <figcaption>Main list page</figcaption>
+        </figure>
+      </div>
+
+      <!-- 4 ── The list page (beige text) -->
+      <div class="vi-card vi-card--beige vi-card--auto" data-reveal="scale">
+        <div class="vi-text-inner">
+          <p class="vi-label">User interaction</p>
+          <h3 class="vi-text-heading">The list page</h3>
+          <p class="vi-text-body">The central challenge on the list page was to display all the interactions that the user has with a file.</p>
+          <p class="vi-text-body">I'm not a big fan of hidden menus. But after conducting user studies, we discovered that on this particular interaction, the bullet menu is a popular pattern among our users.</p>
+          <p class="vi-text-body">Another plus was that, this way, we weren't crowding the page with lots of decisions and actions for the users to make.</p>
+        </div>
+      </div>
+
+      <!-- 5 ── List page expanded wide -->
+      <div class="vi-card vi-card--beige" data-reveal="scale">
+        <figure class="vi-wide-fig">
+          <img src="img/cloudfinity/ListPage2.png" alt="Cloudfinity list page — expanded" loading="lazy">
+          <figcaption>List page — expanded</figcaption>
+        </figure>
+      </div>
+
+      <!-- 6 ── User profiles (dark text) -->
+      <div class="vi-card vi-card--dark vi-card--auto" data-reveal="scale">
+        <div class="vi-text-inner">
+          <p class="vi-label vi-label--dim">More screens</p>
+          <h3 class="vi-text-heading">User profiles</h3>
+          <p class="vi-text-body">The entire project has 46 pages and a lot of micro-interactions. Below, you have the highly important ones.</p>
+        </div>
+      </div>
+
+      <!-- 7 & 8 ── Half row: user-profile + search -->
+      <div class="vi-half-row" data-reveal="scale">
+        <div class="vi-card vi-card--beige vi-card--half">
+          <figure class="vi-half-fig">
+            <img src="img/cloudfinity/user-profile.png" alt="User profile page" loading="lazy">
+            <figcaption>User profile page</figcaption>
+          </figure>
+        </div>
+        <div class="vi-card vi-card--beige vi-card--half">
+          <figure class="vi-half-fig">
+            <img src="img/cloudfinity/search.png" alt="Search bar interaction" loading="lazy">
+            <figcaption>Search bar interaction</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- 9 & 10 ── Half row: photos + photos-big -->
+      <div class="vi-half-row" data-reveal="scale">
+        <div class="vi-card vi-card--beige vi-card--half">
+          <figure class="vi-half-fig">
+            <img src="img/cloudfinity/photos.png" alt="Thumbnail photo preview" loading="lazy">
+            <figcaption>Thumbnail photo preview</figcaption>
+          </figure>
+        </div>
+        <div class="vi-card vi-card--beige vi-card--half">
+          <figure class="vi-half-fig">
+            <img src="img/cloudfinity/photos-big.png" alt="Big photo preview" loading="lazy">
+            <figcaption>Big photo preview</figcaption>
+          </figure>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================================================================
+       NEXT PROJECT
+  ================================================================ -->
+  <section class="cs-next-project">
+    <div class="container">
+      <a href="mbank-case-study.html" class="cs-next-link" data-reveal>
+        <span class="cs-next-label">Next project</span>
+        <span class="cs-next-title">mBank <span class="cs-next-arrow" aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <footer class="footer" id="contact">
+    <div class="footer-card">
+      <div class="footer-left">
+        <div class="footer-connect" data-reveal>
+          <span class="footer-lets script script-green">Let's</span>
+          <h2 class="footer-connect-heading">Connect</h2>
+        </div>
+        <div class="footer-nav-cols" data-reveal data-reveal-delay="2">
+          <nav class="footer-nav-col">
+            <a href="index.html">Home</a>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+          </nav>
+          <nav class="footer-nav-col">
+            <a href="https://www.linkedin.com/in/catalinsandru/" target="_blank" rel="noopener">Linkedin</a>
+            <a href="https://www.instagram.com/careceva/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://unsplash.com/@catalinsandru" target="_blank" rel="noopener">Unsplash</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="dial-button-container">
+          <div class="dial-button-wrapper">
+            <div class="dial-bezel">
+              <img src="img/dial-bezel.svg" alt="" class="bezel-img">
+            </div>
+            <button class="dial-btn" id="dialBtn" aria-label="Open contact form">
+              <img src="img/dial-center.svg" alt="" class="button-center">
+              <img src="img/dial-level.svg" alt="" class="dial-level">
+              <img src="img/dial-base.svg" alt="" class="dial-base">
+            </button>
+            <div class="dial-indicator">
+              <img src="img/dial-indicator.svg" alt="" class="indicator-dot">
+            </div>
+          </div>
+        </div>
+        <span class="dial-label script script-green">Work with me</span>
+        <p class="footer-location">Bucharest, Romania</p>
+        <a href="mailto:catalin.sandru18@gmail.com" class="footer-email">catalin.sandru18@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <p>&copy; 2026 Cătălin Șandru. <span>All rights reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <div id="modalFormState" class="modal-body">
+        <div class="modal-form-col">
+          <p class="modal-eyebrow">Get in touch</p>
+          <h3 class="modal-heading">Let's <em class="script script-green">work</em> together</h3>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="field-name">Name</label>
+                <input id="field-name" type="text" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-field">
+                <label for="field-email">Email</label>
+                <input id="field-email" type="email" name="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="field-message">Message</label>
+              <textarea id="field-message" name="message" placeholder="Tell me about your project…" rows="5" required></textarea>
+            </div>
+            <p class="form-error" id="formError" hidden>Please fill in all fields before sending.</p>
+            <button type="submit" class="btn btn-green btn-full">Send message</button>
+          </form>
+        </div>
+        <div class="modal-info-col">
+          <div class="modal-info-block">
+            <p class="modal-info-label">Location</p>
+            <p class="modal-info-value">Bucharest, Romania</p>
+          </div>
+          <div class="modal-info-block">
+            <p class="modal-info-label">Email</p>
+            <a href="mailto:catalin.sandru18@gmail.com" class="modal-info-link">catalin.sandru18@gmail.com</a>
+          </div>
+          <div class="modal-info-block">
+            <p class="modal-info-label">Socials</p>
+            <div class="modal-info-links">
+              <a href="https://www.linkedin.com/in/catalinsandru/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.instagram.com/careceva/" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://unsplash.com/@catalinsandru" target="_blank" rel="noopener">Unsplash</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="modalSuccessState" class="modal-success" hidden>
+        <div class="success-icon">✓</div>
+        <h3 class="modal-heading">Message sent!</h3>
+        <p class="modal-success-text">I'll get back to you within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Reveal -->
+  <script>
+    (function () {
+      var revealEls = document.querySelectorAll('[data-reveal]');
+      if (!revealEls.length) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            obs.unobserve(el);
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                el.classList.add('is-visible');
+              });
+            });
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(function (el) { obs.observe(el); });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var dialBtn      = document.getElementById('dialBtn');
+      var modal        = document.getElementById('contactModal');
+      var modalClose   = document.getElementById('modalClose');
+      var contactForm  = document.getElementById('contactForm');
+      var formState    = document.getElementById('modalFormState');
+      var successState = document.getElementById('modalSuccessState');
+      var formError    = document.getElementById('formError');
+
+      function closeModal() {
+        modal.classList.remove('active');
+        setTimeout(function () {
+          contactForm.reset();
+          formState.hidden = false;
+          successState.hidden = true;
+          formError.hidden = true;
+        }, 300);
+      }
+
+      if (dialBtn) {
+        dialBtn.addEventListener('click', function () {
+          dialBtn.classList.add('pressed');
+          setTimeout(function () {
+            dialBtn.classList.remove('pressed');
+            modal.classList.add('active');
+          }, 180);
+        });
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+      });
+
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name    = document.getElementById('field-name').value.trim();
+        var email   = document.getElementById('field-email').value.trim();
+        var message = document.getElementById('field-message').value.trim();
+        if (!name || !email || !message) {
+          formError.hidden = false;
+          return;
+        }
+        formError.hidden = true;
+        var subject = encodeURIComponent('Portfolio inquiry from ' + name);
+        var body    = encodeURIComponent(message + '\n\nFrom: ' + name + '\nEmail: ' + email);
+        window.location.href = 'mailto:catalin.sandru18@gmail.com?subject=' + subject + '&body=' + body;
+        formState.hidden    = true;
+        successState.hidden = false;
+      });
+    })();
+  </script>
+
+  <!-- LIGHTBOX -->
+  <div id="vi-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button id="vi-lightbox-close" aria-label="Close">&times;</button>
+    <div id="vi-lightbox-inner">
+      <img id="vi-lightbox-img" src="" alt="">
+      <p id="vi-lightbox-caption"></p>
+    </div>
+  </div>
+
+  <style>
+    .vi-half-fig, .vi-wide-fig { cursor: zoom-in; }
+    .vi-half-fig img, .vi-wide-fig img {
+      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity  0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .vi-half-fig:hover img, .vi-wide-fig:hover img {
+      transform: scale(1.04);
+      opacity: 0.88;
+    }
+    #vi-lightbox {
+      position: fixed; inset: 0; z-index: 9000;
+      display: flex; align-items: center; justify-content: center;
+      padding: 32px; box-sizing: border-box;
+      background: rgba(10, 10, 10, 0.88);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.22s ease-out;
+    }
+    #vi-lightbox.is-open { opacity: 1; pointer-events: all; }
+    #vi-lightbox-inner {
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+      transform: scale(0.94); opacity: 0;
+      transition: transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity  0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    #vi-lightbox.is-open #vi-lightbox-inner { transform: scale(1); opacity: 1; }
+    #vi-lightbox-img {
+      max-width: min(90vw, 1200px); max-height: 80vh;
+      width: auto; height: auto; object-fit: contain;
+      border-radius: 12px; box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+      display: block; cursor: zoom-out;
+    }
+    #vi-lightbox-caption {
+      font-size: 13px; font-family: var(--sans, 'DM Sans', sans-serif);
+      color: rgba(255, 255, 255, 0.45); letter-spacing: 0.04em;
+      text-align: center; margin: 0;
+    }
+    #vi-lightbox-close {
+      position: fixed; top: 24px; right: 24px;
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 22px; line-height: 1; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.18s ease, border-color 0.18s ease;
+    }
+    #vi-lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+  </style>
+
+  <script>
+    (function () {
+      var lightbox    = document.getElementById('vi-lightbox');
+      var lbImg       = document.getElementById('vi-lightbox-img');
+      var lbCaption   = document.getElementById('vi-lightbox-caption');
+      var lbClose     = document.getElementById('vi-lightbox-close');
+
+      function openLightbox(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCaption.textContent = caption || '';
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.vi-half-fig img, .vi-wide-fig img').forEach(function (img) {
+        img.parentElement.addEventListener('click', function () {
+          var caption = img.parentElement.querySelector('figcaption');
+          openLightbox(img.src, img.alt, caption ? caption.textContent : '');
+        });
+      });
+
+      lbClose.addEventListener('click', closeLightbox);
+      lbImg.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+      });
+    })();
+  </script>
+
+</body>
+</html>

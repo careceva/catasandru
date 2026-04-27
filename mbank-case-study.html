@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mBank — Mobile banking focused on saving · Cătălin Șandru</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Manrope:wght@300;400;500;600;700;800&family=Allison&display=swap" rel="stylesheet">
+  <link rel="icon" href="fav.png?v=2" type="image/png">
+  <meta name="description" content="mBank — a mobile banking app that leads users to smarter buying decisions and saving more money. Archive case study (2017) by Cătălin Șandru.">
+  <meta property="og:title" content="mBank Case Study · Cătălin Șandru">
+  <meta property="og:description" content="A mobile banking app focused on saving. 2017 archive.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/vinst-case-study.css">
+  <link rel="stylesheet" href="css/archive-case.css">
+  <style>
+    .cs-screens [data-reveal],
+    .cs-screens [data-reveal="scale"] {
+      opacity: 0;
+      transform: translateY(24px) scale(0.97);
+      will-change: transform, opacity;
+    }
+    .cs-screens [data-reveal].is-visible {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .cs-dark-section [data-reveal],
+    .cs-dark-section [data-reveal].is-visible {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  </style>
+</head>
+<body class="vi-page">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo">
+          <img src="img/logo-nav.svg" alt="Cata">
+        </a>
+        <div class="nav-links">
+          <a href="work.html"  class="nav-link">work</a>
+          <a href="about.html" class="nav-link">about</a>
+          <a href="#contact"   class="nav-btn">work with me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================================================================
+       DARK SECTION
+  ================================================================ -->
+  <div class="cs-dark-section">
+    <img class="cs-dark-bg" src="img/mbank/hero-unsplash.jpg" alt="" fetchpriority="high">
+    <div class="vi-dark-overlay"></div>
+
+    <div class="cs-hero-content">
+      <div class="container">
+        <div class="cs-hero-inner">
+          <span class="cs-hero-wordmark">mBank</span>
+          <div class="vi-role-pills">
+            <span class="vi-role-pill vi-role-pill--archive">Archive</span>
+            <span class="vi-role-pill">In-house UI Designer</span>
+            <span class="vi-role-pill">UX</span>
+            <span class="vi-role-pill">Project Manager</span>
+            <span class="vi-role-pill">Mobile Banking</span>
+          </div>
+          <h1 class="cs-hero-title">A mobile banking app<br>focused on saving</h1>
+          <div class="cs-hero-body">
+            <p>mBank is one of my biggest projects. My roles: in-house UI designer, UX, and project manager.</p>
+            <p>The project's main challenge was to create a mobile banking app that would be interactive, simple, and user-focused.</p>
+            <p>The app's objective was to lead the user to smarter buying decisions, and therefore to saving more money. At the end of the month, the saved money could be transferred to a savings or investment account.</p>
+            <p>On top of the regular functionalities of a banking app — transferring and receiving money, checking the balance, communicating with the bank, requesting a loan — users had the possibility to create a savings account based on their own goals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUOTE -->
+    <div class="cs-quote-layout">
+      <div class="container">
+        <div class="cs-quote-inner">
+          <h2 class="cs-quote-heading" data-reveal>Smarter decisions,<br>more money saved</h2>
+          <div class="cs-quote-image" data-reveal data-reveal-delay="2">
+            <img src="img/mbank/mbank-main-screens.png" alt="mBank main screens" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================================================================
+       CONTEXT BODY TEXT
+  ================================================================ -->
+  <section class="cs-context">
+    <div class="container">
+      <div class="cs-context-inner">
+        <p data-reveal>We built in-app financial goals. We found that if users can have a clear goal in mind and also visualize it, they are more willing to make it happen.</p>
+        <p data-reveal data-reveal-delay="1">Numbers, money, and banks are, for most people, either scary or boring. So we asked the users some key questions to help us along the road.</p>
+        <p data-reveal data-reveal-delay="2">After many interactions and idea-testing, we implemented the in-app financial goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SCREENS GRID
+  ================================================================ -->
+  <div class="cs-screens">
+    <div class="container">
+
+      <!-- 1 ── One time setup (dark text) -->
+      <div class="vi-card vi-card--dark vi-card--auto" data-reveal="scale">
+        <div class="vi-text-inner">
+          <p class="vi-label vi-label--dim">Security</p>
+          <h3 class="vi-text-heading">One time setup</h3>
+          <p class="vi-text-body">For safety and compliance reasons, we had to confirm login with a security token. A good compromise for us, because in the beginning we had to use it for all transactions — because you never know when a thief will pay your phone bill or see that you can save some money.</p>
+        </div>
+      </div>
+
+      <!-- 2 ── Setup flow wide -->
+      <div class="vi-card vi-card--beige" data-reveal="scale">
+        <figure class="vi-wide-fig">
+          <img src="img/mbank/m-bank-setup.png" alt="mBank one-time setup flow" loading="lazy">
+          <figcaption>One-time setup flow</figcaption>
+        </figure>
+      </div>
+
+      <!-- 3 ── Users: Ready? Set your goals. Go! (beige text) -->
+      <div class="vi-card vi-card--beige vi-card--auto" data-reveal="scale">
+        <div class="vi-text-inner">
+          <p class="vi-label">User research</p>
+          <h3 class="vi-text-heading">Ready? Set your goals. Go!</h3>
+          <p class="vi-text-body">We asked the users some key questions to help us along the road:</p>
+          <ul class="vi-text-list">
+            <li>How often do you check your mobile banking app?</li>
+            <li>What is the first thing you're checking when logging in?</li>
+            <li>What would make you happier when you checked your balance?</li>
+          </ul>
+          <p class="vi-text-body">Picture this. You are passing by a nice cruising boat, thinking that you always wanted to take some time off and go see the oceans. What if you could take your phone from the pocket, snap a picture, and set up a financial goal on the spot for accomplishing this dream? You set an amount and, based on your buying behavior, the app does the math and works toward your goal.</p>
+        </div>
+      </div>
+
+      <!-- 4 ── Goals screen wide -->
+      <div class="vi-card vi-card--beige" data-reveal="scale">
+        <figure class="vi-wide-fig">
+          <img src="img/mbank/m-Bank-goals.png" alt="mBank in-app financial goals" loading="lazy">
+          <figcaption>In-app financial goals</figcaption>
+        </figure>
+      </div>
+
+      <!-- 5 ── Behavioural learning (dark text) -->
+      <div class="vi-card vi-card--dark vi-card--auto" data-reveal="scale">
+        <div class="vi-text-inner">
+          <p class="vi-label vi-label--dim">Behaviour</p>
+          <h3 class="vi-text-heading">Learning from behaviour</h3>
+          <p class="vi-text-body">The more a client uses his credit card, the more the app will learn from his behavior. So, for example, if a user's monthly groceries are around $100, but in the last month he spent just $50, the saved amount will be automatically deposited to the financial goals set up in the app.</p>
+        </div>
+      </div>
+
+      <!-- 6 ── More screens wide -->
+      <div class="vi-card vi-card--beige" data-reveal="scale">
+        <figure class="vi-wide-fig">
+          <img src="img/mbank/more-screens.png" alt="mBank — more screens" loading="lazy">
+          <figcaption>More is better — full flows</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================================================================
+       NEXT PROJECT
+  ================================================================ -->
+  <section class="cs-next-project">
+    <div class="container">
+      <a href="places-case-study.html" class="cs-next-link" data-reveal>
+        <span class="cs-next-label">Next project</span>
+        <span class="cs-next-title">Places2Go <span class="cs-next-arrow" aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <footer class="footer" id="contact">
+    <div class="footer-card">
+      <div class="footer-left">
+        <div class="footer-connect" data-reveal>
+          <span class="footer-lets script script-green">Let's</span>
+          <h2 class="footer-connect-heading">Connect</h2>
+        </div>
+        <div class="footer-nav-cols" data-reveal data-reveal-delay="2">
+          <nav class="footer-nav-col">
+            <a href="index.html">Home</a>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+          </nav>
+          <nav class="footer-nav-col">
+            <a href="https://www.linkedin.com/in/catalinsandru/" target="_blank" rel="noopener">Linkedin</a>
+            <a href="https://www.instagram.com/careceva/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://unsplash.com/@catalinsandru" target="_blank" rel="noopener">Unsplash</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="dial-button-container">
+          <div class="dial-button-wrapper">
+            <div class="dial-bezel">
+              <img src="img/dial-bezel.svg" alt="" class="bezel-img">
+            </div>
+            <button class="dial-btn" id="dialBtn" aria-label="Open contact form">
+              <img src="img/dial-center.svg" alt="" class="button-center">
+              <img src="img/dial-level.svg" alt="" class="dial-level">
+              <img src="img/dial-base.svg" alt="" class="dial-base">
+            </button>
+            <div class="dial-indicator">
+              <img src="img/dial-indicator.svg" alt="" class="indicator-dot">
+            </div>
+          </div>
+        </div>
+        <span class="dial-label script script-green">Work with me</span>
+        <p class="footer-location">Bucharest, Romania</p>
+        <a href="mailto:catalin.sandru18@gmail.com" class="footer-email">catalin.sandru18@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <p>&copy; 2026 Cătălin Șandru. <span>All rights reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <div id="modalFormState" class="modal-body">
+        <div class="modal-form-col">
+          <p class="modal-eyebrow">Get in touch</p>
+          <h3 class="modal-heading">Let's <em class="script script-green">work</em> together</h3>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="field-name">Name</label>
+                <input id="field-name" type="text" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-field">
+                <label for="field-email">Email</label>
+                <input id="field-email" type="email" name="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="field-message">Message</label>
+              <textarea id="field-message" name="message" placeholder="Tell me about your project…" rows="5" required></textarea>
+            </div>
+            <p class="form-error" id="formError" hidden>Please fill in all fields before sending.</p>
+            <button type="submit" class="btn btn-green btn-full">Send message</button>
+          </form>
+        </div>
+        <div class="modal-info-col">
+          <div class="modal-info-block">
+            <p class="modal-info-label">Location</p>
+            <p class="modal-info-value">Bucharest, Romania</p>
+          </div>
+          <div class="modal-info-block">
+            <p class="modal-info-label">Email</p>
+            <a href="mailto:catalin.sandru18@gmail.com" class="modal-info-link">catalin.sandru18@gmail.com</a>
+          </div>
+          <div class="modal-info-block">
+            <p class="modal-info-label">Socials</p>
+            <div class="modal-info-links">
+              <a href="https://www.linkedin.com/in/catalinsandru/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.instagram.com/careceva/" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://unsplash.com/@catalinsandru" target="_blank" rel="noopener">Unsplash</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="modalSuccessState" class="modal-success" hidden>
+        <div class="success-icon">✓</div>
+        <h3 class="modal-heading">Message sent!</h3>
+        <p class="modal-success-text">I'll get back to you within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var revealEls = document.querySelectorAll('[data-reveal]');
+      if (!revealEls.length) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            obs.unobserve(el);
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                el.classList.add('is-visible');
+              });
+            });
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(function (el) { obs.observe(el); });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var dialBtn      = document.getElementById('dialBtn');
+      var modal        = document.getElementById('contactModal');
+      var modalClose   = document.getElementById('modalClose');
+      var contactForm  = document.getElementById('contactForm');
+      var formState    = document.getElementById('modalFormState');
+      var successState = document.getElementById('modalSuccessState');
+      var formError    = document.getElementById('formError');
+
+      function closeModal() {
+        modal.classList.remove('active');
+        setTimeout(function () {
+          contactForm.reset();
+          formState.hidden = false;
+          successState.hidden = true;
+          formError.hidden = true;
+        }, 300);
+      }
+
+      if (dialBtn) {
+        dialBtn.addEventListener('click', function () {
+          dialBtn.classList.add('pressed');
+          setTimeout(function () {
+            dialBtn.classList.remove('pressed');
+            modal.classList.add('active');
+          }, 180);
+        });
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+      });
+
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name    = document.getElementById('field-name').value.trim();
+        var email   = document.getElementById('field-email').value.trim();
+        var message = document.getElementById('field-message').value.trim();
+        if (!name || !email || !message) {
+          formError.hidden = false;
+          return;
+        }
+        formError.hidden = true;
+        var subject = encodeURIComponent('Portfolio inquiry from ' + name);
+        var body    = encodeURIComponent(message + '\n\nFrom: ' + name + '\nEmail: ' + email);
+        window.location.href = 'mailto:catalin.sandru18@gmail.com?subject=' + subject + '&body=' + body;
+        formState.hidden    = true;
+        successState.hidden = false;
+      });
+    })();
+  </script>
+
+  <!-- LIGHTBOX -->
+  <div id="vi-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button id="vi-lightbox-close" aria-label="Close">&times;</button>
+    <div id="vi-lightbox-inner">
+      <img id="vi-lightbox-img" src="" alt="">
+      <p id="vi-lightbox-caption"></p>
+    </div>
+  </div>
+
+  <style>
+    .vi-half-fig, .vi-wide-fig { cursor: zoom-in; }
+    .vi-half-fig img, .vi-wide-fig img {
+      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity  0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .vi-half-fig:hover img, .vi-wide-fig:hover img {
+      transform: scale(1.04);
+      opacity: 0.88;
+    }
+    #vi-lightbox {
+      position: fixed; inset: 0; z-index: 9000;
+      display: flex; align-items: center; justify-content: center;
+      padding: 32px; box-sizing: border-box;
+      background: rgba(10, 10, 10, 0.88);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.22s ease-out;
+    }
+    #vi-lightbox.is-open { opacity: 1; pointer-events: all; }
+    #vi-lightbox-inner {
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+      transform: scale(0.94); opacity: 0;
+      transition: transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity  0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    #vi-lightbox.is-open #vi-lightbox-inner { transform: scale(1); opacity: 1; }
+    #vi-lightbox-img {
+      max-width: min(90vw, 1200px); max-height: 80vh;
+      width: auto; height: auto; object-fit: contain;
+      border-radius: 12px; box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+      display: block; cursor: zoom-out;
+    }
+    #vi-lightbox-caption {
+      font-size: 13px; font-family: var(--sans, 'DM Sans', sans-serif);
+      color: rgba(255, 255, 255, 0.45); letter-spacing: 0.04em;
+      text-align: center; margin: 0;
+    }
+    #vi-lightbox-close {
+      position: fixed; top: 24px; right: 24px;
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 22px; line-height: 1; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.18s ease, border-color 0.18s ease;
+    }
+    #vi-lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+  </style>
+
+  <script>
+    (function () {
+      var lightbox    = document.getElementById('vi-lightbox');
+      var lbImg       = document.getElementById('vi-lightbox-img');
+      var lbCaption   = document.getElementById('vi-lightbox-caption');
+      var lbClose     = document.getElementById('vi-lightbox-close');
+
+      function openLightbox(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCaption.textContent = caption || '';
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.vi-half-fig img, .vi-wide-fig img').forEach(function (img) {
+        img.parentElement.addEventListener('click', function () {
+          var caption = img.parentElement.querySelector('figcaption');
+          openLightbox(img.src, img.alt, caption ? caption.textContent : '');
+        });
+      });
+
+      lbClose.addEventListener('click', closeLightbox);
+      lbImg.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+      });
+    })();
+  </script>
+
+</body>
+</html>
