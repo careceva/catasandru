@@ -8,7 +8,11 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://catasandru.com/final.mp4)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://catasandru.com/index.mp4)",
       "Bash(curl -s \"https://api.github.com/repos/careceva/catasandru/pages/builds/latest\")",
-      "Bash(curl -s \"https://api.github.com/repos/careceva/catasandru/deployments?environment=github-pages&per_page=3\")"
+      "Bash(curl -s \"https://api.github.com/repos/careceva/catasandru/deployments?environment=github-pages&per_page=3\")",
+      "Bash(/Users/catalin.sandru/Library/Python/3.9/bin/git-filter-repo --path-glob '*.mp4' --invert-paths --force)",
+      "Bash(git count-objects *)",
+      "Bash(/Users/catalin.sandru/Library/Python/3.9/bin/git-filter-repo --path-glob '*.mp4' --path-glob '*.MP4' --path-glob '*.mov' --path-glob '*.MOV' --invert-paths --force)",
+      "Bash(python3 -c \"import sys,json; s=[x for x in json.load\\(sys.stdin\\)['streams'] if x['codec_type']=='video'][0]; print\\(s['width'],'x',s['height'], s.get\\('r_frame_rate',''\\), s.get\\('bit_rate','no bitrate'\\)\\)\")"
     ],
     "additionalDirectories": [
       "/Users/catalin.sandru/.ssh"
