@@ -82,13 +82,39 @@ I still overthink buttons. It usually pays off.</p>
       <div class="rotator-card" data-reveal="scale">
         <div class="rotator-screenshot">
           <video id="rotatorVideo" autoplay muted loop playsinline preload="metadata">
-            <source src="index.mp4" type="video/mp4">
+            <source src="final.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="video-progress" id="videoProgress" role="progressbar" aria-label="Video progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-          <div class="video-progress-track">
-            <div class="video-progress-fill" id="videoProgressFill"></div>
+        <div class="video-controls">
+          <!-- Play / Pause -->
+          <button class="vc-btn" id="videoPlayBtn" aria-label="Pause">
+            <svg id="iconPause" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <rect x="2" y="2" width="4" height="12" rx="1" fill="white"/>
+              <rect x="10" y="2" width="4" height="12" rx="1" fill="white"/>
+            </svg>
+            <svg id="iconPlay" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="display:none">
+              <polygon points="3,1 14,8 3,15" fill="white"/>
+            </svg>
+          </button>
+          <!-- Progress bar -->
+          <div class="video-progress" id="videoProgress" role="progressbar" aria-label="Video progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="video-progress-track">
+              <div class="video-progress-fill" id="videoProgressFill"></div>
+            </div>
           </div>
+          <!-- Mute / Unmute -->
+          <button class="vc-btn" id="videoMuteBtn" aria-label="Unmute">
+            <svg id="iconMuted" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M2 5.5h2.5l3.5-2.5v10L4.5 10.5H2z" fill="white"/>
+              <line x1="11" y1="5" x2="15" y2="11" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="15" y1="5" x2="11" y2="11" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <svg id="iconSound" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="display:none">
+              <path d="M2 5.5h2.5l3.5-2.5v10L4.5 10.5H2z" fill="white"/>
+              <path d="M11 4c1.3 1 2.2 2.4 2.2 4s-.9 3-2.2 4" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M9.5 6.5c.7.6 1 1.2 1 1.5s-.3 .9-1 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -556,12 +582,18 @@ I still overthink buttons. It usually pays off.</p>
     })();
   </script>
 
-  <!-- ── Video progress bar ── -->
+  <!-- ── Video controls ── -->
   <script>
     (function () {
-      var video   = document.getElementById('rotatorVideo');
-      var bar     = document.getElementById('videoProgress');
-      var fill    = document.getElementById('videoProgressFill');
+      var video     = document.getElementById('rotatorVideo');
+      var bar       = document.getElementById('videoProgress');
+      var fill      = document.getElementById('videoProgressFill');
+      var playBtn   = document.getElementById('videoPlayBtn');
+      var muteBtn   = document.getElementById('videoMuteBtn');
+      var iconPlay  = document.getElementById('iconPlay');
+      var iconPause = document.getElementById('iconPause');
+      var iconSound = document.getElementById('iconSound');
+      var iconMuted = document.getElementById('iconMuted');
       if (!video || !fill || !bar) return;
 
       var rafId = null;
@@ -578,12 +610,36 @@ I still overthink buttons. It usually pays off.</p>
       function start() { if (!rafId) rafId = requestAnimationFrame(tick); }
       function stop()  { cancelAnimationFrame(rafId); rafId = null; }
 
-      video.addEventListener('play',  start);
-      video.addEventListener('pause', stop);
+      function syncPlayIcon() {
+        var paused = video.paused;
+        iconPlay.style.display  = paused  ? '' : 'none';
+        iconPause.style.display = !paused ? '' : 'none';
+        playBtn.setAttribute('aria-label', paused ? 'Play' : 'Pause');
+      }
+
+      function syncMuteIcon() {
+        iconMuted.style.display = video.muted  ? '' : 'none';
+        iconSound.style.display = !video.muted ? '' : 'none';
+        muteBtn.setAttribute('aria-label', video.muted ? 'Unmute' : 'Mute');
+      }
+
+      video.addEventListener('play',  function () { start(); syncPlayIcon(); });
+      video.addEventListener('pause', function () { stop();  syncPlayIcon(); });
       video.addEventListener('ended', stop);
+
+      playBtn.addEventListener('click', function () {
+        video.paused ? video.play() : video.pause();
+      });
+
+      muteBtn.addEventListener('click', function () {
+        video.muted = !video.muted;
+        syncMuteIcon();
+      });
 
       /* autoplay may already be running before this script executes */
       if (!video.paused) start();
+      syncPlayIcon();
+      syncMuteIcon();
 
       /* Click / tap to seek */
       bar.addEventListener('click', function (e) {
