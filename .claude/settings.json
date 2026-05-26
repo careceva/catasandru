@@ -12,10 +12,13 @@
       "Bash(/Users/catalin.sandru/Library/Python/3.9/bin/git-filter-repo --path-glob '*.mp4' --invert-paths --force)",
       "Bash(git count-objects *)",
       "Bash(/Users/catalin.sandru/Library/Python/3.9/bin/git-filter-repo --path-glob '*.mp4' --path-glob '*.MP4' --path-glob '*.mov' --path-glob '*.MOV' --invert-paths --force)",
-      "Bash(python3 -c \"import sys,json; s=[x for x in json.load\\(sys.stdin\\)['streams'] if x['codec_type']=='video'][0]; print\\(s['width'],'x',s['height'], s.get\\('r_frame_rate',''\\), s.get\\('bit_rate','no bitrate'\\)\\)\")"
+      "Bash(python3 -c \"import sys,json; s=[x for x in json.load\\(sys.stdin\\)['streams'] if x['codec_type']=='video'][0]; print\\(s['width'],'x',s['height'], s.get\\('r_frame_rate',''\\), s.get\\('bit_rate','no bitrate'\\)\\)\")",
+      "Bash(git add *)",
+      "Bash(cp /Users/catalin.sandru/Documents/Claudiu/Port/catasandru/final.mp4 /Users/catalin.sandru/Desktop/final.mp4 && git add final.mp4 && git commit -m \"Add final.mp4\" && git push origin main --force 2>&1)"
     ],
     "additionalDirectories": [
-      "/Users/catalin.sandru/.ssh"
+      "/Users/catalin.sandru/.ssh",
+      "/Users/catalin.sandru/Desktop"
     ]
   }
 }
