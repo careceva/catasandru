@@ -4,7 +4,11 @@
       "Read(//Users/catalin.sandru/.ssh/**)",
       "Bash(chmod 600 ~/.ssh/config)",
       "Bash(ffprobe -v quiet -print_format json -show_streams /Users/catalin.sandru/Documents/Claudiu/Port/catasandru/final.mp4)",
-      "Bash(mdls -name kMDItemPixelWidth -name kMDItemPixelHeight /Users/catalin.sandru/Documents/Claudiu/Port/catasandru/final.mp4)"
+      "Bash(mdls -name kMDItemPixelWidth -name kMDItemPixelHeight /Users/catalin.sandru/Documents/Claudiu/Port/catasandru/final.mp4)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://catasandru.com/final.mp4)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://catasandru.com/index.mp4)",
+      "Bash(curl -s \"https://api.github.com/repos/careceva/catasandru/pages/builds/latest\")",
+      "Bash(curl -s \"https://api.github.com/repos/careceva/catasandru/deployments?environment=github-pages&per_page=3\")"
     ],
     "additionalDirectories": [
       "/Users/catalin.sandru/.ssh"
