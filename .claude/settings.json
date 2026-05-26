@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/catalin.sandru/.ssh/**)",
+      "Bash(chmod 600 ~/.ssh/config)"
+    ],
+    "additionalDirectories": [
+      "/Users/catalin.sandru/.ssh"
+    ]
+  }
+}
