@@ -319,7 +319,7 @@ em { font-style: normal; }
   background: var(--card-bg);
   border-radius: 24px 24px 0 0;
   width: clamp(380px, 66vw, 846px);
-  height: 826px;
+  aspect-ratio: 1 / 1;
   padding: 0;
   flex-shrink: 0;
   align-self: flex-end;
@@ -327,30 +327,55 @@ em { font-style: normal; }
   position: relative;
 }
 
-/* ── Subtle gradient scrim so the bar always reads over any video frame ── */
+/* ── Gradient scrim so controls read over any video frame ── */
 .rotator-card::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 56px;
-  background: linear-gradient(to top, rgba(0,0,0,0.38) 0%, transparent 100%);
+  height: 64px;
+  background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 100%);
   pointer-events: none;
   z-index: 9;
 }
 
-/* ── Progress bar — TikTok/Instagram style ── */
-.video-progress {
+/* ── Controls bar: play · progress · mute ── */
+.video-controls {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 20px;           /* tall invisible hit zone for easy tap/click */
-  display: flex;
-  align-items: flex-end;
-  cursor: pointer;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px 10px;
+}
+
+.vc-btn {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity 0.15s;
+}
+.vc-btn:hover { opacity: 1; }
+
+/* ── Progress bar ── */
+.video-progress {
+  flex: 1;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .video-progress-track {
@@ -390,12 +415,13 @@ em { font-style: normal; }
 .rotator-screenshot video {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
+  object-position: top center;
   display: block;
 }
 .me-arch {
   width: clamp(200px, 32vw, 408px);
-  height: clamp(340px, 54vw, 690px);
+  height: clamp(266px, 46vw, 592px);
   border-radius: 999px 999px 0 0;
   overflow: hidden;
   flex-shrink: 0;
@@ -1376,7 +1402,7 @@ em { font-style: normal; }
     margin-top: -52px;
   }
 
-  /* Column layout: me-arch first (CSS order), rotator below */
+  /* Column layout: rotator first, me-arch below */
   .featured-inner {
     flex-direction: column;
     align-items: stretch;
@@ -1386,13 +1412,14 @@ em { font-style: normal; }
     justify-content: flex-start;
   }
 
-  /* Arch photo: show again, full-width portrait crop, pinned first, keep pill shape */
+  /* Arch photo: full-width portrait crop, below rotator */
   .me-arch {
     display: block;
-    order: -1;
+    order: 1;
     width: 100%;
     height: 400px;
     border-radius: 999px 999px 0 0;
+    margin-top: 32px;
   }
 
   .me-arch img {
@@ -1404,10 +1431,10 @@ em { font-style: normal; }
 
   /* Rotator: same width + corners as project cards */
   .rotator-card {
-    order: 1;
+    order: 0;
     width: 100%;
     min-width: 0;
-    height: 380px;
+    height: auto;
     padding: 0;
     border-radius: 12px;
     margin-top: 16px;
@@ -1428,7 +1455,7 @@ em { font-style: normal; }
   .rotator-screenshot video {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   /* ── ABOUT / LOGOS SECTION ── */
@@ -1633,14 +1660,14 @@ em { font-style: normal; }
   .rotator-card {
     flex: 0 0 clamp(380px, 65.4vw, 670px);
     width: clamp(380px, 65.4vw, 670px);
-    height: clamp(460px, 63.9vw, 654px);
+    height: auto;
   }
 
   /* Me arch: 311/981 ≈ 31.7% of combined card width */
   .me-arch {
     flex: 0 0 clamp(190px, 30.4vw, 311px);
     width: clamp(190px, 30.4vw, 311px);
-    height: clamp(320px, 51.6vw, 528px);
+    height: clamp(220px, 45.8vw, 469px);
   }
 
   /* Keep face centred — pull vertical position up so face stays in frame */
@@ -1736,13 +1763,13 @@ em { font-style: normal; }
   .rotator-card {
     flex: 0 0 clamp(600px, 60vw, 780px);
     width: clamp(600px, 60vw, 780px);
-    height: clamp(580px, 58.8vw, 762px);
+    height: auto;
   }
 
   .me-arch {
     flex: 0 0 clamp(260px, 27vw, 350px);
     width: clamp(260px, 27vw, 350px);
-    height: clamp(440px, 45.9vw, 595px);
+    height: clamp(420px, 42vw, 546px);
   }
 
   .me-arch img {
