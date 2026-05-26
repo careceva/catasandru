@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Read(//Users/catalin.sandru/.ssh/**)",
-      "Bash(chmod 600 ~/.ssh/config)"
+      "Bash(chmod 600 ~/.ssh/config)",
+      "Bash(ffprobe -v quiet -print_format json -show_streams /Users/catalin.sandru/Documents/Claudiu/Port/catasandru/final.mp4)",
+      "Bash(mdls -name kMDItemPixelWidth -name kMDItemPixelHeight /Users/catalin.sandru/Documents/Claudiu/Port/catasandru/final.mp4)"
     ],
     "additionalDirectories": [
       "/Users/catalin.sandru/.ssh"
