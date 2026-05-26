@@ -405,7 +405,23 @@ em { font-style: normal; }
   width: 100%;
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
+
+/* ── Cinematic letterbox bars ── */
+.rotator-screenshot::before,
+.rotator-screenshot::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 13%;
+  background: #000;
+  z-index: 2;
+  pointer-events: none;
+}
+.rotator-screenshot::before { top: 0; }
+.rotator-screenshot::after  { bottom: 0; }
 .rotator-screenshot img {
   width: 100%;
   height: 100%;
