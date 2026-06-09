@@ -10,7 +10,7 @@
   <link rel="icon" href="fav.png?v=2" type="image/png">
   <meta name="description" content="Fieldwork UX Case Study — from user interviews to AI-assisted synthesis, UX pillars, and greyscale wireframes. By Cătălin Șandru.">
   <meta property="og:title" content="Fieldwork UX Case Study · Cătălin Șandru">
-  <meta property="og:description" content="From user interviews to greyscale wireframes — a research-first design process, powered partly by AI.">
+  <meta property="og:description" content="From user interviews to greyscale wireframes: a research-first design process, powered partly by AI.">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/vinst-case-study.css">
@@ -76,10 +76,10 @@
           </div>
           <h1 class="cs-hero-title">From user pain<br>to product clarity</h1>
           <div class="cs-hero-body">
-            <p>A few months ago, after long negotiations with the leadership group, we made a decision: build a new face and a new experience for the main product — from scratch, with almost no constraints. No compromises for legacy code. No shortcuts because of infrastructure debt. Me and the development team knew the product well — its friction points, its red flags — but we wanted something fresh. While Christian, the lead developer, analysed what the platform could technically support, I had one job: start from the user and work forward.</p>
-            <p>I started with structured user interviews and feedback sessions. What came back was rich and messy — overlapping needs, contradicting mental models, and a long list of frustrations buried in workarounds.</p>
-            <p>That's where AI entered the process — not as a shortcut, but as a thinking partner. I used it to translate and group feedback across formats and languages, audit my UX pillars against the real data, and co-build personas grounded in behaviour patterns rather than assumption.</p>
-            <p>When it came to wireframes, everything was kept deliberately grey. Stakeholder reviews need to stay focused on flows, content, and journeys — not colour. It's the fastest way to get the right feedback at the right time, and avoid the "I don't like this blue" conversation.</p>
+            <p>A few months ago, after long negotiations with the leadership group, we made a decision: build a new face and a new experience for the main product, from scratch, with almost no constraints. No compromises for legacy code. No shortcuts because of infrastructure debt. The development team and I knew the product well, its friction points and its red flags, but we wanted something fresh. While Christian, the lead developer, analysed what the platform could technically support, I had one job: start from the user and work forward.</p>
+            <p>I started with structured user interviews and feedback sessions. What came back was rich and messy. Overlapping needs, contradicting mental models, and a long list of frustrations buried in workarounds.</p>
+            <p>That's where AI entered the process, not as a shortcut, but as a thinking partner. I used it to translate and group feedback across formats and languages, audit my UX pillars against the real data, and co-build personas grounded in behaviour patterns rather than assumption.</p>
+            <p>When it came to wireframes, everything was kept deliberately grey. Stakeholder reviews need to stay focused on flows, content, and journeys, not colour. It's the fastest way to get the right feedback at the right time, and avoid the "I don't like this blue" conversation.</p>
           </div>
         </div>
       </div>
@@ -105,9 +105,9 @@
   <section class="cs-context">
     <div class="container">
       <div class="cs-context-inner">
-        <p data-reveal>Fieldwork is a platform built for professionals navigating complex, multi-step workflows every day — people who need tools that reduce friction, not add to it.</p>
-        <p data-reveal data-reveal-delay="1">The research phase surfaced four recurring pain points: unclear status tracking, steep onboarding for new team members, missing mobile-optimised flows, and structures that prioritised data storage over actual decision-making.</p>
-        <p data-reveal data-reveal-delay="2">By the time wireframes began, every element on screen had a reason — traced back to interviews, shaped by pillars, validated by AI, and agreed on with the team. That's what a grounded design process looks like.</p>
+        <p data-reveal>Fieldwork is a platform built for professionals navigating complex, multi-step workflows every day. People who need tools that reduce friction, not add to it.</p>
+        <p data-reveal data-reveal-delay="1">The research phase surfaced a handful of recurring frustrations, the kind buried in workarounds people had stopped noticing.</p>
+        <p data-reveal data-reveal-delay="2">By the time wireframes began, every element on screen had a reason. Traced back to interviews, shaped by pillars, validated by AI, and agreed on with the team. That's what a grounded design process looks like.</p>
       </div>
     </div>
   </section>
@@ -117,6 +117,44 @@
   ================================================================ -->
   <div class="cs-screens">
     <div class="container">
+
+      <!-- 0a ── The Problem -->
+      <div class="vi-card vi-card--dark vi-card--auto" data-reveal="scale">
+        <div class="vi-prob-wrap">
+          <p class="vi-label vi-label--dim">The Problem</p>
+          <h3 class="vi-text-heading">Four frustrations we kept hearing</h3>
+          <div class="vi-prob-grid">
+            <div class="vi-prob-item">
+              <span class="vi-prob-num">01</span>
+              <h4 class="vi-prob-title">Unclear status tracking</h4>
+              <p class="vi-prob-desc">People couldn't tell where things stood, or what had changed since they last looked.</p>
+            </div>
+            <div class="vi-prob-item">
+              <span class="vi-prob-num">02</span>
+              <h4 class="vi-prob-title">Steep onboarding</h4>
+              <p class="vi-prob-desc">New team members needed days to get comfortable with flows built for veterans.</p>
+            </div>
+            <div class="vi-prob-item">
+              <span class="vi-prob-num">03</span>
+              <h4 class="vi-prob-title">No real mobile flows</h4>
+              <p class="vi-prob-desc">Most of the work happened in the field, but the product still assumed a desk.</p>
+            </div>
+            <div class="vi-prob-item">
+              <span class="vi-prob-num">04</span>
+              <h4 class="vi-prob-title">Storage over decisions</h4>
+              <p class="vi-prob-desc">The structure was built to hold data, not to help people act on it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 0b ── Opportunity -->
+      <div class="vi-card vi-card--beige vi-card--auto" data-reveal="scale">
+        <div class="vi-statement-inner">
+          <p class="vi-label">Opportunity</p>
+          <p class="vi-statement">A rare chance to rebuild around the user, <em>not the legacy code.</em> How might we turn a product people tolerated into one that follows them into the field?</p>
+        </div>
+      </div>
 
       <!-- 1 ── Research stats -->
       <div class="vi-card vi-card--dark vi-card--stats" data-reveal="scale">
@@ -147,7 +185,7 @@
           <div class="vi-role-card-left">
             <p class="vi-label">My role</p>
             <h3 class="vi-role-card-title">Lead UX Designer</h3>
-            <p class="vi-role-card-desc">End-to-end ownership — from running interviews and synthesising research to defining the product direction, facilitating stakeholder reviews, and delivering validated wireframes ready for development handoff.</p>
+            <p class="vi-role-card-desc">End-to-end ownership, from running interviews and synthesising research to defining the product direction, facilitating stakeholder reviews, and delivering validated wireframes ready for development handoff.</p>
           </div>
           <div class="vi-role-card-right">
             <div class="vi-resp-tag">User Interviews</div>
@@ -169,7 +207,7 @@
           <span class="vi-ai-badge">AI-assisted process</span>
           <h3 class="vi-ai-heading">Where AI entered<br>my process</h3>
           <ul class="vi-ai-list">
-            <li>Translated and grouped raw user feedback across languages and session formats — reducing weeks of manual synthesis to days</li>
+            <li>Translated and grouped raw user feedback across languages and session formats, cutting weeks of manual synthesis down to days</li>
             <li>Audited UX pillars against interview data to surface gaps, blind spots, and overlapping assumptions</li>
             <li>Co-created user personas grounded in real behaviour patterns, not gut feel or educated guesses</li>
           </ul>
@@ -189,7 +227,7 @@
             <div class="vi-pillar">
               <span class="vi-pillar-num">02</span>
               <h4 class="vi-pillar-title">Trust through transparency</h4>
-              <p class="vi-pillar-desc">Users need to know where they are, what changed, and what to do next — at every step of the journey.</p>
+              <p class="vi-pillar-desc">Users need to know where they are, what changed, and what to do next, at every step of the journey.</p>
             </div>
             <div class="vi-pillar">
               <span class="vi-pillar-num">03</span>
@@ -210,14 +248,14 @@
         <div class="vi-text-inner">
           <p class="vi-label vi-label--dim">Wireframes</p>
           <h3 class="vi-text-heading">Grey by design</h3>
-          <p class="vi-text-body">Greyscale wireframes focus stakeholder reviews on what actually matters — flows, content hierarchy, and user journeys. No colour means no distraction. It's how you get the right feedback at the right stage, and keep conversations on the work that moves the product forward.</p>
+          <p class="vi-text-body">Greyscale wireframes focus stakeholder reviews on what actually matters: flows, content hierarchy, and user journeys. No colour means no distraction. It's how you get the right feedback at the right stage, and keep conversations on the work that moves the product forward.</p>
         </div>
       </div>
 
       <!-- ── ITERATION 01 ── -->
       <div class="vi-iter-divider" data-reveal>
         <span class="vi-iter-line"></span>
-        <span class="vi-iter-label">Iteration 01 — Initial flows</span>
+        <span class="vi-iter-label">Iteration 01 · Initial flows</span>
         <span class="vi-iter-line"></span>
       </div>
 
@@ -274,7 +312,7 @@
       <!-- ── ITERATION 02 ── -->
       <div class="vi-iter-divider" data-reveal>
         <span class="vi-iter-line"></span>
-        <span class="vi-iter-label">Iteration 02 — Revised structure</span>
+        <span class="vi-iter-label">Iteration 02 · Revised structure</span>
         <span class="vi-iter-line"></span>
       </div>
 
@@ -298,8 +336,66 @@
       <div class="vi-card vi-card--beige" data-reveal="scale">
         <figure class="vi-wide-fig">
           <img src="img/v-case/revised-flow.png" alt="Wireframe — revised full flow" loading="lazy">
-          <figcaption>Revised flow — stakeholder review v2</figcaption>
+          <figcaption>Revised flow, stakeholder review v2</figcaption>
         </figure>
+      </div>
+
+      <!-- ── OUTCOME ── -->
+      <div class="vi-iter-divider" data-reveal>
+        <span class="vi-iter-line"></span>
+        <span class="vi-iter-label">Outcome</span>
+        <span class="vi-iter-line"></span>
+      </div>
+
+      <!-- Key Decisions -->
+      <div class="vi-card vi-card--beige vi-card--auto" data-reveal="scale">
+        <div class="vi-pillars-wrap">
+          <p class="vi-label">Key Decisions</p>
+          <div class="vi-pillars-grid">
+            <div class="vi-pillar">
+              <span class="vi-pillar-num">01</span>
+              <h4 class="vi-pillar-title">Lead with the numbers that matter</h4>
+              <p class="vi-pillar-desc">The dashboard opens on savings, spend, and contract performance, not marketing content.</p>
+            </div>
+            <div class="vi-pillar">
+              <span class="vi-pillar-num">02</span>
+              <h4 class="vi-pillar-title">Give cross-sell its own space</h4>
+              <p class="vi-pillar-desc">Upsell and cross-sell had value, but mixing them into the core flow created noise where users needed signal.</p>
+            </div>
+            <div class="vi-pillar">
+              <span class="vi-pillar-num">03</span>
+              <h4 class="vi-pillar-title">Restructure the IA around signal</h4>
+              <p class="vi-pillar-desc">We split decision-making content from everything else and rebuilt the navigation around that line.</p>
+            </div>
+            <div class="vi-pillar">
+              <span class="vi-pillar-num">04</span>
+              <h4 class="vi-pillar-title">Stay grey until the flows were right</h4>
+              <p class="vi-pillar-desc">Colour waited so every review stayed about structure, content, and journeys.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outcome -->
+      <div class="vi-card vi-card--dark vi-card--auto" data-reveal="scale">
+        <div class="vi-outcome-inner">
+          <p class="vi-label vi-label--dim">What it produced</p>
+          <h3 class="vi-text-heading">A validated blueprint, ready to build</h3>
+          <ul class="vi-outcome-list">
+            <li>A full set of greyscale wireframes, signed off by the leadership group across two review rounds.</li>
+            <li>An information architecture restructured around decision-making, not data storage.</li>
+            <li>Personas and UX pillars grounded in 24 real interviews, something the whole team could design against.</li>
+            <li>A clean handoff to development, with every screen traceable back to a real user need.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Reflection -->
+      <div class="vi-card vi-card--ai vi-card--auto" data-reveal="scale">
+        <div class="vi-reflection-inner">
+          <p class="vi-label vi-label--dim">Reflection</p>
+          <p class="vi-reflection-text">The hardest part was never drawing the screens. <em>It was asking better questions first,</em> and trusting the research enough to let it reshape what we thought we already knew.</p>
+        </div>
       </div>
 
 
