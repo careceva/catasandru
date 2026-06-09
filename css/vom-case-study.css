@@ -691,3 +691,420 @@
 
   .cs-context-inner  { max-width: 720px; }
 }
+
+/* ============================================================
+   ▓▓▓  NARRATIVE STORY ARC  ▓▓▓
+   Problem → Opportunity → Research → Principles → IA →
+   Flows → Exploration → Design → System → Decisions →
+   Outcome → Reflection
+   Shares the page tokens: --dark, --body, --cream, --green.
+============================================================ */
+
+/* ---- Meta bar (Role / Timeline / Platforms / Responsibilities) ----
+   Sits on the beige, just under the intro story. */
+.cs-meta {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+}
+.cs-meta > div {
+  padding-top: 22px;
+  border-top: 1.5px solid rgba(38, 20, 7, 0.18);
+}
+.cs-meta dt {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  color: var(--green-dark);
+  margin: 0 0 10px;
+}
+.cs-meta dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--dark);
+  letter-spacing: -0.2px;
+}
+
+/* ---- Generic story section ---- */
+.cs-section {
+  padding: clamp(64px, 9vw, 140px) 0;
+}
+.cs-section--tight { padding: clamp(40px, 5vw, 72px) 0; }
+
+.cs-measure {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.cs-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
+  color: var(--green-dark);
+  margin: 0 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cs-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1.5px;
+  background: var(--green-dark);
+  display: inline-block;
+}
+
+.cs-h2 {
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -1.2px;
+  color: var(--dark);
+  margin: 0 0 28px;
+}
+
+.cs-lead {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.6;
+  color: var(--dark);
+  margin: 0 0 24px;
+  font-weight: 500;
+}
+
+.cs-prose p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--body);
+  margin: 0 0 18px;
+}
+.cs-prose p:last-child { margin-bottom: 0; }
+
+/* Big two-beat statement — "Existing tools focused on structure. Not on people." */
+.cs-statement {
+  font-size: clamp(26px, 3.4vw, 44px);
+  font-weight: 600;
+  line-height: 1.22;
+  letter-spacing: -0.8px;
+  color: var(--dark);
+  margin: 40px 0 0;
+}
+.cs-statement em {
+  font-style: normal;
+  color: var(--green-dark);
+}
+
+/* Bullet list */
+.cs-bullets {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.cs-bullets li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--body);
+}
+.cs-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 11px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+/* ---- Employee journey (vertical flow) ---- */
+.cs-journey {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+}
+.cs-journey-step {
+  background: var(--cream);
+  border-radius: 999px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark);
+  outline: 1px solid rgba(38, 20, 7, 0.12);
+  text-align: center;
+}
+.cs-arrow-v {
+  width: 1.5px;
+  height: 26px;
+  background: rgba(38, 20, 7, 0.25);
+  position: relative;
+  margin: 6px 0;
+}
+.cs-arrow-v::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid rgba(38, 20, 7, 0.4);
+}
+
+/* ---- Jobs To Be Done (quote cards) ---- */
+.cs-jtbd {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 8px;
+}
+.cs-quote-card {
+  background: var(--cream);
+  border-radius: 24px;
+  padding: clamp(28px, 4vw, 44px);
+  outline: 1px solid rgba(38, 20, 7, 0.1);
+  position: relative;
+}
+.cs-quote-card p {
+  font-size: clamp(18px, 2.1vw, 24px);
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--dark);
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+.cs-quote-card::before {
+  content: "\201C";
+  font-family: Georgia, serif;
+  font-size: 64px;
+  line-height: 1;
+  color: var(--green);
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  opacity: 0.35;
+}
+
+/* ---- Card grids (principles, decisions) ---- */
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 8px;
+}
+.cs-tile {
+  background: var(--cream);
+  border-radius: 24px;
+  padding: clamp(28px, 3vw, 40px);
+  outline: 1px solid rgba(38, 20, 7, 0.1);
+}
+.cs-tile-num {
+  font-family: var(--script);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--green);
+  display: block;
+  margin-bottom: 12px;
+}
+.cs-tile h3 {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--dark);
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+.cs-tile p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--body);
+  margin: 0;
+}
+
+/* ---- User flows (horizontal) ---- */
+.cs-flow-group { margin-top: 36px; }
+.cs-flow-group:first-of-type { margin-top: 8px; }
+.cs-flow-label {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: var(--dark);
+  margin: 0 0 16px;
+}
+.cs-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.cs-flow-node {
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark);
+  outline: 1px solid rgba(38, 20, 7, 0.12);
+  white-space: nowrap;
+}
+.cs-flow-arrow {
+  color: rgba(38, 20, 7, 0.4);
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ---- Outcome ---- */
+.cs-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 8px 0 48px;
+}
+.cs-stat .cs-stat-num {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -1.6px;
+  color: var(--dark);
+  display: block;
+}
+.cs-stat .cs-stat-label {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--body);
+  margin-top: 10px;
+  display: block;
+}
+.cs-checks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.cs-checks li {
+  position: relative;
+  padding-left: 38px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--dark);
+  font-weight: 500;
+}
+.cs-checks li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---- Reflection (dark close — bookends the dark hero) ---- */
+.cs-reflection {
+  background: var(--dark);
+  border-radius: 36px;
+  padding: clamp(48px, 8vw, 110px) clamp(28px, 6vw, 96px);
+  margin-bottom: clamp(40px, 6vw, 80px);
+}
+.cs-reflection .cs-eyebrow { color: var(--green); }
+.cs-reflection .cs-eyebrow::before { background: var(--green); }
+.cs-reflection-text {
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.8px;
+  color: #fff;
+  margin: 0;
+}
+.cs-reflection-text em {
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ---- Section heading aligned with screens grid (full-width intro) ---- */
+.cs-screens-intro {
+  margin-bottom: 4px;
+}
+.cs-screens-intro .cs-measure { margin: 0; }
+
+/* ============================================================
+   MOCKUP PLACEHOLDERS  (swap for real assets later)
+============================================================ */
+.cs-ph {
+  border: 2px dashed rgba(38, 20, 7, 0.28);
+  border-radius: 36px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(38, 20, 7, 0.015) 0,
+      rgba(38, 20, 7, 0.015) 12px,
+      transparent 12px,
+      transparent 24px
+    );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  padding: 32px;
+  min-height: 320px;
+  box-sizing: border-box;
+}
+.cs-ph--wide   { aspect-ratio: 16 / 9;  min-height: 0; }
+.cs-ph--tall   { min-height: 560px; }
+.cs-ph--square { aspect-ratio: 1 / 1;  min-height: 0; }
+.cs-ph--diagram { min-height: 420px; }
+.cs-ph-tag {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--green-dark);
+}
+.cs-ph-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: -0.3px;
+}
+.cs-ph-note {
+  font-size: 13px;
+  color: var(--body);
+  opacity: 0.7;
+  max-width: 360px;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   NARRATIVE — RESPONSIVE
+============================================================ */
+@media (max-width: 768px) {
+  .cs-meta {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 28px;
+  }
+  .cs-grid { grid-template-columns: 1fr; }
+  .cs-stats { grid-template-columns: 1fr; gap: 28px; }
+  .cs-flow { flex-direction: column; align-items: flex-start; }
+  .cs-flow-arrow { transform: rotate(90deg); margin-left: 24px; }
+}
