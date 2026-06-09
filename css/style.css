@@ -119,6 +119,43 @@ em { font-style: normal; }
 }
 
 /* ============================================================
+   INDEX — fixed nav, logo revealed on scroll past the hero pill
+   (Apple-style). Links stay visible; only the logo animates.
+============================================================ */
+.page-index .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--green);
+}
+
+/* Logo hidden at the top — the big "Cătă" pill is the branding there */
+.page-index .nav-logo {
+  opacity: 0;
+  transform: translateY(-8px) scale(0.94);
+  transform-origin: left center;
+  transition: opacity 0.6s cubic-bezier(0.32, 0.72, 0, 1),
+              transform 0.6s cubic-bezier(0.32, 0.72, 0, 1);
+  pointer-events: none;
+}
+
+/* Revealed once the pill scrolls up under the nav */
+.page-index .nav.nav-logo-in .nav-logo {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-index .nav-logo {
+    transition: opacity 0.2s linear;
+    transform: none;
+  }
+}
+
+/* ============================================================
    HERO  — two-column (pill left | text right)
 ============================================================ */
 .hero {
