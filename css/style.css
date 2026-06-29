@@ -276,12 +276,12 @@ em { font-style: normal; }
 /* "Hi, I'm" */
 .hero-hi-text {
   font-family: var(--script);
-  font-size: clamp(16px, 1.8vw, 28px);
+  font-size: clamp(32px, 3.6vw, 56px);
   color: var(--body);
   opacity: 0.9;
   line-height: normal;
   position: absolute;
-  left: 74%;
+  left: 15%;
   top: -1em;
   white-space: nowrap;
 }
@@ -316,8 +316,8 @@ em { font-style: normal; }
 /* Bio copy */
 .hero-bio {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 20px;
+  line-height: 28px;
   color: var(--body);
   opacity: .9;
   max-width: clamp(220px, 22vw, 320px);
@@ -925,7 +925,7 @@ em { font-style: normal; }
 /* Label + contact info under dial */
 .dial-label {
   font-family: var(--script);
-  font-size: 30px;
+  font-size: 60px;
   color: var(--green);
   letter-spacing: -0.6px;
   display: block;
@@ -1192,6 +1192,48 @@ em { font-style: normal; }
   color: #fff;
 }
 
+/* ── Advantage Design System card ── */
+.project-bg--ads {
+  background-color: #0a1024;
+}
+.project-bg--ads::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(115, 171, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(115, 171, 255, 0.07) 1px, transparent 1px),
+    radial-gradient(120% 90% at 72% 6%, rgba(33, 112, 237, 0.45), transparent 60%);
+  background-size: 48px 48px, 48px 48px, 100% 100%;
+}
+
+.ads-wordmark {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.3px;
+  color: #fff;
+}
+.ads-wordmark-sub {
+  margin-left: 12px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.project-laptop--framed img {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
 /* ============================================================
    HERO HEADLINE — letter-by-letter reveal
 ============================================================ */
@@ -1412,9 +1454,9 @@ em { font-style: normal; }
 
   /* "Hi, I'm" — upper right of the logo */
   .hero-hi-text {
-    font-size: 14px;
+    font-size: clamp(28px, 10.8vw, 42px); /* ~42px at 390px, scales down on small phones */
     top: -1.3em;
-    left: 56%;
+    left: 22%;
     white-space: nowrap;
     overflow: visible;
   }
@@ -1425,6 +1467,12 @@ em { font-style: normal; }
     white-space: normal;
     letter-spacing: -0.8px;
     line-height: 1.6;
+  }
+
+  /* "Senior Product Designer" script — larger, no negative tracking on mobile */
+  .hero-headline .hl-script {
+    font-size: 1.7em;
+    letter-spacing: 0;
   }
 
   .hero-right {
@@ -1633,7 +1681,7 @@ em { font-style: normal; }
   }
 
   .playground-label {
-    font-size: clamp(28px, 8vw, 40px);
+    font-size: 60px; /* match "Work with me" (.dial-label) on mobile */
   }
 
   .playground-heading {
@@ -1851,4 +1899,137 @@ em { font-style: normal; }
     margin-top: -20px;   /* 340×(1−0.88)/2 ≈ 20px */
     margin-bottom: 34px; /* 54px − 20px */
   }
+}
+
+/* ============================================================
+   PROJECT PAGER — move between case studies
+   Bidirectional nav (prev / all-work / next) shown at the end
+   of every case study. Loops, so a project is never a dead end.
+============================================================ */
+.cs-pager {
+  padding: clamp(48px, 7vw, 96px) 0 clamp(56px, 7vw, 104px);
+}
+
+/* — Top bar: previous project + escape to the full index — */
+.cs-pager-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: clamp(20px, 3vw, 32px);
+  margin-bottom: clamp(24px, 3.5vw, 40px);
+  border-bottom: 1px solid rgba(20, 20, 20, 0.12);
+}
+
+.cs-pager-side {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 44px;
+  color: var(--dark);
+}
+.cs-pager-side-arrow {
+  font-size: 20px;
+  line-height: 1;
+  color: var(--green-dark);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.cs-pager-side:hover .cs-pager-side-arrow { transform: translateX(-6px); }
+.cs-pager-side-text  { display: flex; flex-direction: column; gap: 2px; }
+.cs-pager-side-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; opacity: 0.5;
+}
+.cs-pager-side-title { font-size: 16px; font-weight: 600; letter-spacing: -0.2px; }
+
+.cs-pager-index {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark);
+  border: 1.5px solid rgba(20, 20, 20, 0.18);
+  border-radius: 100px;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.cs-pager-index:hover { background: var(--dark); color: #fff; border-color: var(--dark); }
+.cs-pager-index-dots   { display: inline-flex; gap: 3px; }
+.cs-pager-index-dots i { width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
+
+/* — Hero "Next project" card with live preview — */
+.cs-pager-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(20px, 4vw, 56px);
+  padding: clamp(28px, 4vw, 48px) clamp(28px, 5vw, 64px);
+  border-radius: clamp(24px, 3vw, 36px);
+  background: #111;
+  color: #fff;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.35s ease;
+}
+.cs-pager-next:hover { transform: translateY(-3px); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18); }
+
+.cs-pager-next-text  { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.cs-pager-next-label {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(255, 255, 255, 0.45);
+}
+.cs-pager-next-title {
+  display: inline-flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  font-size: clamp(30px, 4.5vw, 56px); font-weight: 700;
+  letter-spacing: -1px; line-height: 1.04; color: #fff;
+}
+.cs-pager-next-arrow {
+  display: inline-block; color: var(--green);
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.cs-pager-next:hover .cs-pager-next-arrow { transform: translateX(12px); }
+.cs-pager-next-sub {
+  font-size: clamp(14px, 1.6vw, 17px); font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.cs-pager-next-media {
+  flex-shrink: 0;
+  width: clamp(150px, 26vw, 320px);
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+.cs-pager-next-media img {
+  width: 100%; height: 100%; display: block; object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.cs-pager-next:hover .cs-pager-next-media img { transform: scale(1.06); }
+
+/* — Keyboard focus — */
+.cs-pager a:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+@media (max-width: 720px) {
+  .cs-pager-next        { flex-direction: column; align-items: flex-start; }
+  .cs-pager-next-media  { order: -1; width: 100%; aspect-ratio: 16 / 9; }
+  .cs-pager-side-title  { font-size: 15px; }
+}
+@media (max-width: 480px) {
+  .cs-pager-top   { flex-direction: column; align-items: stretch; gap: 14px; }
+  .cs-pager-index { justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-pager-next,
+  .cs-pager-next-media img,
+  .cs-pager-next-arrow,
+  .cs-pager-side-arrow { transition: none; }
+  .cs-pager-next:hover { transform: none; }
+  .cs-pager-next:hover .cs-pager-next-media img { transform: none; }
 }

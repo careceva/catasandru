@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advantage Design System — Case Study · Cătălin Șandru</title>
+  <meta name="theme-color" content="#0a1024">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=Manrope:wght@300;400;500;600;700;800&family=Allison&display=swap" rel="stylesheet">
+  <link rel="icon" href="fav.png?v=2" type="image/png">
+  <meta name="description" content="Building the Advantage Design System — a Figma-to-production pipeline wired for AI agents. Tokens, a shadcn registry, Storybook, and an agent-native operating model. By Cătălin Șandru.">
+  <meta property="og:title" content="Advantage Design System — Case Study · Cătălin Șandru">
+  <meta property="og:description" content="From Figma tokens to production code, wired so humans and AI agents build on-system by default.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/advantage-ds-case-study.css">
+</head>
+<body class="cs-page">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo">
+          <img src="img/logo-nav.svg" alt="Cata">
+        </a>
+        <div class="nav-links">
+          <a href="work.html" class="nav-link">work</a>
+          <a href="about.html" class="nav-link">about</a>
+          <a href="#contact" class="nav-btn">work with me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================================================================
+       DARK SECTION — hero + statement share one blueprint background
+  ================================================================ -->
+  <div class="cs-dark-section">
+
+    <!-- HERO -->
+    <div class="cs-hero-content">
+      <div class="container">
+        <div class="cs-hero-inner">
+          <p class="cs-hero-eyebrow">Design System · Figma → Storybook → Production</p>
+          <h1 class="cs-hero-title">A design system<br>that builds <em>itself</em></h1>
+          <div class="cs-hero-body">
+            <p>Three brands, designers in Figma, engineers in code — and the two drifting apart. I built the connective tissue between them.</p>
+            <p>Tokens live in Figma and sync to GitHub. A build step turns them into code. Components live in Storybook and ship through a registry that deploys on Vercel — change a color in Figma and it reaches production with nobody re-typing a hex. I'm a product designer, and I built the whole pipeline myself, with AI as my engineering partner.</p>
+          </div>
+          <div class="cs-hero-chips">
+            <span class="cs-chip">Figma Token Studio</span>
+            <span class="cs-chip">GitHub</span>
+            <span class="cs-chip">Style Dictionary</span>
+            <span class="cs-chip">Tailwind&nbsp;v4</span>
+            <span class="cs-chip">Storybook</span>
+            <span class="cs-chip">Vercel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEVICE — the design system's own landing page -->
+    <div class="cs-hero-device">
+      <div class="container">
+        <figure data-reveal>
+          <img src="img/ds-landing.png" alt="The Advantage Design System landing page — “Make design process self-driving” — with LogBuy, Vinst, Seiva, GitHub, Figma and Tokens Studio" loading="lazy">
+          <figcaption>The system's own front door — built on the same tokens and components</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- STATEMENT -->
+    <div class="cs-hero-statement">
+      <div class="container">
+        <div class="cs-measure">
+          <p class="cs-statement-lead" data-reveal>A design system isn't a folder of components. It's the <em>shortest path</em> between a decision and the thing that ships&nbsp;— and I wanted that path to run on its own.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================================================================
+       CONTEXT
+  ================================================================ -->
+  <section class="cs-context">
+    <div class="container">
+      <div class="cs-context-inner">
+        <p data-reveal>Visma is one of Europe's largest software groups — millions of customers across dozens of markets. Inside it, <strong>Advantage</strong> is one of three sibling design systems I help shape, each its own brand with its own scope. They can't share a codebase, but they all have the same job: make the right design decision the easiest one to ship.</p>
+        <p data-reveal data-reveal-delay="1">Advantage is where I pushed that idea the furthest. The brief I set myself was simple to say and hard to do: <strong>one source of truth in Figma, flowing into code on its own, with the brand built into every step instead of left to good intentions.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       META BAR
+  ================================================================ -->
+  <section class="cs-section--tight">
+    <div class="container">
+      <dl class="cs-meta" data-reveal>
+        <div>
+          <dt>Role</dt>
+          <dd>Senior Product Designer</dd>
+        </div>
+        <div>
+          <dt>Timeline</dt>
+          <dd>2025–2026</dd>
+        </div>
+        <div>
+          <dt>Built by</dt>
+          <dd>One product designer, with AI as engineering partner</dd>
+        </div>
+        <div>
+          <dt>Stack</dt>
+          <dd>Figma · Style Dictionary · Tailwind&nbsp;v4 · shadcn · Storybook · GitHub · Vercel</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       THE PROBLEM
+  ================================================================ -->
+  <section class="cs-section">
+    <div class="container">
+      <div class="cs-measure">
+        <p class="cs-eyebrow" data-reveal>The Problem</p>
+        <h2 class="cs-h2" data-reveal>Design systems don't fail at the component. They fail at the handoff.</h2>
+        <div class="cs-prose" data-reveal data-reveal-delay="1">
+          <p>Every team has the same Figma library and the same good intentions. The drift creeps in between the tools, in the gaps nobody owns:</p>
+        </div>
+        <ul class="cs-bullets" data-reveal data-reveal-delay="1">
+          <li><strong>Tokens get duplicated.</strong> A hex in Figma, a different hex in CSS, and no one's sure which is canonical.</li>
+          <li><strong>Components get re-built per project.</strong> Each team hand-rolls its own button, slightly off, forever.</li>
+          <li><strong>Deploys are manual and fragile.</strong> A token change means someone remembering to rebuild, re-export, and re-publish — so it often doesn't.</li>
+          <li><strong>AI assistants invent UI.</strong> Ask a coding agent for a button and it makes up a plausible, off-brand one from its training data.</li>
+        </ul>
+        <p class="cs-statement" data-reveal>The gap was never the components.<br><em>It was the pipeline between decision and default.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       OPPORTUNITY
+  ================================================================ -->
+  <section class="cs-section cs-section--tight">
+    <div class="container">
+      <div class="cs-measure">
+        <p class="cs-eyebrow" data-reveal>Opportunity</p>
+        <h2 class="cs-h2" data-reveal>How do I make a change in Figma show up in production — without anyone copying values by hand?</h2>
+        <div class="cs-prose" data-reveal data-reveal-delay="1">
+          <p>That question reframed the whole thing. I wasn't shipping a UI kit; I was designing the shortest distance between a design decision and the code that honors it — and making the automated path the easy one, so the right thing happened by default.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       THE OPERATING MODEL — pipeline diagram (centerpiece)
+  ================================================================ -->
+  <section class="cs-section">
+    <div class="container">
+      <div class="cs-measure cs-measure--wide">
+        <p class="cs-eyebrow" data-reveal>The Operating Model</p>
+        <h2 class="cs-h2" data-reveal>One pipeline, end to end</h2>
+        <div class="cs-prose" data-reveal data-reveal-delay="1">
+          <p>A single decision in Figma travels through six automated stages and arrives as installable, themed, accessible code. Nothing is hand-copied between stages — each one is generated from the one before it.</p>
+        </div>
+      </div>
+
+      <div class="cs-pipeline" data-reveal data-reveal-delay="1">
+        <div class="cs-pipe-track">
+          <div class="cs-pipe-node cs-pipe-node--source">
+            <span class="cs-pipe-step">Source</span>
+            <span class="cs-pipe-label">Figma · Token Studio</span>
+            <span class="cs-pipe-desc">Colors, type, radius &amp; shadows edited as variables, synced to Git.</span>
+          </div>
+          <span class="cs-pipe-arrow">→</span>
+          <div class="cs-pipe-node">
+            <span class="cs-pipe-step">Truth</span>
+            <span class="cs-pipe-label">tokens.json</span>
+            <span class="cs-pipe-desc">The single source of truth — W3C design-token spec, versioned in the repo.</span>
+          </div>
+          <span class="cs-pipe-arrow">→</span>
+          <div class="cs-pipe-node">
+            <span class="cs-pipe-step">Build</span>
+            <span class="cs-pipe-label">Style Dictionary</span>
+            <span class="cs-pipe-desc">Transforms + a sanitize pass turn tokens into clean CSS variables.</span>
+          </div>
+          <span class="cs-pipe-arrow">→</span>
+          <div class="cs-pipe-node">
+            <span class="cs-pipe-step">Theme</span>
+            <span class="cs-pipe-label">variables.css → @theme</span>
+            <span class="cs-pipe-desc">Semantic tokens bridged into Tailwind v4 so utilities stay in sync.</span>
+          </div>
+          <span class="cs-pipe-arrow">→</span>
+          <div class="cs-pipe-node">
+            <span class="cs-pipe-step">Distribute</span>
+            <span class="cs-pipe-label">shadcn registry</span>
+            <span class="cs-pipe-desc">49 themed components, installed by CLI — consumers own the code.</span>
+          </div>
+          <span class="cs-pipe-arrow">→</span>
+          <div class="cs-pipe-node cs-pipe-node--ai">
+            <span class="cs-pipe-step">Consume</span>
+            <span class="cs-pipe-label">Humans + AI agents</span>
+            <span class="cs-pipe-desc">Storybook for people; AGENTS.md + MCP so agents build on-system.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Behind-the-scenes Storybook shot -->
+  <div class="cs-screens">
+    <div class="container">
+      <div class="cs-card" data-reveal>
+        <figure class="cs-shot">
+          <img src="img/ads/storybook-ui.png" alt="The Advantage Storybook — component sidebar, Button variants in Vivid Blue, and the live controls panel" loading="lazy">
+          <figcaption>The living system — Storybook, with every component, its states, and live controls</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       LAYER 1 — TOKENS
+  ================================================================ -->
+  <section class="cs-section cs-section--tight">
+    <div class="container">
+      <div class="cs-measure">
+        <p class="cs-layer-tag" data-reveal><b>Layer 01</b> · Tokens</p>
+        <h2 class="cs-h2" data-reveal>Figma is the source of truth — not a mirror of it</h2>
+        <div class="cs-prose" data-reveal data-reveal-delay="1">
+          <p>Every value originates in <strong>Figma Token Studio</strong> and is exported to <code>tokens.json</code>. No one edits color in code. The key decision here was separating <strong>raw palette</strong> from <strong>semantic intent</strong>: components never reference <code>--brand-primary</code> directly — they reference <code>--general-primary</code>. Swap the brand, the components don't move.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-screens">
+    <div class="container">
+
+      <!-- HTML-rendered token swatches (real values) -->
+      <div class="cs-card cs-card--beige" data-reveal style="padding: clamp(24px,4vw,44px);">
+        <div class="cs-swatches">
+          <div class="cs-swatch">
+            <span class="cs-swatch-chip" style="background:#1b64dc;"></span>
+            <span class="cs-swatch-meta"><span class="cs-swatch-name">--general-primary</span><span class="cs-swatch-val">#1B64DC · Vivid Blue</span></span>
+          </div>
+          <div class="cs-swatch">
+            <span class="cs-swatch-chip" style="background:#dbe9ff;"></span>
+            <span class="cs-swatch-meta"><span class="cs-swatch-name">--general-secondary</span><span class="cs-swatch-val">#DBE9FF</span></span>
+          </div>
+          <div class="cs-swatch">
+            <span class="cs-swatch-chip" style="background:#ff9b3d;"></span>
+            <span class="cs-swatch-meta"><span class="cs-swatch-name">--general-accent</span><span class="cs-swatch-val">#FF9B3D · highlights only</span></span>
+          </div>
+          <div class="cs-swatch">
+            <span class="cs-swatch-chip" style="background:#dc2626;"></span>
+            <span class="cs-swatch-meta"><span class="cs-swatch-name">--general-destructive</span><span class="cs-swatch-val">#DC2626</span></span>
+          </div>
+          <div class="cs-swatch">
+            <span class="cs-swatch-chip" style="background:#fafafa; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);"></span>
+            <span class="cs-swatch-meta"><span class="cs-swatch-name">--general-background</span><span class="cs-swatch-val">#FAFAFA</span></span>
+          </div>
+          <div class="cs-swatch">
+            <span class="cs-swatch-chip" style="background:#0f0f0f;"></span>
+            <span class="cs-swatch-meta"><span class="cs-swatch-name">--general-foreground</span><span class="cs-swatch-val">#0F0F0F · all text</span></span>
+          </div>
+          <div class="cs-swatch">
+            <span class="cs-swatch-chip" style="background:#707070;"></span>
+            <span class="cs-swatch-meta"><span class="cs-swatch-name">--general-muted-foreground</span><span class="cs-swatch-val">#707070</span></span>
+          </div>
+          <div class="cs-swatch">
+            <span class="cs-swatch-chip" style="background:#bdd7ff;"></span>
+            <span class="cs-swatch-meta"><span class="cs-swatch-name">--general-border</span><span class="cs-swatch-val">#BDD7FF</span></span>
+          </div>
+        </div>
+        <figcaption style="font-size:13px;font-family:var(--sans);color:var(--dark);opacity:.45;text-align:center;padding-top:22px;">Semantic color tokens — generated from Token Studio, used in every component</figcaption>
+      </div>
+
+      <!-- Swap-able Figma slot -->
+      <div class="cs-slot" data-reveal>
+        <span class="cs-slot-tag">Figma export — drop in later</span>
+        <span class="cs-slot-title">Token Studio variables panel</span>
+        <span class="cs-slot-note">Replace this slot with a screenshot of the Advantage variables in Figma — save it to <code>img/ads/figma-tokens.png</code> and swap the image in.</span>
+      </div>
+
+      <!-- Style Dictionary config code -->
+      <div data-reveal>
+        <div class="cs-code">
+          <div class="cs-code-bar">
+            <span class="cs-code-dot"></span><span class="cs-code-dot"></span><span class="cs-code-dot"></span>
+            <span class="cs-code-file">config.js — Style Dictionary</span>
+          </div>
+<pre><span class="c">// Token Studio JSON → kebab-case CSS variables</span>
+<span class="k">export default</span> {
+  tokens: merged,
+  preprocessors: [<span class="s">'tokens-studio'</span>],
+  platforms: {
+    css: {
+      transformGroup: <span class="s">'tokens-studio'</span>,
+      transforms: [<span class="s">'name/kebab'</span>],     <span class="c">// --general-primary</span>
+      buildPath: <span class="s">'build/css/'</span>,
+      files: [{ destination: <span class="s">'variables.css'</span>, format: <span class="s">'css/variables'</span> }],
+    },
+  },
+};</pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================================================================
+       LAYER 2 — THE BRIDGE
+  ================================================================ -->
+  <section class="cs-section cs-section--tight">
+    <div class="container">
+      <div class="cs-measure">
+        <p class="cs-layer-tag" data-reveal><b>Layer 02</b> · The Bridge</p>
+        <h2 class="cs-h2" data-reveal>One file keeps Tailwind honest</h2>
+        <div class="cs-prose" data-reveal data-reveal-delay="1">
+          <p>Rather than hard-coding values into a Tailwind config (which would instantly drift from Figma), a single <code>@theme</code> block aliases Tailwind's utility names onto the semantic tokens. Developers write familiar classes like <code>bg-primary</code>; under the hood every one resolves to a Token&nbsp;Studio value. Change the token, every utility updates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-screens">
+    <div class="container">
+      <div data-reveal>
+        <div class="cs-code">
+          <div class="cs-code-bar">
+            <span class="cs-code-dot"></span><span class="cs-code-dot"></span><span class="cs-code-dot"></span>
+            <span class="cs-code-file">index.css — the Tailwind v4 bridge</span>
+          </div>
+<pre><span class="k">@import</span> <span class="s">"tailwindcss"</span>;
+<span class="k">@import</span> <span class="s">"../../../build/css/variables.css"</span>;   <span class="c">/* semantic tokens */</span>
+
+<span class="k">@theme</span> {
+  <span class="t">--color-primary</span>:      <span class="k">var</span>(<span class="t">--general-primary</span>);          <span class="c">/* Vivid Blue */</span>
+  <span class="t">--color-accent</span>:       <span class="k">var</span>(<span class="t">--general-accent</span>);           <span class="c">/* orange — highlights */</span>
+  <span class="t">--color-ring</span>:         <span class="k">var</span>(<span class="t">--general-primary</span>);          <span class="c">/* focus = primary */</span>
+  <span class="t">--font-sans</span>:          <span class="k">var</span>(<span class="t">--font-family-headings</span>);
+  <span class="t">--radius-2xl</span>:         <span class="k">calc</span>(<span class="k">var</span>(<span class="t">--rounded-2xl</span>) * 1px);   <span class="c">/* 25px card standard */</span>
+}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       LAYER 3 — COMPONENTS AS A REGISTRY
+  ================================================================ -->
+  <section class="cs-section cs-section--tight">
+    <div class="container">
+      <div class="cs-measure">
+        <p class="cs-layer-tag" data-reveal><b>Layer 03</b> · Distribution</p>
+        <h2 class="cs-h2" data-reveal>Components ship as a registry, not a package</h2>
+        <div class="cs-prose" data-reveal data-reveal-delay="1">
+          <p>This was the most consequential call. Instead of publishing a versioned React library that every app imports and fights with, Advantage ships its components as a <strong>shadcn registry</strong>. Consumers run one command and the <em>source</em> lands in their repo — theirs to read, theirs to extend — with the design tokens travelling along as a dependency so the theme is never optional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-screens">
+    <div class="container">
+
+      <!-- count strip -->
+      <div class="cs-count-row" data-reveal>
+        <div class="cs-count"><span class="cs-count-num">49</span><span class="cs-count-label">themed components in the registry</span></div>
+        <div class="cs-count"><span class="cs-count-num">~150</span><span class="cs-count-label">design tokens from one Figma source</span></div>
+        <div class="cs-count"><span class="cs-count-num">1</span><span class="cs-count-label">command to install, themed &amp; accessible</span></div>
+        <div class="cs-count"><span class="cs-count-num">3</span><span class="cs-count-label">sibling brands, one operating model</span></div>
+      </div>
+
+      <!-- install command -->
+      <div data-reveal>
+        <div class="cs-code">
+          <div class="cs-code-bar">
+            <span class="cs-code-dot"></span><span class="cs-code-dot"></span><span class="cs-code-dot"></span>
+            <span class="cs-code-file">consumer project — terminal</span>
+          </div>
+<pre><span class="c"># pulls the real, themed source into your repo — tokens come with it</span>
+<span class="k">npx</span> shadcn@latest add <span class="s">@advantage/button @advantage/input @advantage/dialog</span></pre>
+        </div>
+      </div>
+
+      <!-- component chips -->
+      <div class="cs-comp-chips" data-reveal>
+        <span>button</span><span>input</span><span>dialog</span><span>card</span><span>select</span><span>table</span><span>tabs</span><span>tooltip</span><span>badge</span><span>checkbox</span><span>calendar</span><span>command</span><span>drawer</span><span>popover</span><span>sheet</span><span>sidebar</span><span>chart</span><span>sonner</span><span>+&nbsp;33 more</span>
+      </div>
+
+      <!-- Button worked example -->
+      <div class="cs-card cs-card--beige" data-reveal style="padding: clamp(28px,4vw,52px) clamp(20px,4vw,52px);">
+        <figure class="cs-shot">
+          <img src="img/ads/button-variants.png" alt="Button variants: default, destructive, outline, secondary, ghost, link" loading="lazy">
+          <figcaption>Button — six variants, each driven by semantic tokens</figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-card cs-card--beige" data-reveal style="padding: clamp(28px,4vw,52px) clamp(20px,4vw,52px);">
+        <figure class="cs-shot">
+          <img src="img/ads/button-shape.png" alt="Button shapes: default proportional radius and pill" loading="lazy">
+          <figcaption>Two button shapes — proportional radius vs. pill — a rule, not a free choice</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================================================================
+       LAYER 4 — QUALITY GATES
+  ================================================================ -->
+  <section class="cs-section cs-section--tight">
+    <div class="container">
+      <div class="cs-measure">
+        <p class="cs-layer-tag" data-reveal><b>Layer 04</b> · Quality</p>
+        <h2 class="cs-h2" data-reveal>Documentation and guardrails, generated alongside the code</h2>
+        <div class="cs-prose" data-reveal data-reveal-delay="1">
+          <p>Every component carries its own docs and tests. Storybook renders the usage, do's and don'ts, and props; an accessibility addon flags violations in the panel; Vitest + Playwright run the stories as browser tests; and Chromatic catches visual regressions before they merge. The system can't drift quietly — something fails loudly when it does.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-screens">
+    <div class="container">
+      <div class="cs-card" data-reveal>
+        <figure class="cs-shot">
+          <img src="img/ads/button-docs.png" alt="Button documentation page in Storybook — usage, variants, and accessibility guidance" loading="lazy">
+          <figcaption>Generated docs — usage, props, and accessibility guidance live with the component</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       THE AI LAYER — the differentiator
+  ================================================================ -->
+  <section class="cs-section">
+    <div class="container">
+      <div class="cs-measure">
+        <p class="cs-eyebrow" data-reveal>The AI Layer</p>
+        <h2 class="cs-h2" data-reveal>AI built it — and the system makes AI build it right</h2>
+        <div class="cs-prose" data-reveal data-reveal-delay="1">
+          <p>Two things are true here. First, <strong>I built this pipeline as a product designer, with AI as my engineering partner</strong> — the token build, the registry generator, the Storybook setup, the Vercel deploy. Second, I made the system control the AI back: coding agents now write a lot of UI, and left alone they invent off-brand components. So the agent is a first-class consumer, given <strong>rules it reads, a registry it can discover, and a default that's easier than inventing.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-screens">
+    <div class="container">
+
+      <!-- AGENTS.md golden rule -->
+      <div data-reveal>
+        <div class="cs-code">
+          <div class="cs-code-bar">
+            <span class="cs-code-dot"></span><span class="cs-code-dot"></span><span class="cs-code-dot"></span>
+            <span class="cs-code-file">AGENTS.md — dropped into every consuming repo</span>
+          </div>
+<pre><span class="c"># Advantage Design System — rules for AI agents</span>
+
+<span class="k">The golden rule</span>
+<span class="s">Never hand-write a component that already exists in the Advantage
+registry. Install it: npx shadcn@latest add @advantage/&lt;name&gt;</span>
+
+<span class="k">Hard rules</span>
+<span class="p">·</span> Use semantic tokens only (<span class="t">--general-*</span>) — never raw hex
+<span class="p">·</span> Primary actions = Vivid Blue pill CTAs; orange is highlight-only
+<span class="p">·</span> Greens are reserved for positive data viz — never decoration
+<span class="p">·</span> Focus rings via <span class="t">--focus-ring</span>; hit targets ≥ 24px (44px mobile)</pre>
+        </div>
+      </div>
+
+      <!-- GUIDELINES rules-as-code -->
+      <div data-reveal>
+        <div class="cs-code">
+          <div class="cs-code-bar">
+            <span class="cs-code-dot"></span><span class="cs-code-dot"></span><span class="cs-code-dot"></span>
+            <span class="cs-code-file">GUIDELINES.md — governance as MUST / SHOULD / NEVER</span>
+          </div>
+<pre><span class="k">MUST</span>   Use semantic tokens in components — never raw palette tokens
+<span class="k">MUST</span>   Two-layer shadows (ambient + direct) — never a single layer
+<span class="k">MUST</span>   Primary CTAs use the pill shape in Vivid Blue
+<span class="k">SHOULD</span> Use the standard shape for secondary / dense UI
+<span class="k">NEVER</span>  Use the orange accent as a primary action color
+<span class="k">NEVER</span>  Hardcode a hex value — all color traces to a CSS variable</pre>
+        </div>
+      </div>
+
+      <!-- Agent conversation -->
+      <div data-reveal>
+        <div class="cs-agent">
+          <div class="cs-agent-bar">
+            <span class="cs-dot-live"></span>
+            <span>Claude Code · advantage workspace · MCP connected</span>
+          </div>
+          <div class="cs-agent-body">
+            <div class="cs-msg cs-msg--user">
+              <span class="cs-msg-who">Designer</span>
+              <p>Add a primary “Request quote” call-to-action to the supplier card.</p>
+            </div>
+            <div class="cs-msg cs-msg--agent">
+              <span class="cs-msg-who">Agent</span>
+              <p>Reading <code>AGENTS.md</code> → the Advantage registry already has a Button. I won't hand-write one. Discovering it via the shadcn MCP server and installing:</p>
+              <span class="cs-cmd">npx shadcn@latest add @advantage/button</span>
+              <p style="margin-top:10px;">Per the guidelines, a primary CTA uses the pill shape in Vivid Blue — so I'm rendering <code>&lt;Button shape="pill"&gt;Request quote&lt;/Button&gt;</code>. Tokens and focus ring come from the system; nothing hardcoded.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-measure" style="margin-top:8px;">
+        <div class="cs-prose" data-reveal>
+          <p>The mechanism behind it: a <strong>Storybook MCP server</strong> exposes the live registry so an agent can <em>list, search, and install</em> real components instead of guessing — and project-level <code>CLAUDE.md</code> + <code>GUIDELINES.md</code> load the brand rules into the agent's context automatically. The on-brand path becomes the shortest path.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================================================================
+       KEY DECISIONS
+  ================================================================ -->
+  <section class="cs-section">
+    <div class="container">
+      <div class="cs-measure">
+        <p class="cs-eyebrow" data-reveal>Key Decisions</p>
+        <h2 class="cs-h2" data-reveal>Four calls that shaped the system</h2>
+        <div class="cs-grid">
+          <div class="cs-tile" data-reveal>
+            <span class="cs-tile-num">01</span>
+            <h3>Figma as the single source of truth</h3>
+            <p>Tokens are authored once, in Token Studio, and flow outward. Code never owns a value.</p>
+          </div>
+          <div class="cs-tile" data-reveal data-reveal-delay="1">
+            <span class="cs-tile-num">02</span>
+            <h3>Semantic over raw, always</h3>
+            <p>Components speak intent (<code>--general-primary</code>), never palette. Re-brand without touching a component.</p>
+          </div>
+          <div class="cs-tile" data-reveal data-reveal-delay="1">
+            <span class="cs-tile-num">03</span>
+            <h3>A registry, not a package</h3>
+            <p>Consumers own the source and the tokens travel with it — adoption without lock-in or version wars.</p>
+          </div>
+          <div class="cs-tile" data-reveal data-reveal-delay="2">
+            <span class="cs-tile-num">04</span>
+            <h3>Constrain the agent, don't trust it</h3>
+            <p>Rules-as-code plus MCP discovery make the on-brand choice the default — for people and AI alike.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       OUTCOME
+  ================================================================ -->
+  <section class="cs-section">
+    <div class="container">
+      <div class="cs-measure">
+        <p class="cs-eyebrow" data-reveal>What it enables</p>
+        <h2 class="cs-h2" data-reveal>From scattered libraries to one operating model</h2>
+        <ul class="cs-checks" data-reveal data-reveal-delay="1">
+          <li>A token edited in Figma reaches production through one automated path — no manual copy.</li>
+          <li>A new project installs themed, accessible components with a single command.</li>
+          <li>AI agents build on-system by default instead of inventing off-brand UI.</li>
+          <li>Visual-regression and a11y checks catch drift before it ships.</li>
+          <li>Three sibling brands run on the same model without sharing a codebase.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       REFLECTION
+  ================================================================ -->
+  <section class="cs-section cs-section--tight">
+    <div class="container">
+      <div class="cs-reflection" data-reveal>
+        <p class="cs-eyebrow">Reflection</p>
+        <p class="cs-reflection-text">I'm a product designer, not a platform engineer. <em>With AI as a build partner, I shipped the whole pipeline myself</em> — tokens, build, registry, docs, deploy. The design was making the right thing the easy thing. The AI was how one person got it built.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       PROJECT PAGER
+  ================================================================ -->
+  <nav class="cs-pager" aria-label="Project navigation">
+    <div class="container">
+      <div class="cs-pager-top">
+        <a href="places-case-study.html" class="cs-pager-side" rel="prev" aria-label="Previous project: Places2Go">
+          <span class="cs-pager-side-arrow" aria-hidden="true">←</span>
+          <span class="cs-pager-side-text">
+            <span class="cs-pager-side-label">Previous</span>
+            <span class="cs-pager-side-title">Places2Go</span>
+          </span>
+        </a>
+        <a href="work.html" class="cs-pager-index" aria-label="View all projects">
+          <span class="cs-pager-index-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          All work
+        </a>
+      </div>
+
+      <a href="vinst-case-study.html" class="cs-pager-next" rel="next" data-reveal aria-label="Next project: Fieldwork">
+        <div class="cs-pager-next-text">
+          <span class="cs-pager-next-label">Next project</span>
+          <span class="cs-pager-next-title">Fieldwork <span class="cs-pager-next-arrow" aria-hidden="true">→</span></span>
+          <span class="cs-pager-next-sub">From research to product clarity</span>
+        </div>
+        <div class="cs-pager-next-media" aria-hidden="true">
+          <img src="img/v-case/laptop.png" alt="" loading="lazy">
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <footer class="footer" id="contact">
+    <div class="footer-card">
+      <div class="footer-left">
+        <div class="footer-connect" data-reveal>
+          <span class="footer-lets script script-green">Let's</span>
+          <h2 class="footer-connect-heading">Connect</h2>
+        </div>
+        <div class="footer-nav-cols" data-reveal data-reveal-delay="2">
+          <nav class="footer-nav-col">
+            <a href="index.html">Home</a>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+          </nav>
+          <nav class="footer-nav-col">
+            <a href="https://www.linkedin.com/in/catalinsandru/" target="_blank" rel="noopener">Linkedin</a>
+            <a href="https://www.instagram.com/careceva/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://unsplash.com/@catalinsandru" target="_blank" rel="noopener">Unsplash</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="dial-button-container">
+          <div class="dial-button-wrapper">
+            <div class="dial-bezel">
+              <img src="img/dial-bezel.svg" alt="" class="bezel-img">
+            </div>
+            <button class="dial-btn" id="dialBtn" aria-label="Open contact form">
+              <img src="img/dial-center.svg" alt="" class="button-center">
+              <img src="img/dial-level.svg" alt="" class="dial-level">
+              <img src="img/dial-base.svg" alt="" class="dial-base">
+            </button>
+            <div class="dial-indicator">
+              <img src="img/dial-indicator.svg" alt="" class="indicator-dot">
+            </div>
+          </div>
+        </div>
+        <span class="dial-label script script-green">Work with me</span>
+        <p class="footer-location">Bucharest, Romania</p>
+        <a href="mailto:catalin.sandru18@gmail.com" class="footer-email">catalin.sandru18@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <p>&copy; 2026 Cătălin Șandru. <span>All rights reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <div id="modalFormState" class="modal-body">
+        <div class="modal-form-col">
+          <p class="modal-eyebrow">Get in touch</p>
+          <h3 class="modal-heading">Let's <em class="script script-green">work</em> together</h3>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="field-name">Name</label>
+                <input id="field-name" type="text" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-field">
+                <label for="field-email">Email</label>
+                <input id="field-email" type="email" name="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="field-message">Message</label>
+              <textarea id="field-message" name="message" placeholder="Tell me about your project…" rows="5" required></textarea>
+            </div>
+            <p class="form-error" id="formError" hidden>Please fill in all fields before sending.</p>
+            <button type="submit" class="btn btn-green btn-full">Send message</button>
+          </form>
+        </div>
+        <div class="modal-info-col">
+          <div class="modal-info-block">
+            <p class="modal-info-label">Location</p>
+            <p class="modal-info-value">Bucharest, Romania</p>
+          </div>
+          <div class="modal-info-block">
+            <p class="modal-info-label">Email</p>
+            <a href="mailto:catalin.sandru18@gmail.com" class="modal-info-link">catalin.sandru18@gmail.com</a>
+          </div>
+          <div class="modal-info-block">
+            <p class="modal-info-label">Socials</p>
+            <div class="modal-info-links">
+              <a href="https://www.linkedin.com/in/catalinsandru/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.instagram.com/careceva/" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://unsplash.com/@catalinsandru" target="_blank" rel="noopener">Unsplash</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="modalSuccessState" class="modal-success" hidden>
+        <div class="success-icon">✓</div>
+        <h3 class="modal-heading">Message sent!</h3>
+        <p class="modal-success-text">I'll get back to you within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Reveal -->
+  <script>
+    (function () {
+      var revealEls = document.querySelectorAll('[data-reveal]');
+      if (!revealEls.length) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            obs.unobserve(el);
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                el.classList.add('is-visible');
+              });
+            });
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(function (el) { obs.observe(el); });
+    })();
+  </script>
+
+  <!-- Contact modal -->
+  <script>
+    (function () {
+      var dialBtn      = document.getElementById('dialBtn');
+      var modal        = document.getElementById('contactModal');
+      var modalClose   = document.getElementById('modalClose');
+      var contactForm  = document.getElementById('contactForm');
+      var formState    = document.getElementById('modalFormState');
+      var successState = document.getElementById('modalSuccessState');
+      var formError    = document.getElementById('formError');
+
+      function closeModal() {
+        modal.classList.remove('active');
+        setTimeout(function () {
+          contactForm.reset();
+          formState.hidden = false;
+          successState.hidden = true;
+          formError.hidden = true;
+        }, 300);
+      }
+
+      if (dialBtn) {
+        dialBtn.addEventListener('click', function () {
+          dialBtn.classList.add('pressed');
+          setTimeout(function () {
+            dialBtn.classList.remove('pressed');
+            modal.classList.add('active');
+          }, 180);
+        });
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+      });
+
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name    = document.getElementById('field-name').value.trim();
+        var email   = document.getElementById('field-email').value.trim();
+        var message = document.getElementById('field-message').value.trim();
+        if (!name || !email || !message) {
+          formError.hidden = false;
+          return;
+        }
+        formError.hidden = true;
+        var subject = encodeURIComponent('Portfolio inquiry from ' + name);
+        var body    = encodeURIComponent(message + '\n\nFrom: ' + name + '\nEmail: ' + email);
+        window.location.href = 'mailto:catalin.sandru18@gmail.com?subject=' + subject + '&body=' + body;
+        formState.hidden    = true;
+        successState.hidden = false;
+      });
+    })();
+  </script>
+
+</body>
+</html>

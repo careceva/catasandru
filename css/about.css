@@ -64,7 +64,7 @@
 
 .hi-greeting {
   font-family: var(--script);
-  font-size: 22px;
+  font-size: 44px;
   color: var(--dark);
   opacity: 1;
   line-height: 1;
@@ -139,6 +139,16 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Apple-style interactive motion: continuous float + pointer tilt (driven by JS) */
+.about-photo {
+  transition: box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.about-photo.is-floating {
+  box-shadow: 0 44px 90px -28px rgba(26, 24, 20, 0.4);
 }
 
 @keyframes photoEnter {
@@ -707,7 +717,7 @@
   }
 
   .hi-greeting {
-    font-size: 18px;
+    font-size: 36px;
   }
 
   .intro-heading {

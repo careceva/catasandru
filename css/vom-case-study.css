@@ -910,7 +910,7 @@
 }
 .cs-tile-num {
   font-family: var(--script);
-  font-size: 40px;
+  font-size: 80px;
   line-height: 1;
   color: var(--green);
   display: block;
