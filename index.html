@@ -482,14 +482,26 @@ I still overthink buttons. It usually pays off.</p>
 
       function processNode(parent, node) {
         if (node.nodeType === 3) {
-          // Text node — wrap every character in a .char span
-          [...node.textContent].forEach(ch => {
-            const s = document.createElement('span');
-            s.className = 'char';
-            s.textContent = ch === ' ' ? '\u00A0' : ch;
-            s.style.animationDelay = `${START + idx * STAGGER}ms`;
-            parent.appendChild(s);
-            idx++;
+          // Text node — group into words so lines never break mid-word.
+          // Each word is an inline-block .word (nowrap inside); spaces between
+          // words stay as real breakable spaces; characters animate individually.
+          node.textContent.split(/(\s+)/).forEach(token => {
+            if (token === '') return;
+            if (/^\s+$/.test(token)) {
+              parent.appendChild(document.createTextNode(' '));
+              return;
+            }
+            const word = document.createElement('span');
+            word.className = 'word';
+            [...token].forEach(ch => {
+              const s = document.createElement('span');
+              s.className = 'char';
+              s.textContent = ch;
+              s.style.animationDelay = `${START + idx * STAGGER}ms`;
+              word.appendChild(s);
+              idx++;
+            });
+            parent.appendChild(word);
           });
         } else if (node.nodeName === 'BR') {
           parent.appendChild(document.createElement('br'));

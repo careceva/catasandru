@@ -316,8 +316,8 @@ em { font-style: normal; }
 /* Bio copy */
 .hero-bio {
   font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 22px;
+  line-height: 30px;
   color: var(--body);
   opacity: .9;
   max-width: clamp(220px, 22vw, 320px);
@@ -1251,6 +1251,11 @@ em { font-style: normal; }
   }
 }
 
+/* Keep each word intact so the headline never breaks mid-word when wrapping */
+.hero-headline .word {
+  display: inline-block;
+  white-space: nowrap;
+}
 .hero-headline .char {
   display: inline-block;
   opacity: 0;
@@ -1482,7 +1487,7 @@ em { font-style: normal; }
 
   .hero-bio {
     max-width: 100%;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.6;
   }
 
