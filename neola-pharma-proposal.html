@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow">
+  <title>Neola Pharma — Brand identity proposal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Allison&display=swap" rel="stylesheet">
+  <link rel="icon" href="fav.png?v=2" type="image/png">
+  <style>
+    :root {
+      --bg:          #ebe8e0;
+      --green:       #86b58f;
+      --green-dark:  #6fa579;
+      --green-brand: #229959;
+      --dark:        #261407;
+      --body:        #33302d;
+      --cream:       #f4f2ec;
+      --line:        rgba(38, 20, 7, .14);
+      --sans:   'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+      --script: 'Allison', cursive;
+      --pad:    clamp(20px, 5vw, 80px);
+      --max-w:  1120px;
+      --bleed:  calc(var(--pad) + max(0px, (100vw - var(--max-w)) / 2));
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--body); font: 400 18px/1.6 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: clip; }
+    h1, h2, h3 { color: var(--dark); margin: 0; letter-spacing: -.02em; line-height: 1.1; }
+    p { margin: 0; }
+    a { color: inherit; }
+    .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* Hero */
+    .hero { background: var(--green); padding: 28px 0 72px; }
+    .hero-top { display: flex; justify-content: space-between; font-size: 16px; color: var(--dark); margin-bottom: 64px; }
+    .hero-top img { width: 62px; height: 38px; object-fit: contain; display: block; }
+    .hero-body { display: flex; align-items: center; gap: clamp(32px, 6vw, 96px); }
+    .pill { flex: 0 1 auto; background: var(--cream); border-radius: 0 999px 999px 0; padding: 48px 72px 48px var(--bleed); margin-left: calc(-1 * var(--bleed)); display: flex; align-items: flex-start; gap: 8px; }
+    .pill h1 { max-width: 11ch; }
+    .hero h1 { font-size: clamp(36px, 4.4vw, 60px); font-weight: 700; }
+    .hero p { font-size: 20px; color: var(--dark); margin-top: 20px; max-width: 34ch; }
+    .lines { display: flex; flex-direction: column; gap: 8px; padding-top: 8px; }
+    .lines div { background: var(--green-dark); }
+
+    /* Sections */
+    section { padding: clamp(72px, 10vw, 140px) 0 0; }
+    .label { font-size: 16px; font-weight: 600; color: var(--green-brand); margin-bottom: 16px; }
+    h2 { font-size: clamp(30px, 3.6vw, 44px); font-weight: 700; max-width: 20ch; }
+    .lead { font-size: 20px; margin-top: 20px; max-width: 56ch; }
+
+    .rows { margin-top: 48px; border-top: 1px solid var(--line); }
+    .row { display: grid; grid-template-columns: 1fr 120px; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+    .row h3 { font-size: 20px; font-weight: 600; margin-bottom: 4px; }
+    .row .pkg { font-size: 15px; color: var(--body); opacity: .7; text-align: right; }
+
+    .gantt { margin-top: 48px; display: grid; gap: 8px; }
+    .g-row { display: grid; grid-template-columns: 240px 1fr; gap: 24px; align-items: center; font-size: 17px; }
+    .g-row > span { color: var(--dark); font-weight: 500; }
+    .track { position: relative; height: 28px; background: repeating-linear-gradient(90deg, transparent 0 calc(12.5% - 1px), var(--line) calc(12.5% - 1px) 12.5%); }
+    .bar { position: absolute; top: 4px; bottom: 4px; border-radius: 999px; }
+    .b1 { background: var(--green-brand); }
+    .b2 { background: var(--green); }
+    .b3 { background: var(--green-dark); opacity: .45; }
+    .weeks { display: grid; grid-template-columns: repeat(8, 1fr); font-size: 14px; font-weight: 600; opacity: .6; }
+
+    .packages { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 48px; border-top: 1px solid var(--line); }
+    .package { padding: 32px 32px 32px 0; }
+    .package + .package { padding-left: 32px; border-left: 1px solid var(--line); }
+    .package h3 { font-size: 22px; font-weight: 700; }
+    .package .sub { font-size: 16px; opacity: .75; margin-top: 4px; }
+    .price { font-size: clamp(40px, 4.4vw, 56px); font-weight: 800; color: var(--dark); letter-spacing: -.03em; margin: 28px 0 4px; }
+    .time { font-size: 16px; opacity: .75; }
+    .package ul { list-style: none; padding: 0; margin: 28px 0 0; font-size: 16px; }
+    .package li { padding: 8px 0; border-top: 1px solid var(--line); }
+    .package.best .price { color: var(--green-brand); }
+    .addon { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 32px; align-items: baseline; }
+    .addon p { max-width: 60ch; font-size: 16px; margin-top: 6px; }
+    .addon strong { font-size: 28px; color: var(--dark); white-space: nowrap; }
+    .small { font-size: 14px; opacity: .7; margin-top: 24px; }
+
+    .terms { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 64px; margin-top: 48px; }
+    .terms div { padding: 20px 0; border-top: 1px solid var(--line); font-size: 16px; }
+    .terms b { display: block; color: var(--dark); font-weight: 600; margin-bottom: 4px; font-size: 18px; }
+
+    footer { background: var(--green); margin-top: clamp(72px, 10vw, 140px); padding: clamp(64px, 8vw, 112px) 0 48px; color: var(--dark); }
+    footer h2 { max-width: 18ch; }
+    .steps { margin: 32px 0 0; padding-left: 1.2em; font-size: 20px; max-width: 56ch; }
+    .steps li { padding: 6px 0; }
+    .sign { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; margin-top: 80px; font-size: 16px; }
+    .sign .script { font: 400 64px/.8 var(--script); }
+
+    @media (max-width: 860px) {
+      .hero-body { flex-direction: column; align-items: flex-start; }
+      .row { grid-template-columns: 1fr; gap: 4px; }
+      .row .pkg { text-align: left; }
+      .g-row { grid-template-columns: 1fr; gap: 6px; }
+      .g-row > span:empty { display: none; }
+      .packages { grid-template-columns: 1fr; }
+      .package, .package + .package { padding: 32px 0; border-left: 0; }
+      .package + .package { border-top: 1px solid var(--line); }
+      .terms { grid-template-columns: 1fr; }
+      .addon { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <a href="/"><img src="img/logo-nav.svg" alt="Cata"></a>
+        <span>November 2026</span>
+      </div>
+      <div class="hero-body">
+        <div class="pill">
+          <h1>Brand identity for Neola&nbsp;Pharma</h1>
+        </div>
+        <p>A new mark, custom lettering for the name, and the system that carries them.</p>
+      </div>
+    </div>
+  </header>
+  <div class="lines">
+    <div style="height:32px"></div>
+    <div style="height:24px;opacity:.9"></div>
+    <div style="height:16px;opacity:.7"></div>
+    <div style="height:8px;opacity:.4"></div>
+    <div style="height:4px;opacity:.2"></div>
+  </div>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <p class="label">Process</p>
+        <h2>Many ideas first. Then one.</h2>
+        <div class="rows">
+          <div class="row"><div><h3>Discovery</h3><p>Two one-hour sessions with your team on goals, audience and constraints.</p></div><span class="pkg">Essential</span></div>
+          <div class="row"><div><h3>Research</h3><p>The current brand, Romanian and European competitors, packaging and small-size limits.</p></div><span class="pkg">Essential</span></div>
+          <div class="row"><div><h3>Brand attributes</h3><p>Three to five qualities the brand must express. You approve them before design starts.</p></div><span class="pkg">Essential</span></div>
+          <div class="row"><div><h3>Exploration</h3><p>Five to ten distinct directions for the mark and the lettering.</p></div><span class="pkg">Essential</span></div>
+          <div class="row"><div><h3>Three finalists</h3><p>Refined and shown on real applications.</p></div><span class="pkg">Essential</span></div>
+          <div class="row"><div><h3>Final identity</h3><p>The mark and custom "NEOLA pharma" lettering, in every version you need.</p></div><span class="pkg">Essential</span></div>
+          <div class="row"><div><h3>Guidelines and stationery</h3><p>Brand book, business cards, letterhead, envelopes, folder, email signature.</p></div><span class="pkg">Identity</span></div>
+          <div class="row"><div><h3>Presentation, banners and landing page</h3><p>PowerPoint template, web and print banners, a one-page website.</p></div><span class="pkg">Complete</span></div>
+          <div class="row"><div><h3>Handover</h3><p>Brand mockups, all files, and full rights.</p></div><span class="pkg">Complete</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <p class="label">Timeline</p>
+        <h2>About 8 weeks from kickoff to handover.</h2>
+        <p class="lead">Essential ends after week 5 and Identity after week 6. The schedule assumes feedback within 3 working days at each review.</p>
+        <div class="gantt">
+          <div class="g-row"><span>Discovery and research</span><div class="track"><div class="bar b1" style="left:0.0%;width:25.0%"></div></div></div>
+          <div class="g-row"><span>Brand attributes</span><div class="track"><div class="bar b1" style="left:12.5%;width:12.5%"></div></div></div>
+          <div class="g-row"><span>Exploration</span><div class="track"><div class="bar b1" style="left:25.0%;width:12.5%"></div></div></div>
+          <div class="g-row"><span>Three finalists</span><div class="track"><div class="bar b1" style="left:37.5%;width:12.5%"></div></div></div>
+          <div class="g-row"><span>Final identity</span><div class="track"><div class="bar b1" style="left:50.0%;width:12.5%"></div></div></div>
+          <div class="g-row"><span>Guidelines and stationery</span><div class="track"><div class="bar b2" style="left:50.0%;width:25.0%"></div></div></div>
+          <div class="g-row"><span>PowerPoint and banners</span><div class="track"><div class="bar b3" style="left:62.5%;width:25.0%"></div></div></div>
+          <div class="g-row"><span>Landing page</span><div class="track"><div class="bar b3" style="left:62.5%;width:37.5%"></div></div></div>
+          <div class="g-row"><span>Presentation and handover</span><div class="track"><div class="bar b3" style="left:87.5%;width:12.5%"></div></div></div>
+          <div class="g-row"><span></span><div class="weeks"><span>Wk 1</span><span>Wk 2</span><span>Wk 3</span><span>Wk 4</span><span>Wk 5</span><span>Wk 6</span><span>Wk 7</span><span>Wk 8</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <p class="label">Investment</p>
+        <h2>Three packages. Each includes the one before.</h2>
+        <div class="packages">
+          <div class="package">
+            <h3>Essential</h3>
+            <p class="sub">Logo and wordmark</p>
+            <p class="price">€3,500</p>
+            <p class="time">About 5 weeks</p>
+            <ul>
+              <li>Discovery and research</li>
+              <li>Five to ten directions</li>
+              <li>Three finalists</li>
+              <li>Final logo mark</li>
+              <li>Custom lettering</li>
+              <li>Logo usage sheet</li>
+            </ul>
+          </div>
+          <div class="package">
+            <h3>Identity</h3>
+            <p class="sub">Logo, system and print</p>
+            <p class="price">€6,500</p>
+            <p class="time">About 6 weeks</p>
+            <ul>
+              <li>Everything in Essential</li>
+              <li>Brand guidelines</li>
+              <li>Colour, type and grid</li>
+              <li>Business cards</li>
+              <li>Letterhead and envelopes</li>
+              <li>Folder and email signature</li>
+            </ul>
+          </div>
+          <div class="package best">
+            <h3>Complete</h3>
+            <p class="sub">Recommended</p>
+            <p class="price">€9,000</p>
+            <p class="time">About 8 weeks</p>
+            <ul>
+              <li>Everything in Identity</li>
+              <li>PowerPoint template</li>
+              <li>Web and print banners</li>
+              <li>One-page website</li>
+              <li>Brand mockups</li>
+              <li>Full file handover</li>
+            </ul>
+          </div>
+        </div>
+        <div class="addon">
+          <div>
+            <h3>Presentation website</h3>
+            <p>Four to five pages instead of the one-page site in Complete. Final price is set once the pages are agreed.</p>
+          </div>
+          <strong>+ €2,000–2,500</strong>
+        </div>
+        <p class="small">Prices in EUR, excluding VAT where applicable.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <p class="label">Terms</p>
+        <h2>Clear from the start.</h2>
+        <div class="terms">
+          <div><b>Payment</b>40% to start, 30% when the finalists are approved, 30% on delivery.</div>
+          <div><b>Revisions</b>Two rounds at each stage. Additional rounds at €60 per hour.</div>
+          <div><b>Rights</b>Full rights to the final work transfer on final payment.</div>
+          <div><b>Fonts</b>The custom lettering is yours. Licences for any retail typeface are paid by Neola Pharma.</div>
+          <div><b>Website</b>Domain and hosting are paid by Neola Pharma. You provide text and product information.</div>
+          <div><b>Packaging</b>Product packaging is quoted separately once the identity is final.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <h2>Ready when you are.</h2>
+      <ol class="steps">
+        <li>Choose a package.</li>
+        <li>Sign the agreement and pay the deposit.</li>
+        <li>Book the first discovery session.</li>
+      </ol>
+      <div class="sign">
+        <div><span class="script">Cătălin</span><br>Senior Product Designer, Bucharest</div>
+        <div><a href="mailto:catalin.sandru18@gmail.com">catalin.sandru18@gmail.com</a><br><a href="https://www.linkedin.com/in/catalinsandru/">linkedin.com/in/catalinsandru</a></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
